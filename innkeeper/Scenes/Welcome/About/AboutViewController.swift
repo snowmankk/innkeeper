@@ -14,9 +14,6 @@ class AboutViewController: UIViewController {
     
     @IBOutlet var btnBack: UIButton!
     @IBOutlet weak var ytHSView: YTPlayerView!
-
-    
-    let YOUTUBE_HS_CINEMAIC_URL: String = "m6kPKwfuzPI"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +114,7 @@ extension AboutViewController: YTPlayerViewDelegate {
     func setCinematicVideo()
     {
         ytHSView.delegate = self
-        ytHSView.load(withVideoId: YOUTUBE_HS_CINEMAIC_URL, playerVars: ["playsinline": 1])
+        ytHSView.load(withVideoId: InnIdentifiers.YOUTUBE_HS_CINEMATIC.rawValue, playerVars: ["playsinline": 1])
     }
 }
 

@@ -10,12 +10,12 @@ import UIKit
 
 class CircleMaskView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        // Drawing code
+        let halfWidth = self.bounds.size.width / 2
+        let halfHeight = self.bounds.size.height / 2
+        let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: halfWidth, y: halfHeight), radius: halfWidth, startAngle: CGFloat.pi, endAngle: CGFloat.pi * 4, clockwise: true)
+        let circleShape = CAShapeLayer()
+        circleShape.path = circlePath.cgPath
+        self.layer.mask = circleShape
     }
-    */
-
 }

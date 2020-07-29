@@ -10,69 +10,84 @@ import UIKit
 
 class WelComeViewController: UIViewController {
     
-    @IBOutlet weak var aboutView: UIView!
-    @IBOutlet weak var appstoreView: UIImageView!
-    @IBOutlet weak var summaryView: UIView!
+    enum ViewID: Int {
+        case about = 100
+        case play
+        case noob
+        case community
+        case appstore
+    }
+    
+    @IBOutlet var tapViews: [UIView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.title = "Welcome!"
+        self.setNvigationItems()
         
-        setLayerCorner(layer: aboutView.layer)
-        setLayerCorner(layer: appstoreView.layer)
+        // 각 메뉴들의 모서리 코너 설정
+        for v in tapViews {
+            self.setLayerCorner(layer: v.layer)
+        }
         
-        let gesture1 = UITapGestureRecognizer(target: self, action: #selector(self.tappedView(_:)))
-        aboutView.addGestureRecognizer(gesture1)
-        
-        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.tappedView2(_:)))
-        appstoreView.addGestureRecognizer(gesture2)
-        
-        
-        
-        
-        
-        
-        
-//        let maskView = UIView(frame: CGRect(x: 100, y: 200, width: 128, height: 128))
-//        maskView.backgroundColor = .blue
-//        maskView.layer.cornerRadius = 20
-//        redView.mask = maskView
+        // 각 메뉴들의 터치 설정
+        self.setGestures()
+
+//        self.summaryView.setSummaryHandleButton()
     }
     
-    func setLayerCorner(layer: CALayer, radius: CGFloat = 15.0, mask: Bool = true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // depth가 존재할때 (현재 탭에서 다른 씬으로 이동한 후 돌아올때 - 현재 탭에서 상호작용을 하여 씬을 이동하면 새로운 navigationBar item이 생성됨)
+        if let item = self.navigationController?.navigationBar.backItem {
+            item.title = InnIdentifiers.SCENE_WELCOME.rawValue
+        }
+        // depth가 없을때 (다른 탭으로 이동한 후 돌아올때)
+        else {
+            self.navigationController?.navigationBar.topItem?.title = InnIdentifiers.SCENE_WELCOME.rawValue
+            self.navigationController?.navigationBar.topItem?.titleView = nil
+            
+            // navigation background color
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 133/255, green: 147/255, blue: 152/255, alpha: 1.0)
+        }
+        
+//        self.navigationController?.navigationBar.topItem?.titleView = nil
+//        self.navigationController?.navigationBar.backItem?.title = InnIdentifiers.SCENE_WELCOME.rawValue
+    }
+    
+    func setLayerCorner(layer: CALayer, radius: CGFloat = 10.0, mask: Bool = true)
     {
-        layer.cornerRadius = 15.0
-        layer.masksToBounds = true
+        layer.cornerRadius = radius
+        layer.masksToBounds = mask
+    }
+    
+    func setNvigationItems() {
+        self.navigationController?.navigationBar.topItem?.title = InnIdentifiers.SCENE_WELCOME.rawValue
+        
+        // back button color
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)
+    }
+}
+
+
+// MARK:- Gestures
+extension WelComeViewController {
+    
+    func setGestures() {
+        for v in self.tapViews {
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tappedView(_:)))
+            v.addGestureRecognizer(gesture)
+        }
     }
     
     @objc func tappedView(_ sender: UIGestureRecognizer) {
-        print("tapped 'aboutView'")
-    }
-    
-    @objc func tappedView2(_ sender: UIGestureRecognizer) {
-        print("tapped 'appstoreView'")
+        guard let selectedView = sender.view else { return }
         
-        let redView = UIView(frame: CGRect(x: 0, y: 0, width: summaryView.bounds.width, height: summaryView.bounds.height))
-        redView.backgroundColor = .black
-        redView.alpha = 0.5
-        summaryView.addSubview(redView)
-        mask(viewToMask: redView, maskRect: CGRect(x: 30, y: 30, width: 50, height: 50), invert: true)
-    }
-    
-    func mask(viewToMask: UIView, maskRect: CGRect, invert: Bool = false) {
-        let maskLayer = CAShapeLayer()
-        let path = CGMutablePath()
-        if (invert) {
-            path.addRect(viewToMask.bounds)
-        }
-        path.addRect(maskRect)
-
-        maskLayer.path = path
-        if (invert) {
-            maskLayer.fillRule = .evenOdd
-        }
-
-        viewToMask.layer.mask = maskLayer;
+        // 씬 이동
+//        let segueID = "segue-\(selectedView.tag)"
+        let segueID = "\(InnIdentifiers.SEGUE_BASE.rawValue)\(selectedView.tag)"
+        self.performSegue(withIdentifier: segueID, sender: self)
     }
 }
+
 

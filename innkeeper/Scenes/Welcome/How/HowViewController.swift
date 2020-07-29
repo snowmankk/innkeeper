@@ -31,13 +31,17 @@ class HowViewController: UIViewController {
 }
 
 extension HowViewController: MenuViewDelegate {
+    
     func onMenuSelected(selectedIndex: Int) {
-        switch selectedIndex {
-        case InnTags.TAG_MENU_VIEW_ITEM_INFO:
+        
+        guard let index = InnTags(rawValue: selectedIndex) else { return }
+        
+        switch index {
+        case .MENU_VIEW_ITEM_INFO:
             self.infoView.isHidden = false
             self.prePlayView.isHidden = true
             
-        case InnTags.TAG_MENU_VIEW_ITEM_PLAY:
+        case .MENU_VIEW_ITEM_PLAY:
             self.infoView.isHidden = true
             self.prePlayView.isHidden = false
             

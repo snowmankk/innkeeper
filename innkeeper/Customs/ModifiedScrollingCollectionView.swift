@@ -10,12 +10,9 @@ import UIKit
 
 class ModifiedScrollingCollectionView: UICollectionView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func touchesShouldCancel(in view: UIView) -> Bool {
+        if view is UIButton { return true }
+        
+        return super.touchesShouldCancel(in: view)
     }
-    */
-
 }

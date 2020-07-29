@@ -7,7 +7,26 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 class VideoCollectionViewCell: UICollectionViewCell {
     
+    static let identifier = "VideoCollectionViewCell"
+    
+    @IBOutlet var player: YTPlayerView!
+    
+    func configure(videoID: String) {
+        self.setVideo(videoID: videoID)
+    }
+}
+
+
+//MARK:- Youtube Player
+extension VideoCollectionViewCell: YTPlayerViewDelegate {
+    
+    func setVideo(videoID: String)
+    {
+        player.delegate = self
+        player.load(withVideoId: videoID, playerVars: ["playsinline": 1])
+    }
 }

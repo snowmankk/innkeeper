@@ -10,15 +10,18 @@ import UIKit
 
 class LectureTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    static var identifier = "LectureTableViewCell"
 
+    @IBOutlet var img: UIImageView!
+    @IBOutlet var title: UILabel!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func configure(imgName: String, title: String) {
+        self.img.image = UIImage(named: imgName)
+        self.title.text = title
     }
 
 }

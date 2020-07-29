@@ -3,27 +3,92 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242E4CBB24BBEFD5006B325E /* CommuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CBA24BBEFD5006B325E /* CommuCollectionViewCell.swift */; };
+		242E4CBD24BC8BF3006B325E /* LectureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CBC24BC8BF3006B325E /* LectureTableViewCell.swift */; };
+		242E4CBF24BD4FF9006B325E /* CircleMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CBE24BD4FF9006B325E /* CircleMaskView.swift */; };
+		242E4CC124BD9598006B325E /* InnIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CC024BD9598006B325E /* InnIdentifiers.swift */; };
+		242E4CC324BD9D63006B325E /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CC224BD9D63006B325E /* VideoListViewController.swift */; };
+		242E4CC524BDB44C006B325E /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CC424BDB44C006B325E /* VideoCollectionViewCell.swift */; };
+		242F6EAB24B2CC52001156EA /* HowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F6EAA24B2CC52001156EA /* HowViewController.swift */; };
+		242F6EAD24B2F52D001156EA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F6EAC24B2F52D001156EA /* MenuView.swift */; };
+		242F6EAF24B313D1001156EA /* InnTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F6EAE24B313D1001156EA /* InnTags.swift */; };
+		24310A4724AF82DC00B6F017 /* myfont-01-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 24310A4424AF82DC00B6F017 /* myfont-01-bold.otf */; };
+		2443F22724B8B19C003011C0 /* NoobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443F22624B8B19C003011C0 /* NoobViewController.swift */; };
+		24503C0624BE9CDB00666AD6 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24503C0524BE9CDB00666AD6 /* TestViewController.swift */; };
+		2467E0F524C67E0B009CC97B /* ModifiedScrollingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */; };
+		2467E0FC24C99247009CC97B /* RangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E0FB24C99247009CC97B /* RangeCollectionViewCell.swift */; };
+		2467E10024CAD955009CC97B /* SelectedDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E0FF24CAD955009CC97B /* SelectedDatas.swift */; };
+		2467E10224CD7ACC009CC97B /* ExUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E10124CD7ACC009CC97B /* ExUITextField.swift */; };
+		2467E10424CF3852009CC97B /* WordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E10324CF3852009CC97B /* WordCollectionViewCell.swift */; };
 		2497571D24A9C389008D125E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497571C24A9C389008D125E /* AppDelegate.swift */; };
 		2497571F24A9C389008D125E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497571E24A9C389008D125E /* SceneDelegate.swift */; };
-		2497572124A9C389008D125E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497572024A9C389008D125E /* ViewController.swift */; };
+		2497572124A9C389008D125E /* WelComeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497572024A9C389008D125E /* WelComeViewController.swift */; };
 		2497572424A9C389008D125E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2497572224A9C389008D125E /* Main.storyboard */; };
 		2497572624A9C38A008D125E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2497572524A9C38A008D125E /* Assets.xcassets */; };
 		2497572924A9C38A008D125E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2497572724A9C38A008D125E /* LaunchScreen.storyboard */; };
+		2497573224A9FC88008D125E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497573124A9FC88008D125E /* GradientView.swift */; };
+		24B8B56324BEDF6900D9FAE5 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8B56224BEDF6900D9FAE5 /* CardsViewController.swift */; };
+		24B8B56624C1B9CF00D9FAE5 /* HearthStroneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8B56524C1B9CF00D9FAE5 /* HearthStroneAPI.swift */; };
+		24B8B56824C1BAB900D9FAE5 /* HearthStoneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8B56724C1BAB900D9FAE5 /* HearthStoneData.swift */; };
+		24BF2B1C24C3FE3B00E3E9DE /* KeywordsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF2B1B24C3FE3B00E3E9DE /* KeywordsCollectionViewCell.swift */; };
+		24BF2B1E24C450E400E3E9DE /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF2B1D24C450E400E3E9DE /* CardData.swift */; };
+		24BF2B2024C4BA0D00E3E9DE /* KeywordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF2B1F24C4BA0D00E3E9DE /* KeywordsViewController.swift */; };
+		24BF2B2224C5B99200E3E9DE /* KeywordsViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF2B2124C5B99200E3E9DE /* KeywordsViewLayout.swift */; };
+		24CA7A9424AB473600A415AD /* MapoHongdaeFreedom.otf in Resources */ = {isa = PBXBuildFile; fileRef = 24CA7A9324AB473600A415AD /* MapoHongdaeFreedom.otf */; };
+		24D27A6324B4B9A60030C4C1 /* HSInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D27A6224B4B9A60030C4C1 /* HSInfoView.swift */; };
+		24E7596C24ADC7E700789586 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7596B24ADC7E700789586 /* AboutViewController.swift */; };
+		24E7596F24ADCAB500789586 /* InnPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7596E24ADCAB500789586 /* InnPalette.swift */; };
+		24ECC8AF24B5D0D1003EABC5 /* PrePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECC8AE24B5D0D1003EABC5 /* PrePlayView.swift */; };
+		2EA53225B001438D1FF65F25 /* Pods_innkeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2622DAB982A9DA7D4A77DE6 /* Pods_innkeeper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		242E4CBA24BBEFD5006B325E /* CommuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuCollectionViewCell.swift; sourceTree = "<group>"; };
+		242E4CBC24BC8BF3006B325E /* LectureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTableViewCell.swift; sourceTree = "<group>"; };
+		242E4CBE24BD4FF9006B325E /* CircleMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMaskView.swift; sourceTree = "<group>"; };
+		242E4CC024BD9598006B325E /* InnIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnIdentifiers.swift; sourceTree = "<group>"; };
+		242E4CC224BD9D63006B325E /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
+		242E4CC424BDB44C006B325E /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		242F6EAA24B2CC52001156EA /* HowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowViewController.swift; sourceTree = "<group>"; };
+		242F6EAC24B2F52D001156EA /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		242F6EAE24B313D1001156EA /* InnTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnTags.swift; sourceTree = "<group>"; };
+		24310A4424AF82DC00B6F017 /* myfont-01-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "myfont-01-bold.otf"; sourceTree = "<group>"; };
+		24310A4A24B0ABA300B6F017 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = youtube_ios_player_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2443F22624B8B19C003011C0 /* NoobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoobViewController.swift; sourceTree = "<group>"; };
+		24503C0524BE9CDB00666AD6 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedScrollingCollectionView.swift; sourceTree = "<group>"; };
+		2467E0FB24C99247009CC97B /* RangeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCollectionViewCell.swift; sourceTree = "<group>"; };
+		2467E0FF24CAD955009CC97B /* SelectedDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDatas.swift; sourceTree = "<group>"; };
+		2467E10124CD7ACC009CC97B /* ExUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUITextField.swift; sourceTree = "<group>"; };
+		2467E10324CF3852009CC97B /* WordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCollectionViewCell.swift; sourceTree = "<group>"; };
 		2497571924A9C389008D125E /* innkeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = innkeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2497571C24A9C389008D125E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2497571E24A9C389008D125E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2497572024A9C389008D125E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2497572024A9C389008D125E /* WelComeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelComeViewController.swift; sourceTree = "<group>"; };
 		2497572324A9C389008D125E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2497572524A9C38A008D125E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2497572824A9C38A008D125E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2497572A24A9C38A008D125E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2497573124A9FC88008D125E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		24B8B56224BEDF6900D9FAE5 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		24B8B56524C1B9CF00D9FAE5 /* HearthStroneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthStroneAPI.swift; sourceTree = "<group>"; };
+		24B8B56724C1BAB900D9FAE5 /* HearthStoneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthStoneData.swift; sourceTree = "<group>"; };
+		24BF2B1B24C3FE3B00E3E9DE /* KeywordsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsCollectionViewCell.swift; sourceTree = "<group>"; };
+		24BF2B1D24C450E400E3E9DE /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		24BF2B1F24C4BA0D00E3E9DE /* KeywordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsViewController.swift; sourceTree = "<group>"; };
+		24BF2B2124C5B99200E3E9DE /* KeywordsViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsViewLayout.swift; sourceTree = "<group>"; };
+		24CA7A9324AB473600A415AD /* MapoHongdaeFreedom.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MapoHongdaeFreedom.otf; sourceTree = "<group>"; };
+		24D27A6224B4B9A60030C4C1 /* HSInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSInfoView.swift; sourceTree = "<group>"; };
+		24E7596B24ADC7E700789586 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		24E7596E24ADCAB500789586 /* InnPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnPalette.swift; sourceTree = "<group>"; };
+		24ECC8AE24B5D0D1003EABC5 /* PrePlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrePlayView.swift; sourceTree = "<group>"; };
+		78C9D5D3467A82BD2DE318F1 /* Pods-innkeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innkeeper.release.xcconfig"; path = "Target Support Files/Pods-innkeeper/Pods-innkeeper.release.xcconfig"; sourceTree = "<group>"; };
+		8F0ACDC1FBE39FECD7A6B62A /* Pods-innkeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innkeeper.debug.xcconfig"; path = "Target Support Files/Pods-innkeeper/Pods-innkeeper.debug.xcconfig"; sourceTree = "<group>"; };
+		E2622DAB982A9DA7D4A77DE6 /* Pods_innkeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_innkeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +96,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA53225B001438D1FF65F25 /* Pods_innkeeper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2443F21C24B8B0B7003011C0 /* How */ = {
+			isa = PBXGroup;
+			children = (
+				242F6EAA24B2CC52001156EA /* HowViewController.swift */,
+				24D27A6224B4B9A60030C4C1 /* HSInfoView.swift */,
+				24ECC8AE24B5D0D1003EABC5 /* PrePlayView.swift */,
+			);
+			path = How;
+			sourceTree = "<group>";
+		};
+		2443F21D24B8B0D5003011C0 /* Noob */ = {
+			isa = PBXGroup;
+			children = (
+				2443F22624B8B19C003011C0 /* NoobViewController.swift */,
+				242E4CBA24BBEFD5006B325E /* CommuCollectionViewCell.swift */,
+				242E4CBC24BC8BF3006B325E /* LectureTableViewCell.swift */,
+				242E4CC224BD9D63006B325E /* VideoListViewController.swift */,
+				242E4CC424BDB44C006B325E /* VideoCollectionViewCell.swift */,
+			);
+			path = Noob;
+			sourceTree = "<group>";
+		};
+		2443F22824B8B1A9003011C0 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				24E7596B24ADC7E700789586 /* AboutViewController.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		24503C0224BE9CAB00666AD6 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				24503C0524BE9CDB00666AD6 /* TestViewController.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		2497571024A9C389008D125E = {
 			isa = PBXGroup;
 			children = (
 				2497571B24A9C389008D125E /* innkeeper */,
 				2497571A24A9C389008D125E /* Products */,
+				C0AD442B95E34960A032086B /* Pods */,
+				D9BB69E4AE6F83DC8E7FE0B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +162,113 @@
 		2497571B24A9C389008D125E /* innkeeper */ = {
 			isa = PBXGroup;
 			children = (
+				24B8B56424C1B99C00D9FAE5 /* Request */,
+				24503C0224BE9CAB00666AD6 /* Test */,
+				24E7596D24ADCA8F00789586 /* Common */,
+				24EEF98724AB1BFA00CFE38C /* Scenes */,
+				2497573024A9FC75008D125E /* Customs */,
 				2497571C24A9C389008D125E /* AppDelegate.swift */,
 				2497571E24A9C389008D125E /* SceneDelegate.swift */,
-				2497572024A9C389008D125E /* ViewController.swift */,
 				2497572224A9C389008D125E /* Main.storyboard */,
 				2497572524A9C38A008D125E /* Assets.xcassets */,
 				2497572724A9C38A008D125E /* LaunchScreen.storyboard */,
 				2497572A24A9C38A008D125E /* Info.plist */,
 			);
 			path = innkeeper;
+			sourceTree = "<group>";
+		};
+		2497573024A9FC75008D125E /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				24CA7A9224AB471E00A415AD /* Fonts */,
+				2497573124A9FC88008D125E /* GradientView.swift */,
+				242F6EAC24B2F52D001156EA /* MenuView.swift */,
+				242E4CBE24BD4FF9006B325E /* CircleMaskView.swift */,
+				2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */,
+				2467E10124CD7ACC009CC97B /* ExUITextField.swift */,
+			);
+			path = Customs;
+			sourceTree = "<group>";
+		};
+		24B8B56124BEDF5500D9FAE5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				24B8B56224BEDF6900D9FAE5 /* CardsViewController.swift */,
+				24BF2B1F24C4BA0D00E3E9DE /* KeywordsViewController.swift */,
+				24BF2B1B24C3FE3B00E3E9DE /* KeywordsCollectionViewCell.swift */,
+				24BF2B2124C5B99200E3E9DE /* KeywordsViewLayout.swift */,
+				2467E0FB24C99247009CC97B /* RangeCollectionViewCell.swift */,
+				2467E0FF24CAD955009CC97B /* SelectedDatas.swift */,
+				2467E10324CF3852009CC97B /* WordCollectionViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		24B8B56424C1B99C00D9FAE5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				24B8B56524C1B9CF00D9FAE5 /* HearthStroneAPI.swift */,
+				24B8B56724C1BAB900D9FAE5 /* HearthStoneData.swift */,
+				24BF2B1D24C450E400E3E9DE /* CardData.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		24CA7A9224AB471E00A415AD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				24310A4424AF82DC00B6F017 /* myfont-01-bold.otf */,
+				24CA7A9324AB473600A415AD /* MapoHongdaeFreedom.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		24E7596D24ADCA8F00789586 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				24E7596E24ADCAB500789586 /* InnPalette.swift */,
+				242F6EAE24B313D1001156EA /* InnTags.swift */,
+				242E4CC024BD9598006B325E /* InnIdentifiers.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		24EEF98724AB1BFA00CFE38C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				24B8B56124BEDF5500D9FAE5 /* Search */,
+				24EEF98824AB1C2800CFE38C /* Welcome */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		24EEF98824AB1C2800CFE38C /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				2443F22824B8B1A9003011C0 /* About */,
+				2443F21D24B8B0D5003011C0 /* Noob */,
+				2443F21C24B8B0B7003011C0 /* How */,
+				2497572024A9C389008D125E /* WelComeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		C0AD442B95E34960A032086B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F0ACDC1FBE39FECD7A6B62A /* Pods-innkeeper.debug.xcconfig */,
+				78C9D5D3467A82BD2DE318F1 /* Pods-innkeeper.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D9BB69E4AE6F83DC8E7FE0B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24310A4A24B0ABA300B6F017 /* youtube_ios_player_helper.framework */,
+				E2622DAB982A9DA7D4A77DE6 /* Pods_innkeeper.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2497572D24A9C38A008D125E /* Build configuration list for PBXNativeTarget "innkeeper" */;
 			buildPhases = (
+				956E84F9B5E17D8710ADA2C5 /* [CP] Check Pods Manifest.lock */,
 				2497571524A9C389008D125E /* Sources */,
 				2497571624A9C389008D125E /* Frameworks */,
 				2497571724A9C389008D125E /* Resources */,
+				94C9D6C0161B310E12BE1AF0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,21 +332,95 @@
 			buildActionMask = 2147483647;
 			files = (
 				2497572924A9C38A008D125E /* LaunchScreen.storyboard in Resources */,
+				24310A4724AF82DC00B6F017 /* myfont-01-bold.otf in Resources */,
 				2497572624A9C38A008D125E /* Assets.xcassets in Resources */,
+				24CA7A9424AB473600A415AD /* MapoHongdaeFreedom.otf in Resources */,
 				2497572424A9C389008D125E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		94C9D6C0161B310E12BE1AF0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-innkeeper/Pods-innkeeper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-innkeeper/Pods-innkeeper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-innkeeper/Pods-innkeeper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		956E84F9B5E17D8710ADA2C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-innkeeper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2497571524A9C389008D125E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2497572124A9C389008D125E /* ViewController.swift in Sources */,
+				242E4CC524BDB44C006B325E /* VideoCollectionViewCell.swift in Sources */,
+				24E7596C24ADC7E700789586 /* AboutViewController.swift in Sources */,
+				24D27A6324B4B9A60030C4C1 /* HSInfoView.swift in Sources */,
+				24BF2B2224C5B99200E3E9DE /* KeywordsViewLayout.swift in Sources */,
+				2497572124A9C389008D125E /* WelComeViewController.swift in Sources */,
 				2497571D24A9C389008D125E /* AppDelegate.swift in Sources */,
+				24B8B56624C1B9CF00D9FAE5 /* HearthStroneAPI.swift in Sources */,
+				2443F22724B8B19C003011C0 /* NoobViewController.swift in Sources */,
+				242F6EAD24B2F52D001156EA /* MenuView.swift in Sources */,
+				24BF2B2024C4BA0D00E3E9DE /* KeywordsViewController.swift in Sources */,
+				2497573224A9FC88008D125E /* GradientView.swift in Sources */,
 				2497571F24A9C389008D125E /* SceneDelegate.swift in Sources */,
+				24503C0624BE9CDB00666AD6 /* TestViewController.swift in Sources */,
+				2467E10024CAD955009CC97B /* SelectedDatas.swift in Sources */,
+				24B8B56824C1BAB900D9FAE5 /* HearthStoneData.swift in Sources */,
+				242E4CBD24BC8BF3006B325E /* LectureTableViewCell.swift in Sources */,
+				2467E10224CD7ACC009CC97B /* ExUITextField.swift in Sources */,
+				24ECC8AF24B5D0D1003EABC5 /* PrePlayView.swift in Sources */,
+				24BF2B1E24C450E400E3E9DE /* CardData.swift in Sources */,
+				242E4CC124BD9598006B325E /* InnIdentifiers.swift in Sources */,
+				24E7596F24ADCAB500789586 /* InnPalette.swift in Sources */,
+				24B8B56324BEDF6900D9FAE5 /* CardsViewController.swift in Sources */,
+				2467E0FC24C99247009CC97B /* RangeCollectionViewCell.swift in Sources */,
+				2467E0F524C67E0B009CC97B /* ModifiedScrollingCollectionView.swift in Sources */,
+				242E4CBF24BD4FF9006B325E /* CircleMaskView.swift in Sources */,
+				2467E10424CF3852009CC97B /* WordCollectionViewCell.swift in Sources */,
+				242E4CC324BD9D63006B325E /* VideoListViewController.swift in Sources */,
+				24BF2B1C24C3FE3B00E3E9DE /* KeywordsCollectionViewCell.swift in Sources */,
+				242F6EAF24B313D1001156EA /* InnTags.swift in Sources */,
+				242F6EAB24B2CC52001156EA /* HowViewController.swift in Sources */,
+				242E4CBB24BBEFD5006B325E /* CommuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +550,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,6 +562,7 @@
 		};
 		2497572E24A9C38A008D125E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F0ACDC1FBE39FECD7A6B62A /* Pods-innkeeper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +581,7 @@
 		};
 		2497572F24A9C38A008D125E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78C9D5D3467A82BD2DE318F1 /* Pods-innkeeper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

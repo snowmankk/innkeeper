@@ -16,20 +16,52 @@ class GradientView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setGradient(color1: UIColor.yellow, color2: UIColor.systemGreen)
+        
+        self.setGradient(palette: InnPalette.gradientColor001)
     }
     
-    func setGradient(color1: UIColor, color2: UIColor)
+    func setGradient(palette: InnPalette)
+    {
+        let startPoint = CGPoint(x: 0.0, y: 0.0)
+        let endPoint = CGPoint(x: 0.0, y: 1.0)
+        
+        switch palette {
+        case .gradientColor001:
+            let startColor = UIColor(red: 133/255, green: 147/255, blue: 152/255, alpha: 1)
+            let endColor = UIColor(red: 40/255, green: 48/255, blue: 72/255, alpha: 1)
+            
+            self.setGradient(colors: [startColor.cgColor, endColor.cgColor], startPoint: startPoint, endPoint: endPoint)
+            
+        case .gradientColor002:
+            let startColor = UIColor(red: 15/255, green: 32/255, blue: 39/255, alpha: 1)
+            let color1 = UIColor(red: 32/255, green: 58/255, blue: 67/255, alpha: 1)
+            let endColor = UIColor(red: 44/255, green: 83/255, blue: 100/255, alpha: 1)
+            
+            self.setGradient(colors: [startColor.cgColor, color1.cgColor, endColor.cgColor], startPoint: startPoint, endPoint: endPoint)
+            
+        case .gradientColor003:
+            let startColor = UIColor(red: 96/255, green: 108/255, blue: 136/255, alpha: 1)
+            let endColor = UIColor(red: 63/255, green: 76/255, blue: 107/255, alpha: 1)
+            
+            self.setGradient(colors: [startColor.cgColor, endColor.cgColor], startPoint: startPoint, endPoint: endPoint)
+            
+        case .solidColor001:
+            self.backgroundColor = UIColor(red: 15/255, green: 32/255, blue: 39/255, alpha: 1)
+        case .solidColor002:
+            self.backgroundColor = UIColor(red: 32/255, green: 58/255, blue: 67/255, alpha: 1)
+        case .solidColor003:
+            self.backgroundColor = UIColor(red: 44/255, green: 83/255, blue: 100/255, alpha: 1)
+        }
+    }
+    
+    func setGradient(colors: [CGColor], startPoint: CGPoint, endPoint: CGPoint)
     {
         let gradientLayer = layer as! CAGradientLayer
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
         
-        let startColor = UIColor(red: 240/255, green: 152/255, blue: 25/255, alpha: 1)
-        let endColor = UIColor(red: 237/255, green: 222/255, blue: 93/255, alpha: 1)
-//        let startColor = UIColor(cgColor: CGColor(srgbRed: 235, green: 229, blue: 116, alpha: 255))
-//        let endColor = UIColor(cgColor: CGColor(srgbRed: 225, green: 245, blue: 196, alpha: 255))
-        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        gradientLayer.colors = colors
+        
+        
     }
- 
 }
