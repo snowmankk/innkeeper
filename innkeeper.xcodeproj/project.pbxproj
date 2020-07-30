@@ -18,6 +18,7 @@
 		242F6EAF24B313D1001156EA /* InnTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F6EAE24B313D1001156EA /* InnTags.swift */; };
 		24310A4724AF82DC00B6F017 /* myfont-01-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 24310A4424AF82DC00B6F017 /* myfont-01-bold.otf */; };
 		2443F22724B8B19C003011C0 /* NoobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443F22624B8B19C003011C0 /* NoobViewController.swift */; };
+		24489B4624D1D11F00E81B31 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24489B4524D1D11F00E81B31 /* CardsCollectionViewCell.swift */; };
 		24503C0624BE9CDB00666AD6 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24503C0524BE9CDB00666AD6 /* TestViewController.swift */; };
 		2467E0F524C67E0B009CC97B /* ModifiedScrollingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */; };
 		2467E0FC24C99247009CC97B /* RangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E0FB24C99247009CC97B /* RangeCollectionViewCell.swift */; };
@@ -59,6 +60,7 @@
 		24310A4424AF82DC00B6F017 /* myfont-01-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "myfont-01-bold.otf"; sourceTree = "<group>"; };
 		24310A4A24B0ABA300B6F017 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = youtube_ios_player_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2443F22624B8B19C003011C0 /* NoobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoobViewController.swift; sourceTree = "<group>"; };
+		24489B4524D1D11F00E81B31 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		24503C0524BE9CDB00666AD6 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedScrollingCollectionView.swift; sourceTree = "<group>"; };
 		2467E0FB24C99247009CC97B /* RangeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				2467E0FB24C99247009CC97B /* RangeCollectionViewCell.swift */,
 				2467E0FF24CAD955009CC97B /* SelectedDatas.swift */,
 				2467E10324CF3852009CC97B /* WordCollectionViewCell.swift */,
+				24489B4524D1D11F00E81B31 /* CardsCollectionViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				24BF2B2024C4BA0D00E3E9DE /* KeywordsViewController.swift in Sources */,
 				2497573224A9FC88008D125E /* GradientView.swift in Sources */,
 				2497571F24A9C389008D125E /* SceneDelegate.swift in Sources */,
+				24489B4624D1D11F00E81B31 /* CardsCollectionViewCell.swift in Sources */,
 				24503C0624BE9CDB00666AD6 /* TestViewController.swift in Sources */,
 				2467E10024CAD955009CC97B /* SelectedDatas.swift in Sources */,
 				24B8B56824C1BAB900D9FAE5 /* HearthStoneData.swift in Sources */,

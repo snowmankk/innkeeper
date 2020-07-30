@@ -13,6 +13,7 @@ class CardsViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var gradientView: GradientView!
     @IBOutlet var wordCollection: UICollectionView!
+    @IBOutlet var cardCollection: UICollectionView!
     
     var words = [String]()
     
@@ -22,6 +23,8 @@ class CardsViewController: UIViewController {
         searchBar.delegate = self
         searchBar.searchTextField.textColor = .white
         wordCollection.dataSource = self
+        cardCollection.dataSource = self
+        cardCollection.delegate = self
         SelectedDatas.shared.delegate = self
         
         HearthStoneAPI.shared.requestAccessToken()
@@ -68,14 +71,58 @@ extension CardsViewController: UISearchBarDelegate {
 // MARK:- UICollectionViewDataSource
 extension CardsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return words.count
+        var count = 0
+        if collectionView == wordCollection {
+            count = words.count
+        }
+        else if collectionView == cardCollection {
+            //count = HearthStoneData.shared.cards.count
+            count = 10
+        }
+        
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WordCollectionViewCell.identifier, for: indexPath) as! WordCollectionViewCell
         
-        cell.configure(title: words[indexPath.row])
-        return cell
+        if collectionView == cardCollection {
+            let cardCell = collectionView.dequeueReusableCell(withReuseIdentifier: CardsCollectionViewCell.identifier, for: indexPath) as! CardsCollectionViewCell
+            
+            return cardCell
+        } else {
+            let wordCell = collectionView.dequeueReusableCell(withReuseIdentifier: WordCollectionViewCell.identifier, for: indexPath) as! WordCollectionViewCell
+            
+            wordCell.configure(title: words[indexPath.row])
+            return wordCell
+        }
+    }
+    
+}
+
+// MARK:- UICollectionViewDelegateFlowLayout
+extension CardsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        var cellWidth: CGFloat = 0
+        if collectionView == cardCollection {
+            var spaceCount: CGFloat = 0
+            var columnCount: CGFloat = 0
+            let screenWidth = UIScreen.main.bounds.width
+            let cellSpace:CGFloat = 10
+            
+            // screenWidth가 640보다 작으면 column이 screenWidh의 2등분, 640 이상이면 3등분 되도록 cell width를 설정한다
+            if screenWidth < 640 {
+                columnCount = 2
+                spaceCount = columnCount + 1
+            } else {
+                columnCount = 3
+                spaceCount = columnCount + 1
+            }
+            
+            cellWidth = screenWidth / columnCount - (cellSpace * spaceCount / columnCount)
+        }
+        
+        return CGSize(width: cellWidth, height: cellWidth * 2)
     }
 }
 

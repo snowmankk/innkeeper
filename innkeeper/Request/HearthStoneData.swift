@@ -22,9 +22,10 @@ class HearthStoneData {
     var wildSets    : [MetaDataBase] = []
     var minionTypes : [MetaDataBase] = []
     var options     : [MetaDataBase] = []
-    var standards: [String] = []
-    var wilds    : [String] = []
-    var standardOnly: Bool = false
+    var standards   : [String] = []
+    var wilds       : [String] = []
+    
+    var cards : [CardData] = []
     
     private init() {}
     
