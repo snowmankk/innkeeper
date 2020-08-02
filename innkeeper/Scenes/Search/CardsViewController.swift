@@ -26,7 +26,7 @@ class CardsViewController: UIViewController {
         cardCollection.dataSource = self
         cardCollection.delegate = self
         SelectedDatas.shared.delegate = self
-        
+        HearthStoneAPI.shared.delegate = self
         HearthStoneAPI.shared.requestAccessToken()
     }
     
@@ -76,8 +76,8 @@ extension CardsViewController: UICollectionViewDataSource {
             count = words.count
         }
         else if collectionView == cardCollection {
-            //count = HearthStoneData.shared.cards.count
-            count = 10
+//            count = HearthStoneData.shared.cards.count
+            count = 3
         }
         
         return count
@@ -87,6 +87,9 @@ extension CardsViewController: UICollectionViewDataSource {
         
         if collectionView == cardCollection {
             let cardCell = collectionView.dequeueReusableCell(withReuseIdentifier: CardsCollectionViewCell.identifier, for: indexPath) as! CardsCollectionViewCell
+            
+//            cardCell.configure(data: HearthStoneData.shared.cards[indexPath.row])
+            cardCell.configureTest()
             
             return cardCell
         } else {
@@ -122,7 +125,7 @@ extension CardsViewController: UICollectionViewDelegateFlowLayout {
             cellWidth = screenWidth / columnCount - (cellSpace * spaceCount / columnCount)
         }
         
-        return CGSize(width: cellWidth, height: cellWidth * 2)
+        return CGSize(width: cellWidth, height: cellWidth * 1.6)
     }
 }
 
@@ -130,5 +133,12 @@ extension CardsViewController: UICollectionViewDelegateFlowLayout {
 extension CardsViewController: SelectedDataDelegate {
     func SelecctedDataRemoved() {
         setSelectedKeywords()
+    }
+}
+
+// MARK:-HearthStroneAPIDelegate
+extension CardsViewController: HearthStroneAPIDelegate {
+    func responseCardDatas() {
+//        cardCollection.reloadData()
     }
 }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-weapon-90.png",
+      "filename" : "icon-sword.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-weapon-91.png",
+      "filename" : "icon-sword-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icons8-weapon-92.png",
+      "filename" : "icon-sword-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

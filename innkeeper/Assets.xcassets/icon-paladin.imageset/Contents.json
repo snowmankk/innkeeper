@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icon-mana.png",
+      "filename" : "icon-paladin.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icon-mana-1.png",
+      "filename" : "icon-paladin-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icon-mana-2.png",
+      "filename" : "icon-paladin-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

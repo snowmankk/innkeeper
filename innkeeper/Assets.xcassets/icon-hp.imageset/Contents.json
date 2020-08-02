@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-water-90.png",
+      "filename" : "icon-hp.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-water-91.png",
+      "filename" : "icon-hp-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icons8-water-92.png",
+      "filename" : "icon-hp-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

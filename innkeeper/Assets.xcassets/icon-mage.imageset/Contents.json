@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icon-mana.png",
+      "filename" : "icon-mage.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icon-mana-1.png",
+      "filename" : "icon-mage-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icon-mana-2.png",
+      "filename" : "icon-mage-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

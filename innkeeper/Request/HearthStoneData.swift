@@ -70,6 +70,24 @@ class HearthStoneData {
         slug = datas.filter({ $0.name == keyword }).first?.slug ?? ""
         return slug
     }
+    
+    func getSlug(category: MetadataCategory, id: Int) -> String {
+        var slug = ""
+        var datas: [MetaDataBase] = []
+        switch category {
+        case .CLASSES       : datas = self.classes
+        case .TYPES         : datas = self.types
+        case .RARITY        : datas = self.rarity
+        case .SETS          : datas = self.sets
+        case .MINION_TYPES  : datas = self.minionTypes
+        case .OPTIONS       : datas = self.options
+        case .WILD_SETS     : datas = self.wildSets
+        default             : break
+        }
+        
+        slug = datas.filter({ $0.id == id }).first?.slug ?? ""
+        return slug
+    }
 }
 
 struct MetaDataBase {
@@ -96,7 +114,7 @@ enum MetadataCategory: String {
         get {
             var name: String = ""
             switch self {
-            case .CLASSES       : name = "직업 제한"
+            case .CLASSES       : name = "직업"
             case .TYPES         : name = "타입"
             case .RARITY        : name = "등급"
             case .SETS          : name = "확장팩(정규)"
@@ -131,5 +149,6 @@ enum MetadataCategory: String {
         }
     }
 }
+
 
 

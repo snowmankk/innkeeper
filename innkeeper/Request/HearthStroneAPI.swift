@@ -8,13 +8,18 @@
 
 import Foundation
 
+protocol HearthStroneAPIDelegate {
+    func responseCardDatas()
+}
+
 class HearthStoneAPI {
     static let shared: HearthStoneAPI = HearthStoneAPI()
     
     private var accessToken: String = ""
-    private let dispatchGroup = DispatchGroup()
     private let dispatchSemaphore = DispatchSemaphore(value: 0)
     private let dispatchQueue = DispatchQueue.global()
+    
+    var delegate: HearthStroneAPIDelegate! = nil
     
     private init() {}
     
@@ -106,34 +111,42 @@ class HearthStoneAPI {
             guard let apiDict = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else { return}
             guard let cardArr = apiDict["cards"] as? [NSDictionary], cardArr.count > 0 else { return }
             
-            var cards: [CardData] = []
             for card in cardArr {
                 let name = card["name"] as! String
                 let imgUrl = card["image"] as! String
                 
-                var id: Int = card["classId"] as! Int
-                let cls = HearthStoneData.shared.classes.filter({ $0.id == id }).first?.name ?? ""
+                let classId: Int = card["classId"] as! Int
+                let cls = HearthStoneData.shared.classes.filter({ $0.id == classId }).first?.name ?? ""
                 
-                id = card["rarityId"] as! Int
-                let rarity = HearthStoneData.shared.rarity.filter({ $0.id == id }).first?.name ?? ""
+                var mana: Int = -1
+                if let obj = card.object(forKey: "manaCost") { mana = obj as! Int }
                 
-                id = card["cardTypeId"] as! Int
-                let type = HearthStoneData.shared.types.filter({ $0.id == id }).first?.name ?? ""
+                var attack: Int = -1
+                if let obj = card.object(forKey: "attack") { attack = obj as! Int }
                 
-                id = card["cardSetId"] as! Int
-                let set = HearthStoneData.shared.sets.filter({ $0.id == id }).first
-                let setName = set?.name ?? ""
-                let setSlug = set?.slug ?? ""
-                let isStandard = HearthStoneData.shared.standards.contains(setSlug)
-
-                let cardData: CardData = CardData(imgUrl: imgUrl, cls: cls, type: rarity, rarity: type, set: setName, standard: isStandard)
-                cards.append(cardData)
+                let type = CardTypes(rawValue: card["cardTypeId"] as! Int) ?? CardTypes.MINION
                 
-                print("name: \(name)/ imgUrl : \(cardData.imgUrl) / cls : \(cardData.cls) / rarity : \(cardData.rarity) / type : \(cardData.type) / set : \(cardData.set) / standard : \(isStandard)")
-                print("\n")
+                var durability = -1
+                if let obj = card.object(forKey: "durability") { durability = obj as! Int }
+                
+                var hp: Int = -1
+                if let obj = card.object(forKey: "health") { hp = obj as! Int }
+                
+                var armor: Int = -1
+                if let obj = card.object(forKey: "armor") { armor = obj as! Int }
+                
+                var flavorText: String = ""
+                if let obj = card.object(forKey: "flavorText") { flavorText = obj as! String }
+                
+                let cardData: CardData = CardData(name: name, type: type, mana: mana, attack: attack, hp: hp, durability: durability, armor: armor, imgUrl: imgUrl, cls: cls, flavorText: flavorText)
+                HearthStoneData.shared.cards.append(cardData)
             }
             
+            self.dispatchSemaphore.signal()
         }.resume()
+        
+        _ = dispatchSemaphore.wait(timeout: .now() + 5)
+        if self.delegate != nil { self.delegate.responseCardDatas() }
     }
         
     func requestMetaData(category: MetadataCategory) {
@@ -176,7 +189,7 @@ class HearthStoneAPI {
                     }
                 }
                 
-            default            : break
+            default : break
             }
             
         }.resume()
