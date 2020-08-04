@@ -111,12 +111,14 @@ class HearthStoneAPI {
             guard let apiDict = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else { return}
             guard let cardArr = apiDict["cards"] as? [NSDictionary], cardArr.count > 0 else { return }
             
+            HearthStoneData.shared.cards.removeAll()
             for card in cardArr {
                 let name = card["name"] as! String
                 let imgUrl = card["image"] as! String
                 
                 let classId: Int = card["classId"] as! Int
-                let cls = HearthStoneData.shared.classes.filter({ $0.id == classId }).first?.name ?? ""
+//                let cls = HearthStoneData.shared.classes.filter({ $0.id == classId }).first?.id ?? 0
+                let cls = Classes(rawValue: classId) ?? Classes.NEUTRAL
                 
                 var mana: Int = -1
                 if let obj = card.object(forKey: "manaCost") { mana = obj as! Int }

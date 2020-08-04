@@ -19,6 +19,7 @@
 		24310A4724AF82DC00B6F017 /* myfont-01-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 24310A4424AF82DC00B6F017 /* myfont-01-bold.otf */; };
 		2443F22724B8B19C003011C0 /* NoobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443F22624B8B19C003011C0 /* NoobViewController.swift */; };
 		24489B4624D1D11F00E81B31 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24489B4524D1D11F00E81B31 /* CardsCollectionViewCell.swift */; };
+		24489B4824D7F23200E81B31 /* SSShinRegular_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 24489B4724D7F23200E81B31 /* SSShinRegular_otf.otf */; };
 		24503C0624BE9CDB00666AD6 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24503C0524BE9CDB00666AD6 /* TestViewController.swift */; };
 		2467E0F524C67E0B009CC97B /* ModifiedScrollingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */; };
 		2467E0FC24C99247009CC97B /* RangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E0FB24C99247009CC97B /* RangeCollectionViewCell.swift */; };
@@ -39,7 +40,6 @@
 		24BF2B1E24C450E400E3E9DE /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF2B1D24C450E400E3E9DE /* CardData.swift */; };
 		24BF2B2024C4BA0D00E3E9DE /* KeywordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF2B1F24C4BA0D00E3E9DE /* KeywordsViewController.swift */; };
 		24BF2B2224C5B99200E3E9DE /* KeywordsViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF2B2124C5B99200E3E9DE /* KeywordsViewLayout.swift */; };
-		24CA7A9424AB473600A415AD /* MapoHongdaeFreedom.otf in Resources */ = {isa = PBXBuildFile; fileRef = 24CA7A9324AB473600A415AD /* MapoHongdaeFreedom.otf */; };
 		24D27A6324B4B9A60030C4C1 /* HSInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D27A6224B4B9A60030C4C1 /* HSInfoView.swift */; };
 		24E7596C24ADC7E700789586 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7596B24ADC7E700789586 /* AboutViewController.swift */; };
 		24E7596F24ADCAB500789586 /* InnPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7596E24ADCAB500789586 /* InnPalette.swift */; };
@@ -61,6 +61,7 @@
 		24310A4A24B0ABA300B6F017 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = youtube_ios_player_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2443F22624B8B19C003011C0 /* NoobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoobViewController.swift; sourceTree = "<group>"; };
 		24489B4524D1D11F00E81B31 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
+		24489B4724D7F23200E81B31 /* SSShinRegular_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SSShinRegular_otf.otf; sourceTree = "<group>"; };
 		24503C0524BE9CDB00666AD6 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedScrollingCollectionView.swift; sourceTree = "<group>"; };
 		2467E0FB24C99247009CC97B /* RangeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		24BF2B1D24C450E400E3E9DE /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 		24BF2B1F24C4BA0D00E3E9DE /* KeywordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsViewController.swift; sourceTree = "<group>"; };
 		24BF2B2124C5B99200E3E9DE /* KeywordsViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsViewLayout.swift; sourceTree = "<group>"; };
-		24CA7A9324AB473600A415AD /* MapoHongdaeFreedom.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MapoHongdaeFreedom.otf; sourceTree = "<group>"; };
 		24D27A6224B4B9A60030C4C1 /* HSInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSInfoView.swift; sourceTree = "<group>"; };
 		24E7596B24ADC7E700789586 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		24E7596E24ADCAB500789586 /* InnPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnPalette.swift; sourceTree = "<group>"; };
@@ -220,8 +220,8 @@
 		24CA7A9224AB471E00A415AD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				24489B4724D7F23200E81B31 /* SSShinRegular_otf.otf */,
 				24310A4424AF82DC00B6F017 /* myfont-01-bold.otf */,
-				24CA7A9324AB473600A415AD /* MapoHongdaeFreedom.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -334,10 +334,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24489B4824D7F23200E81B31 /* SSShinRegular_otf.otf in Resources */,
 				2497572924A9C38A008D125E /* LaunchScreen.storyboard in Resources */,
 				24310A4724AF82DC00B6F017 /* myfont-01-bold.otf in Resources */,
 				2497572624A9C38A008D125E /* Assets.xcassets in Resources */,
-				24CA7A9424AB473600A415AD /* MapoHongdaeFreedom.otf in Resources */,
 				2497572424A9C389008D125E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,12 +14,14 @@ class GradientView: UIView {
         return CAGradientLayer.classForCoder()
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
-        self.setGradient(palette: InnPalette.gradientColor001)
-    }
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//
+//        self.setGradient(palette: InnPalette.gradientColor001)
+//    }
     
+    
+    /*
     func setGradient(palette: InnPalette)
     {
         let startPoint = CGPoint(x: 0.0, y: 0.0)
@@ -45,23 +47,31 @@ class GradientView: UIView {
             
             self.setGradient(colors: [startColor.cgColor, endColor.cgColor], startPoint: startPoint, endPoint: endPoint)
             
+        case .gradientColor004:
+            let startColor = UIColor(red: 19/255, green: 51/255, blue: 45/255, alpha: 1)
+//            let color1 = UIColor(red: 19/255, green: 51/255, blue: 45/255, alpha: 0.8)
+            let endColor = UIColor(red: 19/255, green: 51/255, blue: 45/255, alpha: 0.5)
+            
+            self.setGradient(colors: [startColor.cgColor, endColor.cgColor], startPoint: startPoint, endPoint: endPoint)
+            
         case .solidColor001:
             self.backgroundColor = UIColor(red: 15/255, green: 32/255, blue: 39/255, alpha: 1)
         case .solidColor002:
             self.backgroundColor = UIColor(red: 32/255, green: 58/255, blue: 67/255, alpha: 1)
         case .solidColor003:
             self.backgroundColor = UIColor(red: 44/255, green: 83/255, blue: 100/255, alpha: 1)
+        
         }
     }
+    */
     
-    func setGradient(colors: [CGColor], startPoint: CGPoint, endPoint: CGPoint)
+    func setGradient(colors: [CGColor], startPoint: CGPoint = CGPoint.zero, endPoint: CGPoint = CGPoint(x: 0.0, y: 1.0))
     {
+        self.backgroundColor = .clear
+        
         let gradientLayer = layer as! CAGradientLayer
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = endPoint
-        
         gradientLayer.colors = colors
-        
-        
     }
 }

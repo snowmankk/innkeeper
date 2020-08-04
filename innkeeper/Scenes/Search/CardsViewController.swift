@@ -47,6 +47,7 @@ class CardsViewController: UIViewController {
 //        let requestString = SelectedDatas.shared.allKeywordsToString()
 //        searchBar.text = requestString
         
+        words.removeAll()
         words = SelectedDatas.shared.allKeywordsToArray()
         wordCollection.reloadData()
     }
@@ -76,8 +77,8 @@ extension CardsViewController: UICollectionViewDataSource {
             count = words.count
         }
         else if collectionView == cardCollection {
-//            count = HearthStoneData.shared.cards.count
-            count = 3
+            count = HearthStoneData.shared.cards.count
+//            count = 3
         }
         
         return count
@@ -88,8 +89,8 @@ extension CardsViewController: UICollectionViewDataSource {
         if collectionView == cardCollection {
             let cardCell = collectionView.dequeueReusableCell(withReuseIdentifier: CardsCollectionViewCell.identifier, for: indexPath) as! CardsCollectionViewCell
             
-//            cardCell.configure(data: HearthStoneData.shared.cards[indexPath.row])
-            cardCell.configureTest()
+            cardCell.configure(data: HearthStoneData.shared.cards[indexPath.row])
+//            cardCell.testConfigure()
             
             return cardCell
         } else {
@@ -139,6 +140,6 @@ extension CardsViewController: SelectedDataDelegate {
 // MARK:-HearthStroneAPIDelegate
 extension CardsViewController: HearthStroneAPIDelegate {
     func responseCardDatas() {
-//        cardCollection.reloadData()
+        cardCollection.reloadData()
     }
 }

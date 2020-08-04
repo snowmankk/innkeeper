@@ -11,6 +11,9 @@
         <array key="MapoHongdaeFreedom.otf">
             <string>MapoHongdaeFreedom</string>
         </array>
+        <array key="SSShinRegular_otf.otf">
+            <string>SangSangShinOTF</string>
+        </array>
         <array key="myfont-01-bold.otf">
             <string>NEXONLv1GothicOTFBold</string>
         </array>
@@ -123,7 +126,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초보들에게" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-lI-M44">
-                                                                        <rect key="frame" x="0.0" y="9" width="221" height="25.5"/>
+                                                                        <rect key="frame" x="0.0" y="9" width="221" height="23.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="221" id="d9W-M4-yAo"/>
                                                                         </constraints>
@@ -271,7 +274,7 @@
         <scene sceneID="aQx-l9-L5v">
             <objects>
                 <viewController id="TsE-S8-BdT" userLabel="About" customClass="AboutViewController" customModule="innkeeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UUx-E4-wRc" customClass="GradientView" customModule="innkeeper" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="UUx-E4-wRc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -436,7 +439,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="dhO-c8-TPe"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274509803921" green="0.18823529411764706" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="63o-cr-FBl" secondAttribute="bottom" id="EZK-a7-gtQ"/>
                             <constraint firstItem="63o-cr-FBl" firstAttribute="leading" secondItem="Xbl-8X-gB3" secondAttribute="leading" id="JnW-7B-lrr"/>
@@ -458,7 +461,7 @@
         <scene sceneID="HxY-TP-3yt">
             <objects>
                 <viewController id="8B8-40-MaJ" userLabel="Welcome" customClass="WelComeViewController" customModule="innkeeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xZr-s7-M5p" customClass="GradientView" customModule="innkeeper" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="xZr-s7-M5p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -585,7 +588,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="077-Rq-HD2"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xYg-De-jfE" firstAttribute="trailing" secondItem="b4d-We-5La" secondAttribute="trailing" id="Ea3-Sl-q77"/>
                             <constraint firstItem="xYg-De-jfE" firstAttribute="top" secondItem="b4d-We-5La" secondAttribute="top" id="MAQ-aQ-qiA"/>
@@ -613,7 +616,7 @@
         <scene sceneID="WOl-qI-2HQ">
             <objects>
                 <viewController title="vvvv" id="wfH-vv-2fS" userLabel="HowToPlay" customClass="HowViewController" customModule="innkeeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XWT-SW-6Hd" customClass="GradientView" customModule="innkeeper" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="XWT-SW-6Hd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -808,7 +811,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="HbK-JU-bWN"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274509803921" green="0.18823529411764706" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Smq-A0-IhG" secondAttribute="bottom" id="0db-eJ-hng"/>
                             <constraint firstItem="Smq-A0-IhG" firstAttribute="leading" secondItem="mCo-52-Rgc" secondAttribute="leading" id="Bfy-b7-DLh"/>
@@ -854,7 +857,7 @@
         <scene sceneID="SBV-Ol-bdT">
             <objects>
                 <viewController id="U0l-TX-tjJ" customClass="CardsViewController" customModule="innkeeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="t0V-iW-Zv4" customClass="GradientView" customModule="innkeeper" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="t0V-iW-Zv4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -954,29 +957,40 @@
                                 <rect key="frame" x="0.0" y="130" width="414" height="683"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eIp-Qb-Fnv">
-                                    <size key="itemSize" width="133" height="190"/>
+                                    <size key="itemSize" width="133" height="277"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardsCollectionViewCell" id="Hfo-Vf-hpe" customClass="CardsCollectionViewCell" customModule="innkeeper" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="133" height="190"/>
+                                        <rect key="frame" x="10" y="10" width="133" height="277"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="io5-dd-XLF">
-                                            <rect key="frame" x="0.0" y="0.0" width="133" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="277"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h97-3o-jXZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="133" height="190"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h97-3o-jXZ" customClass="GradientView" customModule="innkeeper" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="133" height="277"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-test-card-0" translatesAutoresizingMaskIntoConstraints="NO" id="AAN-oe-pYV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="133" height="179"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                            <rect key="frame" x="0.0" y="59" width="133" height="207"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-hunter" translatesAutoresizingMaskIntoConstraints="NO" id="dQb-dH-osN">
+                                                            <rect key="frame" x="6" y="19" width="29" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FlavorText FlavorText FlavorText FlavorText FlavorText FlavorText FlavorText FlavorText " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3F-jz-wWb">
+                                                            <rect key="frame" x="43" y="8" width="82" height="54"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="SangSangShinOTF" family="상상토끼 신과장 OTF" pointSize="15"/>
+                                                            <color key="textColor" red="0.93741887807846069" green="0.80381186349316036" blue="0.46942636216787986" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="0.069750642123287673" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="0.6056292808219178" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -986,15 +1000,18 @@
                                                 <constraint firstAttribute="bottom" secondItem="h97-3o-jXZ" secondAttribute="bottom" id="xMM-TF-H9y"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="133" height="190"/>
+                                        <size key="customSize" width="133" height="277"/>
                                         <connections>
                                             <outlet property="card" destination="AAN-oe-pYV" id="aD8-k0-ZJr"/>
+                                            <outlet property="cls" destination="dQb-dH-osN" id="9K3-2H-KRb"/>
+                                            <outlet property="flavorText" destination="R3F-jz-wWb" id="L0z-7W-44P"/>
+                                            <outlet property="gradientView" destination="h97-3o-jXZ" id="Fs9-Th-yCM"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.18823529410000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fj0-Wz-GqN" firstAttribute="bottom" secondItem="anA-xu-Soh" secondAttribute="bottom" id="9px-QY-WDQ"/>
                             <constraint firstItem="fj0-Wz-GqN" firstAttribute="trailing" secondItem="anA-xu-Soh" secondAttribute="trailing" id="Jmz-ch-tgn"/>
@@ -1215,7 +1232,7 @@
         <scene sceneID="ctP-HI-aZy">
             <objects>
                 <viewController id="K5N-PA-93E" customClass="NoobViewController" customModule="innkeeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Fl2-TH-XDJ" customClass="GradientView" customModule="innkeeper" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="Fl2-TH-XDJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1364,7 +1381,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274509803921" green="0.18823529411764706" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Fhm-AD-5e2" firstAttribute="leading" secondItem="HiB-ct-aJF" secondAttribute="leading" id="1oY-kW-KrD"/>
                             <constraint firstItem="Ugj-K0-Jv5" firstAttribute="top" secondItem="Fhm-AD-5e2" secondAttribute="bottom" constant="10" id="925-yk-3KU"/>
@@ -1398,7 +1415,7 @@
         <scene sceneID="kdP-E8-LPj">
             <objects>
                 <viewController id="Gfq-28-cPK" customClass="VideoListViewController" customModule="innkeeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zrF-qh-dza" customClass="GradientView" customModule="innkeeper" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="zrF-qh-dza">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1439,7 +1456,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.18823529410000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="V3e-2f-m4j" firstAttribute="bottom" secondItem="kgn-Us-Qat" secondAttribute="bottom" id="0TX-4e-t97"/>
                             <constraint firstItem="kgn-Us-Qat" firstAttribute="leading" secondItem="V3e-2f-m4j" secondAttribute="leading" id="M0d-ln-HmL"/>
@@ -1509,6 +1526,7 @@
         <image name="icon-cards-selected" width="24" height="24"/>
         <image name="icon-home" width="24" height="24"/>
         <image name="icon-home-selected" width="24" height="24"/>
+        <image name="icon-hunter" width="85" height="85"/>
         <image name="img-test-card-0" width="187.5" height="259"/>
         <image name="img_about" width="960" height="540"/>
         <image name="img_about_top" width="512" height="218.5"/>
