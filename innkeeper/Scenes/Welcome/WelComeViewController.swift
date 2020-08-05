@@ -10,14 +10,6 @@ import UIKit
 
 class WelComeViewController: UIViewController {
     
-    enum ViewID: Int {
-        case about = 100
-        case play
-        case noob
-        case community
-        case appstore
-    }
-    
     @IBOutlet var tapViews: [UIView]!
     
     override func viewDidLoad() {

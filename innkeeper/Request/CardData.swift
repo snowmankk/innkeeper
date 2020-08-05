@@ -9,16 +9,28 @@
 import Foundation
 
 struct CardData {
-    var name: String
-    var type: CardTypes
-    var mana: Int
-    var attack: Int
-    var hp: Int
-    var durability: Int
-    var armor: Int
-    var imgUrl: String
-    var cls: Classes
-    var flavorText: String
+    var name: String = ""
+    var type: CardTypes = .MINION
+    var mana: Int = 0
+    var attack: Int = 0
+    var hp: Int = 0
+    var durability: Int = 0
+    var armor: Int = 0
+    var imgUrl: String = ""
+    var classIds: [Classes] = []
+    var flavorText: String = ""
+    var rarity: Int = 0
+    var set: Int = 0
+    
+    func getRarityName() -> String {
+        let data = HearthStoneData.shared.rarity.filter { $0.id == rarity }
+        return data.first?.name ?? ""
+    }
+    
+    func getSetName() -> String {
+        let data = HearthStoneData.shared.sets.filter { $0.id == set }
+        return data.first?.name ?? ""
+    }
 }
 
 enum CardTypes: Int {
@@ -26,6 +38,13 @@ enum CardTypes: Int {
     case MINION = 4
     case SPELL = 5
     case WEAPON = 7
+    
+    var name: String {
+        get {
+            let types = HearthStoneData.shared.types.filter { $0.id == self.rawValue }
+            return types.first?.name ?? ""
+        }
+    }
 }
 
 enum Classes: Int {
@@ -40,6 +59,30 @@ enum Classes: Int {
     case WARRIOR = 10
     case NEUTRAL = 12
     case DEMONHUNTER = 14
+    
+    var name: String {
+        get {
+            /*
+            var nameStr = ""
+            switch self {
+            case .DRUID: nameStr = "드루이드"
+            case .HUNTER: nameStr = "사냥꾼"
+            case .MAGE: nameStr = "마법사"
+            case .PALADIN: nameStr = "팔라딘"
+            case .PRIEST: nameStr = "사제"
+            case .ROGUE: nameStr = "도적"
+            case .SHAMAN: nameStr = "주술사"
+            case .WORLOCK: nameStr = "흑마법사"
+            case .WARRIOR: nameStr = "전사"
+            case .NEUTRAL: nameStr = "중립"
+            case .DEMONHUNTER: nameStr = "악마 사냥꾼"
+            }
+            */
+            
+            let classes = HearthStoneData.shared.classes.filter { $0.id == self.rawValue }
+            return classes.first?.name ?? ""
+        }
+    }
 }
 
 /*

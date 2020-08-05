@@ -69,28 +69,46 @@ extension CardsViewController: UISearchBarDelegate {
     }
 }
 
+// MARK:- UICollectionViewDelegate
+extension CardsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard collectionView === cardCollection else { return }
+        guard indexPath.row < HearthStoneData.shared.cards.count else { return }
+
+        SelectedDatas.shared.card = HearthStoneData.shared.cards[indexPath.row]
+        self.performSegue(withIdentifier: InnIdentifiers.SEGUE_CARD_DETAIL.rawValue, sender: self)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row >= HearthStoneData.shared.cards.count - 1 {
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                HearthStoneAPI.shared.requestNextPageCardDatas()
+            }
+        }
+    }
+    
+}
+
 // MARK:- UICollectionViewDataSource
 extension CardsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var count = 0
-        if collectionView == wordCollection {
+        if collectionView === wordCollection {
             count = words.count
         }
-        else if collectionView == cardCollection {
+        else if collectionView === cardCollection {
             count = HearthStoneData.shared.cards.count
 //            count = 3
         }
-        
         return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if collectionView == cardCollection {
+        if collectionView === cardCollection {
             let cardCell = collectionView.dequeueReusableCell(withReuseIdentifier: CardsCollectionViewCell.identifier, for: indexPath) as! CardsCollectionViewCell
             
             cardCell.configure(data: HearthStoneData.shared.cards[indexPath.row])
-//            cardCell.testConfigure()
             
             return cardCell
         } else {
@@ -106,9 +124,8 @@ extension CardsViewController: UICollectionViewDataSource {
 // MARK:- UICollectionViewDelegateFlowLayout
 extension CardsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         var cellWidth: CGFloat = 0
-        if collectionView == cardCollection {
+        if collectionView === cardCollection {
             var spaceCount: CGFloat = 0
             var columnCount: CGFloat = 0
             let screenWidth = UIScreen.main.bounds.width

@@ -14,13 +14,18 @@ class CardsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var card: UIImageView!
     @IBOutlet weak var cls: UIImageView!
+    @IBOutlet weak var multiClass0: UIImageView!
+    @IBOutlet weak var multiClass1: UIImageView!
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var flavorText: UILabel!
     
     var cardImg: UIImage! = nil
+    var name: String = ""
     
     func configure(data: CardData) {
-        let pallete = InnPalette(rawValue: data.cls.rawValue)
+        name = data.name
+        
+        let pallete = InnPalette(rawValue: data.classIds[0].rawValue)
         guard let color = pallete?.color else { return }
         
         let startColor = color.withAlphaComponent(0.7)
@@ -29,17 +34,31 @@ class CardsCollectionViewCell: UICollectionViewCell {
         gradientView.setGradient(colors: [startColor.cgColor, color1.cgColor, endColor.cgColor])
         flavorText.text = data.flavorText
         
-        cls.image = UIImage(named: "icon-class-\(data.cls.rawValue)")
+        if data.classIds.count > 1 {
+            multiClass0.isHidden = false
+            multiClass1.isHidden = false
+            cls.isHidden = true
+            
+            multiClass0.image = UIImage(named: "icon-class-\(data.classIds[0].rawValue)")
+            multiClass1.image = UIImage(named: "icon-class-\(data.classIds[1].rawValue)")
+        } else {
+            multiClass0.isHidden = true
+            multiClass1.isHidden = true
+            cls.isHidden = false
+            
+            cls.image = UIImage(named: "icon-class-\(data.classIds[0].rawValue)")
+        }
+
         DispatchQueue.main.async {
             self.setCardImage(imgUrl: data.imgUrl)
         }
     }
     
     func setCardImage(imgUrl: String) {
-        guard nil == cardImg else { return }
         
         let url: URL! = URL(string: imgUrl)
-        let data = try! Data(contentsOf: url)
+        guard let data = try? Data(contentsOf: url) else { return }
+        
         cardImg = UIImage(data: data)
         card.image = cardImg
     }

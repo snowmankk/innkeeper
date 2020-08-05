@@ -17,21 +17,6 @@ class SelectedDatas {
     
     var delegate: SelectedDataDelegate! = nil
     
-    private init() {}
-    
-    /*
-     case CLASSES = "classes"
-     case TYPES = "types"
-     case RARITY = "rarities"
-     case SETS = "sets"
-     case MINION_TYPES = "minionTypes"
-     case OPTIONS = "keywords"
-     case COST = "cost"
-     case ATTACK = "attack"
-     case HP = "hp"
-     case NONE = "none"
-     */
-    
     var classes = [String]()
     var types = [String]()
     var rarities = [String]()
@@ -41,6 +26,9 @@ class SelectedDatas {
     var costs = [String]()
     var attacks = [String]()
     var hps = [String]()
+    var card: CardData = CardData()
+    
+    private init() {}
     
     func setKeywordDatas(category: MetadataCategory, keyword: String, add: Bool) {
         

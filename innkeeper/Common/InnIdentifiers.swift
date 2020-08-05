@@ -15,6 +15,7 @@ enum InnIdentifiers: String {
     
     case SEGUE_BASE = "segue-"
     case SEGUE_LECTURE_VIDEO = "segue-103"
+    case SEGUE_CARD_DETAIL = "segue-104"
     
     case YOUTUBE_HS_CINEMATIC = "m6kPKwfuzPI"
     

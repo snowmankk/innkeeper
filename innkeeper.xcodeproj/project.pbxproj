@@ -13,6 +13,7 @@
 		242E4CC124BD9598006B325E /* InnIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CC024BD9598006B325E /* InnIdentifiers.swift */; };
 		242E4CC324BD9D63006B325E /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CC224BD9D63006B325E /* VideoListViewController.swift */; };
 		242E4CC524BDB44C006B325E /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CC424BDB44C006B325E /* VideoCollectionViewCell.swift */; };
+		242F487C24DA5851000CEE85 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F487B24DA5851000CEE85 /* CardDetailViewController.swift */; };
 		242F6EAB24B2CC52001156EA /* HowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F6EAA24B2CC52001156EA /* HowViewController.swift */; };
 		242F6EAD24B2F52D001156EA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F6EAC24B2F52D001156EA /* MenuView.swift */; };
 		242F6EAF24B313D1001156EA /* InnTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F6EAE24B313D1001156EA /* InnTags.swift */; };
@@ -54,6 +55,7 @@
 		242E4CC024BD9598006B325E /* InnIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnIdentifiers.swift; sourceTree = "<group>"; };
 		242E4CC224BD9D63006B325E /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
 		242E4CC424BDB44C006B325E /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		242F487B24DA5851000CEE85 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		242F6EAA24B2CC52001156EA /* HowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowViewController.swift; sourceTree = "<group>"; };
 		242F6EAC24B2F52D001156EA /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		242F6EAE24B313D1001156EA /* InnTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnTags.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				2467E0FF24CAD955009CC97B /* SelectedDatas.swift */,
 				2467E10324CF3852009CC97B /* WordCollectionViewCell.swift */,
 				24489B4524D1D11F00E81B31 /* CardsCollectionViewCell.swift */,
+				242F487B24DA5851000CEE85 /* CardDetailViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				2497573224A9FC88008D125E /* GradientView.swift in Sources */,
 				2497571F24A9C389008D125E /* SceneDelegate.swift in Sources */,
 				24489B4624D1D11F00E81B31 /* CardsCollectionViewCell.swift in Sources */,
+				242F487C24DA5851000CEE85 /* CardDetailViewController.swift in Sources */,
 				24503C0624BE9CDB00666AD6 /* TestViewController.swift in Sources */,
 				2467E10024CAD955009CC97B /* SelectedDatas.swift in Sources */,
 				24B8B56824C1BAB900D9FAE5 /* HearthStoneData.swift in Sources */,

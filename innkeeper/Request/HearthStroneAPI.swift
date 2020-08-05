@@ -14,11 +14,13 @@ protocol HearthStroneAPIDelegate {
 
 class HearthStoneAPI {
     static let shared: HearthStoneAPI = HearthStoneAPI()
+    let pageSize: Int = 10
     
     private var accessToken: String = ""
     private let dispatchSemaphore = DispatchSemaphore(value: 0)
     private let dispatchQueue = DispatchQueue.global()
     
+    var page: Int = 1
     var delegate: HearthStroneAPIDelegate! = nil
     
     private init() {}
@@ -68,23 +70,17 @@ class HearthStoneAPI {
     
     func makeCardDataRequestURL() -> String {
         
-        let cls: String = SelectedDatas.shared.keywordsToSlugStrings(category: .CLASSES) //keywordsToString(category: .CLASSES)
-        //getSlug(category: .CLASSES, keywords: &SelectedDatas.shared.classes)
+        let cls: String = SelectedDatas.shared.keywordsToSlugStrings(category: .CLASSES)
         let type: String = SelectedDatas.shared.keywordsToSlugStrings(category: .TYPES)
-        //getSlug(category: .TYPES, keywords: &SelectedDatas.shared.types)
         let rarity: String = SelectedDatas.shared.keywordsToSlugStrings(category: .RARITY)
-        // getSlug(category: .RARITY, keywords: &SelectedDatas.shared.rarities)
         let set: String = SelectedDatas.shared.keywordsToSlugStrings(category: .SETS)
-        //getSlug(category: .SETS, keywords: &SelectedDatas.shared.sets)
         let minionType: String = SelectedDatas.shared.keywordsToSlugStrings(category: .MINION_TYPES)
-        //getSlug(category: .MINION_TYPES, keywords: &SelectedDatas.shared.minionTypes)
         let option: String = SelectedDatas.shared.keywordsToSlugStrings(category: .OPTIONS)
-        //getSlug(category: .OPTIONS, keywords: &SelectedDatas.shared.options)
         let cost: String = SelectedDatas.shared.keywordsToString(category: .COST)
         let attack: String = SelectedDatas.shared.keywordsToString(category: .ATTACK)
         let hp: String = SelectedDatas.shared.keywordsToString(category: .HP)
         
-        let url: String = "https://kr.api.blizzard.com/hearthstone/cards?locale=ko_KR&set=\(set)&class=\(cls)&manaCost=\(cost)&attack=\(attack)&health=\(hp)&collectible=1&rarity=\(rarity)&type=\(type)&minionType=\(minionType)&keyword=\(option)&textFilter=&gameMode=constructed&page=1&pageSize=10&sort=name&order=desc&access_token=\(self.accessToken)"
+        let url: String = "https://kr.api.blizzard.com/hearthstone/cards?locale=ko_KR&set=\(set)&class=\(cls)&manaCost=\(cost)&attack=\(attack)&health=\(hp)&collectible=1&rarity=\(rarity)&type=\(type)&minionType=\(minionType)&keyword=\(option)&textFilter=&gameMode=constructed&page=\(page)&pageSize=\(pageSize)&sort=name&order=desc&access_token=\(self.accessToken)"
         print("request url: \(url)")
         return url
     }
@@ -99,26 +95,58 @@ class HearthStoneAPI {
     
     func requestCardDatas() {
         print("Access token : \(self.accessToken)")
-//        let url = URL(string: "https://kr.api.blizzard.com/hearthstone/cards?locale=ko_KR&type=minion&minionType=dragon&page=1&pageSize=5&sort=name&order=desc&access_token=\(self.accessToken)")!
         
-        let url = URL(string: makeCardDataRequestURL())!
-        let request: URLRequest = URLRequest(url: url)
-        //        request.httpMethod = "GET"
-        //        request.addValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+//        let url = URL(string: makeCardDataRequestURL())!
+//        let request: URLRequest = URLRequest(url: url)
+        
+//        request.httpMethod = "GET"
+//        request.addValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        
+        page = 1
+        HearthStoneData.shared.cards.removeAll()
+        requestCards(url: makeCardDataRequestURL())
+    }
+    
+    func requestNextPageCardDatas() {
+        if page == 0 {
+            print("요청할 카드 없음..")
+            return
+        }
+        page += 1
+        requestCards(url: makeCardDataRequestURL())
+    }
+    
+    func requestCards(url: String) {
+        let uri = URL(string: url)!
+        let request: URLRequest = URLRequest(url: uri)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else { print("empty data"); return }
-            guard let apiDict = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else { return}
-            guard let cardArr = apiDict["cards"] as? [NSDictionary], cardArr.count > 0 else { return }
+            guard let apiDict = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else { return }
+            guard let cardArr = apiDict["cards"] as? [NSDictionary] else { return }
+            guard cardArr.count > 0 else {
+                if self.page > 1 {
+                    print("더 이상 받아올 카드 없음..")
+                    self.page = 0
+                }
+                return
+            }
             
-            HearthStoneData.shared.cards.removeAll()
             for card in cardArr {
                 let name = card["name"] as! String
                 let imgUrl = card["image"] as! String
                 
-                let classId: Int = card["classId"] as! Int
-//                let cls = HearthStoneData.shared.classes.filter({ $0.id == classId }).first?.id ?? 0
-                let cls = Classes(rawValue: classId) ?? Classes.NEUTRAL
+                var classIds: [Classes] = []
+                if let multiClassIds = card["multiClassIds"] as? [Int], multiClassIds.count > 0 {
+                    for classId in multiClassIds {
+                        let cls = Classes(rawValue: classId) ?? Classes.NEUTRAL
+                        classIds.append(cls)
+                    }
+                } else {
+                    let classId: Int = card["classId"] as! Int
+                    let cls = Classes(rawValue: classId) ?? Classes.NEUTRAL
+                    classIds.append(cls)
+                }
                 
                 var mana: Int = -1
                 if let obj = card.object(forKey: "manaCost") { mana = obj as! Int }
@@ -140,14 +168,18 @@ class HearthStoneAPI {
                 var flavorText: String = ""
                 if let obj = card.object(forKey: "flavorText") { flavorText = obj as! String }
                 
-                let cardData: CardData = CardData(name: name, type: type, mana: mana, attack: attack, hp: hp, durability: durability, armor: armor, imgUrl: imgUrl, cls: cls, flavorText: flavorText)
+                let rarity = card.object(forKey: "rarityId") as! Int
+                
+                let set = card.object(forKey: "cardSetId") as! Int
+                
+                let cardData: CardData = CardData(name: name, type: type, mana: mana, attack: attack, hp: hp, durability: durability, armor: armor, imgUrl: imgUrl, classIds: classIds, flavorText: flavorText, rarity: rarity, set: set)
                 HearthStoneData.shared.cards.append(cardData)
             }
             
             self.dispatchSemaphore.signal()
         }.resume()
         
-        _ = dispatchSemaphore.wait(timeout: .now() + 5)
+        _ = dispatchSemaphore.wait(timeout: .now() + 1)
         if self.delegate != nil { self.delegate.responseCardDatas() }
     }
         
@@ -156,7 +188,6 @@ class HearthStoneAPI {
         
         let url: URL = URL(string: "https://kr.api.blizzard.com/hearthstone/metadata/\(category.rawValue)?locale=ko_KR&access_token=\(self.accessToken)")!
 
-//        print("request classes url : \(url.absoluteString)")
         let request: URLRequest = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -172,7 +203,6 @@ class HearthStoneAPI {
                 
                 let metaData = MetaDataBase(id: id, slug: slug, name: name)
                 metaDatas.append(metaData)
-//                print("\(category.rawValue) [id : \(id) / name : \(name)]")
             }
 
             switch(category) {
