@@ -26,6 +26,7 @@ class SelectedDatas {
     var costs = [String]()
     var attacks = [String]()
     var hps = [String]()
+    var searchWord: String = ""
     var card: CardData = CardData()
     
     private init() {}

@@ -79,8 +79,9 @@ class HearthStoneAPI {
         let cost: String = SelectedDatas.shared.keywordsToString(category: .COST)
         let attack: String = SelectedDatas.shared.keywordsToString(category: .ATTACK)
         let hp: String = SelectedDatas.shared.keywordsToString(category: .HP)
+        let searchWord: String = SelectedDatas.shared.searchWord
         
-        let url: String = "https://kr.api.blizzard.com/hearthstone/cards?locale=ko_KR&set=\(set)&class=\(cls)&manaCost=\(cost)&attack=\(attack)&health=\(hp)&collectible=1&rarity=\(rarity)&type=\(type)&minionType=\(minionType)&keyword=\(option)&textFilter=&gameMode=constructed&page=\(page)&pageSize=\(pageSize)&sort=name&order=desc&access_token=\(self.accessToken)"
+        let url: String = "https://kr.api.blizzard.com/hearthstone/cards?locale=ko_KR&set=\(set)&class=\(cls)&manaCost=\(cost)&attack=\(attack)&health=\(hp)&collectible=1&rarity=\(rarity)&type=\(type)&minionType=\(minionType)&keyword=\(option)&textFilter=\(searchWord)&gameMode=constructed&page=\(page)&pageSize=\(pageSize)&sort=name&order=desc&access_token=\(self.accessToken)"
         print("request url: \(url)")
         return url
     }
@@ -179,7 +180,7 @@ class HearthStoneAPI {
             self.dispatchSemaphore.signal()
         }.resume()
         
-        _ = dispatchSemaphore.wait(timeout: .now() + 1)
+        _ = dispatchSemaphore.wait(timeout: .now() + 0.5)
         if self.delegate != nil { self.delegate.responseCardDatas() }
     }
         

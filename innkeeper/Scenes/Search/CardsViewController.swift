@@ -22,6 +22,7 @@ class CardsViewController: UIViewController {
 
         searchBar.delegate = self
         searchBar.searchTextField.textColor = .white
+        searchBar.placeholder = InnIdentifiers.SEARCH_PLACE_HOLDER.rawValue
         wordCollection.dataSource = self
         cardCollection.dataSource = self
         cardCollection.delegate = self
@@ -53,6 +54,8 @@ class CardsViewController: UIViewController {
     }
     
     @IBAction func onSearch(_ sender: Any) {
+        guard let searchWord = searchBar.text?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        SelectedDatas.shared.searchWord = searchWord
         HearthStoneAPI.shared.requestCardDatas()
     }
 }
@@ -60,12 +63,12 @@ class CardsViewController: UIViewController {
 // MARK:- UISearchBarDelegate
 extension CardsViewController: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("textDidChange")
-    }
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        print("textDidChange")
+//    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("searchBarSearchButtonClicked")
+        onSearch(self)
     }
 }
 

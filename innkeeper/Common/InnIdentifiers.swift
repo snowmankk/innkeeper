@@ -41,4 +41,6 @@ enum InnIdentifiers: String {
     case YOUTUBE_HS_EDDIE_0 = "i_ECrlQv6VM"
     case YOUTUBE_HS_EDDIE_1 = "35SFIp-XsXg"
     case YOUTUBE_HS_EDDIE_2 = "SElGoKAXb_8"
+    
+    case SEARCH_PLACE_HOLDER = "카드명/카드 텍스트를 검색하세요."
 }
