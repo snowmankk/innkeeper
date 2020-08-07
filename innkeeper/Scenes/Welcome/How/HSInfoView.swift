@@ -16,7 +16,6 @@ class HSInfoView: UIView {
         var mask: CGRect
     }
     
-    @IBOutlet weak var parentVC: UIViewController!
     @IBOutlet weak var hsImgView: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var desc: UILabel!
@@ -35,8 +34,7 @@ class HSInfoView: UIView {
     override func didMoveToWindow() {
         guard false == moved else { return }
         moved = true
-        
-        parentVC.setResolution(targetView: hsImgView)
+        UIView.setResolution(targetView: hsImgView)
         self.initInfos()
         self.setInfos()
         self.setScreenRate()

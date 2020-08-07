@@ -20,36 +20,31 @@ class AboutViewController: UIViewController {
         
         self.setBackButtonPosition()
         self.setCinematicVideo()
-        self.setResolution(targetView: ytHSView)
+        UIView.setResolution(targetView: ytHSView)
     }
     
     func setBackButtonPosition() {
-        
-//        let systemVersion = getDeviceIdentifier()
-        
         if UIDevice.current.hasNotch {
-            btnBack.frame.origin.x = 20
-            btnBack.frame.origin.y = 50
+            print("notch")
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                btnBack.frame = CGRect(x: 15, y: 50, width: 38, height: 38)
+            } else {
+                btnBack.frame = CGRect(x: 15, y: 40, width: 50, height: 50)
+            }
         } else {
-            btnBack.frame.origin.x = 20
-            btnBack.frame.origin.y = 10
+            print("not notch")
+    
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                btnBack.frame = CGRect(x: 15, y: 15, width: 38, height: 38)
+            } else {
+                btnBack.frame = CGRect(x: 15, y: 35, width: 50, height: 50)
+            }
         }
     }
 
-    
     @IBAction func back(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func getDeviceIdentifier() -> String {
         var systemInfo = utsname()
@@ -76,34 +71,6 @@ class AboutViewController: UIViewController {
             if #available(iOS 10.0, *) { UIApplication.shared.open(url) }
             else                       { UIApplication.shared.openURL(url) }
         }
-    }
-}
-
-
-// MARK:- Set specified view's height (based on screen width)
-extension UIViewController {
-    
-    // 늘어난 스크린 넓이 만큼의 비율로 targetView의 높이를 변경한다
-    func setResolution(targetView: UIView) {
-        
-        guard let targetHeight = targetView.constraints.filter({ $0.identifier == "targetHeight" }).first
-        else { return }
-        
-        let newViewWidth = UIScreen.main.bounds.width       // 현재 스크린의 width
-        let originViewWidth = targetView.frame.width        // 원래 뷰의 width
-        let originViewHeight = targetView.frame.height      // 원래 뷰의 height
-        
-        
-        /* 비율 공식으로 height를 계산한다
-         
-              414       :        234       =     1000     :   ?
-        originViewWidth : originViewHeight = newViewWidth :   ?
-        
-        ? = originViewHeight * newViewWidth / originViewWidth
-        
-        */
-        let newViewHeight = originViewHeight * newViewWidth / originViewWidth
-        targetHeight.constant = newViewHeight
     }
 }
 

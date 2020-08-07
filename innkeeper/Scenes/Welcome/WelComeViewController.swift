@@ -10,16 +10,20 @@ import UIKit
 
 class WelComeViewController: UIViewController {
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet var tapViews: [UIView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNvigationItems()
+        UIView.setResolution(targetView: containerView)
         
         // 각 메뉴들의 모서리 코너 설정
         for v in tapViews {
             self.setLayerCorner(layer: v.layer)
+            UIView.setResolution(targetView: v)
         }
+        
         
         // 각 메뉴들의 터치 설정
         self.setGestures()

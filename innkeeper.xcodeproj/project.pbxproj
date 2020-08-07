@@ -27,6 +27,10 @@
 		2467E10024CAD955009CC97B /* SelectedDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E0FF24CAD955009CC97B /* SelectedDatas.swift */; };
 		2467E10224CD7ACC009CC97B /* ExUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E10124CD7ACC009CC97B /* ExUITextField.swift */; };
 		2467E10424CF3852009CC97B /* WordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E10324CF3852009CC97B /* WordCollectionViewCell.swift */; };
+		2470E7CD24DD352B007436D6 /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2470E7CC24DD352B007436D6 /* ExUIView.swift */; };
+		2470E7D024DD431C007436D6 /* DecksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2470E7CF24DD431C007436D6 /* DecksViewController.swift */; };
+		2470E7D224DD43AA007436D6 /* DeckData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2470E7D124DD43AA007436D6 /* DeckData.swift */; };
+		2470E7D624DD98E6007436D6 /* DecksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2470E7D524DD98E6007436D6 /* DecksCollectionViewCell.swift */; };
 		2497571D24A9C389008D125E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497571C24A9C389008D125E /* AppDelegate.swift */; };
 		2497571F24A9C389008D125E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497571E24A9C389008D125E /* SceneDelegate.swift */; };
 		2497572124A9C389008D125E /* WelComeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497572024A9C389008D125E /* WelComeViewController.swift */; };
@@ -70,6 +74,10 @@
 		2467E0FF24CAD955009CC97B /* SelectedDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDatas.swift; sourceTree = "<group>"; };
 		2467E10124CD7ACC009CC97B /* ExUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUITextField.swift; sourceTree = "<group>"; };
 		2467E10324CF3852009CC97B /* WordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCollectionViewCell.swift; sourceTree = "<group>"; };
+		2470E7CC24DD352B007436D6 /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
+		2470E7CF24DD431C007436D6 /* DecksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksViewController.swift; sourceTree = "<group>"; };
+		2470E7D124DD43AA007436D6 /* DeckData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckData.swift; sourceTree = "<group>"; };
+		2470E7D524DD98E6007436D6 /* DecksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksCollectionViewCell.swift; sourceTree = "<group>"; };
 		2497571924A9C389008D125E /* innkeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = innkeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2497571C24A9C389008D125E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2497571E24A9C389008D125E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +153,16 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		2470E7CE24DD42AA007436D6 /* Decks */ = {
+			isa = PBXGroup;
+			children = (
+				2470E7CF24DD431C007436D6 /* DecksViewController.swift */,
+				2470E7D124DD43AA007436D6 /* DeckData.swift */,
+				2470E7D524DD98E6007436D6 /* DecksCollectionViewCell.swift */,
+			);
+			path = Decks;
+			sourceTree = "<group>";
+		};
 		2497571024A9C389008D125E = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +208,7 @@
 				242E4CBE24BD4FF9006B325E /* CircleMaskView.swift */,
 				2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */,
 				2467E10124CD7ACC009CC97B /* ExUITextField.swift */,
+				2470E7CC24DD352B007436D6 /* ExUIView.swift */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -242,6 +261,7 @@
 		24EEF98724AB1BFA00CFE38C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2470E7CE24DD42AA007436D6 /* Decks */,
 				24B8B56124BEDF5500D9FAE5 /* Search */,
 				24EEF98824AB1C2800CFE38C /* Welcome */,
 			);
@@ -406,17 +426,21 @@
 				2443F22724B8B19C003011C0 /* NoobViewController.swift in Sources */,
 				242F6EAD24B2F52D001156EA /* MenuView.swift in Sources */,
 				24BF2B2024C4BA0D00E3E9DE /* KeywordsViewController.swift in Sources */,
+				2470E7D224DD43AA007436D6 /* DeckData.swift in Sources */,
 				2497573224A9FC88008D125E /* GradientView.swift in Sources */,
+				2470E7D624DD98E6007436D6 /* DecksCollectionViewCell.swift in Sources */,
 				2497571F24A9C389008D125E /* SceneDelegate.swift in Sources */,
 				24489B4624D1D11F00E81B31 /* CardsCollectionViewCell.swift in Sources */,
 				242F487C24DA5851000CEE85 /* CardDetailViewController.swift in Sources */,
 				24503C0624BE9CDB00666AD6 /* TestViewController.swift in Sources */,
 				2467E10024CAD955009CC97B /* SelectedDatas.swift in Sources */,
+				2470E7D024DD431C007436D6 /* DecksViewController.swift in Sources */,
 				24B8B56824C1BAB900D9FAE5 /* HearthStoneData.swift in Sources */,
 				242E4CBD24BC8BF3006B325E /* LectureTableViewCell.swift in Sources */,
 				2467E10224CD7ACC009CC97B /* ExUITextField.swift in Sources */,
 				24ECC8AF24B5D0D1003EABC5 /* PrePlayView.swift in Sources */,
 				24BF2B1E24C450E400E3E9DE /* CardData.swift in Sources */,
+				2470E7CD24DD352B007436D6 /* ExUIView.swift in Sources */,
 				242E4CC124BD9598006B325E /* InnIdentifiers.swift in Sources */,
 				24E7596F24ADCAB500789586 /* InnPalette.swift in Sources */,
 				24B8B56324BEDF6900D9FAE5 /* CardsViewController.swift in Sources */,

@@ -13,6 +13,8 @@ enum InnIdentifiers: String {
     case SCENE_WELCOME = "Welcome!"
     case SCENE_FOR_NOOB = "초보들에게  : )"
     
+    case CONSTRIANT_TARGET_HEIGHT = "targetHeight"
+    
     case SEGUE_BASE = "segue-"
     case SEGUE_LECTURE_VIDEO = "segue-103"
     case SEGUE_CARD_DETAIL = "segue-104"

@@ -30,6 +30,7 @@ class PrePlayView: UIView {
     override func didMoveToWindow() {
         self.initInfos()
         self.setInfos()
+        UIView.setResolution(targetView: playImgView)
     }
     
     func initInfos() {
