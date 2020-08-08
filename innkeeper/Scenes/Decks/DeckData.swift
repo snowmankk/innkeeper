@@ -10,5 +10,6 @@ import Foundation
 
 struct DeckData {
     var name: String = ""
+    var cls: Classes = .NEUTRAL
     var cards: [CardData] = []
 }

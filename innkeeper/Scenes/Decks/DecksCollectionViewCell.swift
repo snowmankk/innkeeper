@@ -14,7 +14,11 @@ class DecksCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var classImg: UIImageView!
     @IBOutlet weak var name: UILabel!
     
-    func configure() {
-        
+    var deck = DeckData()
+    
+    func configure(deckData: DeckData) {
+        deck = deckData
+        classImg.image = UIImage(named: "icon-deck-\(deck.cls.rawValue)")
+        name.text = deck.name
     }
 }

@@ -55,7 +55,7 @@ enum Classes: Int {
     case PRIEST = 6
     case ROGUE = 7
     case SHAMAN = 8
-    case WORLOCK = 9
+    case WARLOCK = 9
     case WARRIOR = 10
     case NEUTRAL = 12
     case DEMONHUNTER = 14
