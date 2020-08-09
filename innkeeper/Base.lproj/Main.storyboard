@@ -1313,7 +1313,6 @@
         <!--Item-->
         <scene sceneID="GJf-vp-UKs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e0Q-bf-2e9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="chG-0K-rNm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="rGP-jI-UBw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Aq7-Ww-Jxe">
@@ -1324,6 +1323,7 @@
                         <segue destination="RSn-2d-92q" kind="relationship" relationship="rootViewController" id="mAR-1H-CEh"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0Q-bf-2e9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2025" y="333"/>
         </scene>
@@ -1454,56 +1454,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NFN-D6-8Yl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v2I-2M-JEa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NbY-8i-7Ir">
-                                    <size key="itemSize" width="350" height="140"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DecksCollectionViewCell" id="E6A-4h-v4i" customClass="DecksCollectionViewCell" customModule="innkeeper" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="0.0" width="350" height="140"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VGj-dX-xs1">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="140"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DecksTableViewCell" textLabel="Ghw-0N-dvs" imageView="itb-cz-7GE" rowHeight="50" style="IBUITableViewCellStyleDefault" id="bvl-L5-0qu" customClass="DecksTableViewCell" customModule="innkeeper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bvl-L5-0qu" id="mE2-6w-2pD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-deck-7" translatesAutoresizingMaskIntoConstraints="NO" id="9Kz-gO-9eU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="140"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="은신 갈라크론드 도적" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ck7-iI-Y9j">
-                                                    <rect key="frame" x="26" y="85" width="302" height="26"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="모자키 마법사" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ghw-0N-dvs">
+                                                    <rect key="frame" x="85" y="0.0" width="309" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="NEXONLv1GothicOTFBold" family="NEXON Lv1 Gothic OTF" pointSize="21"/>
                                                     <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="icon-class-4" id="itb-cz-7GE">
+                                                    <rect key="frame" x="20" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="9Kz-gO-9eU" firstAttribute="top" secondItem="VGj-dX-xs1" secondAttribute="top" id="5bX-m5-Ise"/>
-                                                <constraint firstAttribute="bottom" secondItem="9Kz-gO-9eU" secondAttribute="bottom" id="9na-Hk-pEp"/>
-                                                <constraint firstAttribute="trailing" secondItem="9Kz-gO-9eU" secondAttribute="trailing" id="aUf-S3-es1"/>
-                                                <constraint firstItem="9Kz-gO-9eU" firstAttribute="leading" secondItem="VGj-dX-xs1" secondAttribute="leading" id="c9D-gA-jde"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="350" height="140"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="classImg" destination="9Kz-gO-9eU" id="ynv-QI-36F"/>
-                                            <outlet property="name" destination="ck7-iI-Y9j" id="uxb-JE-jKo"/>
+                                            <outlet property="classImg" destination="itb-cz-7GE" id="LQ8-qE-Rnd"/>
+                                            <outlet property="name" destination="Ghw-0N-dvs" id="wYh-39-OWy"/>
                                         </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NFN-D6-8Yl" firstAttribute="trailing" secondItem="O1w-bc-V4B" secondAttribute="trailing" id="805-sZ-ESF"/>
-                            <constraint firstItem="NFN-D6-8Yl" firstAttribute="bottom" secondItem="O1w-bc-V4B" secondAttribute="bottom" id="AYH-Ms-w3E"/>
-                            <constraint firstItem="NFN-D6-8Yl" firstAttribute="leading" secondItem="O1w-bc-V4B" secondAttribute="leading" id="TMi-0N-cV8"/>
-                            <constraint firstItem="NFN-D6-8Yl" firstAttribute="top" secondItem="O1w-bc-V4B" secondAttribute="top" id="YXZ-HU-tSP"/>
+                            <constraint firstItem="v2I-2M-JEa" firstAttribute="top" secondItem="O1w-bc-V4B" secondAttribute="top" id="8ML-RX-xtl"/>
+                            <constraint firstItem="v2I-2M-JEa" firstAttribute="bottom" secondItem="O1w-bc-V4B" secondAttribute="bottom" id="Bmg-M6-K1Q"/>
+                            <constraint firstItem="v2I-2M-JEa" firstAttribute="leading" secondItem="O1w-bc-V4B" secondAttribute="leading" id="Bu4-gp-ERS"/>
+                            <constraint firstItem="v2I-2M-JEa" firstAttribute="trailing" secondItem="O1w-bc-V4B" secondAttribute="trailing" id="Wom-G6-Iux"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1w-bc-V4B"/>
                     </view>
@@ -1511,7 +1500,7 @@
                     <navigationItem key="navigationItem" title="Decks" id="gMt-je-Bcz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="collection" destination="NFN-D6-8Yl" id="3kO-bR-gow"/>
+                        <outlet property="table" destination="v2I-2M-JEa" id="QlS-Io-ywq"/>
                         <segue destination="wIp-8q-ZhZ" kind="show" id="XF5-0s-g43"/>
                     </connections>
                 </viewController>
@@ -1545,8 +1534,8 @@
         <image name="icon-cards" width="24" height="24"/>
         <image name="icon-cards-selected" width="24" height="24"/>
         <image name="icon-class-12" width="85" height="84.5"/>
+        <image name="icon-class-4" width="85" height="85"/>
         <image name="icon-deck" width="24" height="24"/>
-        <image name="icon-deck-7" width="245" height="98.5"/>
         <image name="icon-deck-selected" width="24" height="24"/>
         <image name="icon-home" width="24" height="24"/>
         <image name="icon-home-selected" width="24" height="24"/>

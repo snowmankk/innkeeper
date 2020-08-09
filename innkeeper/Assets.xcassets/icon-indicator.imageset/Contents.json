@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icon-deck-paladin.jpg",
+      "filename" : "icons8-more-than-30.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icon-deck-paladin-1.jpg",
+      "filename" : "icons8-more-than-31.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icon-deck-paladin-2.jpg",
+      "filename" : "icons8-more-than-32.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

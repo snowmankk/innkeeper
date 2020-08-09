@@ -10,7 +10,7 @@ import UIKit
 
 class DecksViewController: UIViewController {
 
-    @IBOutlet weak var collection: UICollectionView!
+    @IBOutlet weak var table: UITableView!
     
     var decks: [DeckData] = []
     
@@ -31,27 +31,26 @@ class DecksViewController: UIViewController {
         
         
         
-        collection.delegate = self
-        collection.dataSource = self
+        table.delegate = self
+        table.dataSource = self
     }
 }
 
-// MARK:- UICollectionViewDelegate
-extension DecksViewController: UICollectionViewDelegate {
+// MARK:- UITableViewDelegate
+extension DecksViewController: UITableViewDelegate {
     
 }
 
-extension DecksViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+// MARK:- UITableViewDataSource
+extension DecksViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return decks.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DecksCollectionViewCell.identifier, for: indexPath) as! DecksCollectionViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: DecksTableViewCell.identifier, for: indexPath) as! DecksTableViewCell
         cell.configure(deckData: decks[indexPath.row])
         
         return cell
     }
-    
-    
 }
