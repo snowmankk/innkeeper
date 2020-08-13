@@ -20,8 +20,7 @@ class HowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.menuView.menuViewDelegate = self
-        self.menuView.setMenuItems(titles: ["게임 정보", "플레이 맛보기"])
+        self.menuView.setMenuItems(titles: ["게임 정보", "플레이 맛보기"], views: [infoView, prePlayView])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,23 +29,4 @@ class HowViewController: UIViewController {
     }
 }
 
-extension HowViewController: MenuViewDelegate {
-    
-    func onMenuSelected(selectedIndex: Int) {
-        
-        guard let index = InnTags(rawValue: selectedIndex) else { return }
-        
-        switch index {
-        case .MENU_VIEW_ITEM_INFO:
-            self.infoView.isHidden = false
-            self.prePlayView.isHidden = true
-            
-        case .MENU_VIEW_ITEM_PLAY:
-            self.infoView.isHidden = true
-            self.prePlayView.isHidden = false
-            
-        default: break
-            
-        }
-    }
-}
+

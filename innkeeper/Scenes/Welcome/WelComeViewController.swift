@@ -18,17 +18,14 @@ class WelComeViewController: UIViewController {
         self.setNvigationItems()
         UIView.setResolution(targetView: containerView)
         
-        // 각 메뉴들의 모서리 코너 설정
         for v in tapViews {
             self.setLayerCorner(layer: v.layer)
             UIView.setResolution(targetView: v)
         }
         
-        
-        // 각 메뉴들의 터치 설정
         self.setGestures()
-
-//        self.summaryView.setSummaryHandleButton()
+        
+        HearthStoneAPI.shared.requestAccessToken()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,11 +33,11 @@ class WelComeViewController: UIViewController {
         
         // depth가 존재할때 (현재 탭에서 다른 씬으로 이동한 후 돌아올때 - 현재 탭에서 상호작용을 하여 씬을 이동하면 새로운 navigationBar item이 생성됨)
         if let item = self.navigationController?.navigationBar.backItem {
-            item.title = InnIdentifiers.SCENE_WELCOME.rawValue
+            item.title = InnTexts.SCENE_WELCOME.rawValue
         }
         // depth가 없을때 (다른 탭으로 이동한 후 돌아올때)
         else {
-            self.navigationController?.navigationBar.topItem?.title = InnIdentifiers.SCENE_WELCOME.rawValue
+            self.navigationController?.navigationBar.topItem?.title = InnTexts.SCENE_WELCOME.rawValue
             self.navigationController?.navigationBar.topItem?.titleView = nil
             
             // navigation background color
@@ -58,7 +55,7 @@ class WelComeViewController: UIViewController {
     }
     
     func setNvigationItems() {
-        self.navigationController?.navigationBar.topItem?.title = InnIdentifiers.SCENE_WELCOME.rawValue
+        self.navigationController?.navigationBar.topItem?.title = InnTexts.SCENE_WELCOME.rawValue
         
         // back button color
         self.navigationController?.navigationBar.tintColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)

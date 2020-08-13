@@ -10,12 +10,18 @@ import UIKit
 
 class DecksViewController: UIViewController {
 
+    @IBOutlet weak var menuView: MenuView!
+    @IBOutlet weak var myDeck: MyDecks!
+    @IBOutlet weak var searchDeck: SearchDecks!
     @IBOutlet weak var table: UITableView!
     
     var decks: [DeckData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuView.menuViewDelegate = self
+        menuView.setMenuItems(titles: ["내 덱", "덱 검색"], views: [myDeck, searchDeck])
 
         // test! (임시 데이터)
         decks.append(DeckData(name: "모자키 마법사", cls: .MAGE, cards: []))
@@ -29,10 +35,10 @@ class DecksViewController: UIViewController {
         decks.append(DeckData(name: "용 사냥꾼", cls: .HUNTER, cards: []))
         decks.append(DeckData(name: "템포 악마사냥꾼", cls: .DEMONHUNTER, cards: []))
         
-        
-        
         table.delegate = self
         table.dataSource = self
+        
+        HearthStoneAPI.shared.requestMetaDatas()
     }
 }
 
@@ -54,3 +60,24 @@ extension DecksViewController: UITableViewDataSource {
         return cell
     }
 }
+
+
+extension DecksViewController: MenuViewDelegate {
+    
+    func onMenuSelected(selectedIndex: Int) {
+        guard let index = InnTags(rawValue: selectedIndex) else { return }
+        switch index {
+        case .MENU_VIEW_ITEM_MY_DECK:
+            myDeck.isHidden = false
+            searchDeck.isHidden = true
+            
+        case .MENU_VIEW_ITEM_SEARCH_DECK:
+            myDeck.isHidden = true
+            searchDeck.isHidden = false
+            
+        default: break
+        }
+    }
+    
+}
+

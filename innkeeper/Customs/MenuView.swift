@@ -16,26 +16,33 @@ class MenuView: UIView {
 
     class MenuItem {
         var title: UILabel
+        var selectedBar: UIView
         var selectedView: UIView
         var tag: Int = 0
         
-        init(title: UILabel, selectedView: UIView, tag: Int) {
+        init(title: UILabel, selectedBar: UIView, selectedView: UIView, tag: Int) {
             self.title = title
+            self.selectedBar = selectedBar
             self.selectedView = selectedView
             self.tag = tag
         }
     }
     
     var menuItems: [MenuItem] = []
-    var selectedTag = InnTags.MENU_VIEW_ITEM_INFO.rawValue
-    var menuViewDelegate: MenuViewDelegate!
+    var selectedTag = 0//InnTags.MENU_VIEW_ITEM_INFO.rawValue
+    var menuViewDelegate: MenuViewDelegate?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
     // 타이틀의 개수 만큼 메뉴 아이템 생성
-    func setMenuItems(titles: [String]) {
+    func setMenuItems(titles: [String], views: [UIView]) {
+        
+        if titles.count != views.count {
+            print("Each count does not match..")
+            return
+        }
         
         let screenWidth = UIScreen.main.bounds.width
         let itemCount = titles.count
@@ -51,9 +58,9 @@ class MenuView: UIView {
         let labelHeight: CGFloat = 32
         
         let selectedViewHeight: CGFloat = 3
-        let selectedViewPosX = self.frame.height - selectedViewHeight
+        let selectedViewPosY = self.frame.height - selectedViewHeight
         
-        var tag = InnTags.MENU_VIEW_ITEM_INFO.rawValue
+        var tag = 0//InnTags.MENU_VIEW_ITEM_INFO.rawValue
         var itemPosX: CGFloat = 0
         for title in titles {
             // ──────────── 각 아이템에 해당하는 view를 생성하고 width/tag/gesture ──────────── //
@@ -71,17 +78,17 @@ class MenuView: UIView {
             labelTitle.textColor = .white
             labelTitle.textAlignment = .center
         
-            let selectedView: UIView = UIView(frame: CGRect(x: 0, y: selectedViewPosX, width: itemWidth, height: selectedViewHeight))
-            selectedView.backgroundColor = .white
-            selectedView.alpha = 0.5
+            let selectedBar: UIView = UIView(frame: CGRect(x: 0, y: selectedViewPosY, width: itemWidth, height: selectedViewHeight))
+            selectedBar.backgroundColor = .white
+            selectedBar.alpha = 0.7
             
             itemView.addSubview(labelTitle)
-            itemView.addSubview(selectedView)
+            itemView.addSubview(selectedBar)
             // ──────────────────────────────────────────────────────────────────────── //
             
             self.addSubview(itemView)
             
-            let menuItem: MenuItem = MenuItem(title: labelTitle, selectedView: selectedView, tag: tag)
+            let menuItem: MenuItem = MenuItem(title: labelTitle, selectedBar: selectedBar, selectedView: views[tag], tag: tag)
             menuItems.append(menuItem)
             
             itemPosX += itemWidth
@@ -94,20 +101,25 @@ class MenuView: UIView {
     @objc func tappedItem(_ sender: UIGestureRecognizer) {
         guard let selectedView = sender.view else { return }
         
-        self.selectedTag = selectedView.tag
-//        print("view id : \(selectedTag)")
+        selectedTag = selectedView.tag
+//        print("selected tag : \(selectedTag)")
         
-        self.setSelected()
+        setSelected()
     }
     
     func setSelected()
     {
         for item in menuItems {
-            if item.tag == self.selectedTag { item.selectedView.alpha = 0.7 }
-            else                            { item.selectedView.alpha = 0.0 }
+            if item.tag == selectedTag {
+                item.selectedBar.alpha = 0.7
+                item.selectedView.isHidden = false
+                menuViewDelegate?.onMenuSelected(selectedIndex: selectedTag)
+            }
+            else {
+                item.selectedBar.alpha = 0.0
+                item.selectedView.isHidden = true
+            }
         }
-        
-        self.menuViewDelegate.onMenuSelected(selectedIndex: self.selectedTag)
     }
 
 }

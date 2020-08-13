@@ -61,17 +61,18 @@ class CardDetailViewController: UIViewController {
         setText.text = "\(MetadataCategory.SETS.localName): \(data.getSetName())"
         manaText.text = "\(MetadataCategory.COST.localName): \(data.mana)"
         
-        DispatchQueue.main.async {
-            self.setCardImage(imgUrl: data.imgUrl)
-        }
+        
+        self.setCardImage(imgUrl: data.imgUrl)
     }
     
     func setCardImage(imgUrl: String) {
         let url: URL! = URL(string: imgUrl)
-        guard let data = try? Data(contentsOf: url) else { return }
         
-        let img = UIImage(data: data)
-        cardImg.image = img
+        DispatchQueue.main.async {
+            guard let data = try? Data(contentsOf: url) else { return }
+            let img = UIImage(data: data)
+            self.cardImg.image = img
+        }
     }
 
 }

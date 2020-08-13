@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "5aa009cab815aaa48c48aa2a82b2567b041a4fca4800e172ce449917d52e1436.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "5aa009cab815aaa48c48aa2a82b2567b041a4fca4800e172ce449917d52e1436-1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "5aa009cab815aaa48c48aa2a82b2567b041a4fca4800e172ce449917d52e1436-2.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

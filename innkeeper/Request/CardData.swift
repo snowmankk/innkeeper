@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CardData {
+struct CardData: Hashable {
     var name: String = ""
     var type: CardTypes = .MINION
     var mana: Int = 0
@@ -21,6 +21,7 @@ struct CardData {
     var flavorText: String = ""
     var rarity: Int = 0
     var set: Int = 0
+    var cropImgUrl: String = ""
     
     func getRarityName() -> String {
         let data = HearthStoneData.shared.rarity.filter { $0.id == rarity }

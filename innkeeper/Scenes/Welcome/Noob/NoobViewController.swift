@@ -103,7 +103,7 @@ class NoobViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.topItem?.title = ""
-        self.navigationController?.navigationBar.backItem?.title = InnIdentifiers.SCENE_FOR_NOOB.rawValue
+        self.navigationController?.navigationBar.backItem?.title = InnTexts.SCENE_FOR_NOOB.rawValue
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -8,8 +8,10 @@
 
 import Foundation
 
-protocol HearthStroneAPIDelegate {
-    func responseCardDatas()
+@objc
+protocol HearthStoneAPIDelegate {
+    @objc optional func responseCardDatas()
+    @objc optional func responseDeckData()
 }
 
 class HearthStoneAPI {
@@ -21,7 +23,7 @@ class HearthStoneAPI {
     private let dispatchQueue = DispatchQueue.global()
     
     var page: Int = 1
-    var delegate: HearthStroneAPIDelegate! = nil
+    var delegate: HearthStoneAPIDelegate?
     
     private init() {}
     
@@ -41,25 +43,21 @@ class HearthStoneAPI {
         
         
         URLSession.shared.dataTask(with: request) { data, response, error in
-//            guard let data = data else { print("empty data"); return }
-//            let dataString = String(data: data, encoding: .utf8)
-            
             guard let data = data else { print("empty data"); return }
             guard let apiDict = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else { return }
             
             self.accessToken = apiDict["access_token"] as! String
-            self.dispatchSemaphore.signal()
+//            self.dispatchSemaphore.signal()
             
         }.resume()
-        _ = dispatchSemaphore.wait(timeout: .now() + 5)
+//        _ = dispatchSemaphore.wait(timeout: .now() + 5)
         
-        self.requestGroupDatas()
-        _ = dispatchSemaphore.wait(timeout: .now() + 5)
-        
-        self.requestMetaDatas()
     }
     
     func requestMetaDatas() {
+        self.requestGroupDatas()
+        _ = dispatchSemaphore.wait(timeout: .now() + 5)
+        
         self.requestMetaData(category: .CLASSES)
         self.requestMetaData(category: .TYPES)
         self.requestMetaData(category: .RARITY)
@@ -124,8 +122,8 @@ class HearthStoneAPI {
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else { print("empty data"); return }
             guard let apiDict = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else { return }
-            guard let cardArr = apiDict["cards"] as? [NSDictionary] else { return }
-            guard cardArr.count > 0 else {
+            guard let cardDataArr = apiDict["cards"] as? [NSDictionary] else { return }
+            guard cardDataArr.count > 0 else {
                 if self.page > 1 {
                     print("더 이상 받아올 카드 없음..")
                     self.page = 0
@@ -133,55 +131,62 @@ class HearthStoneAPI {
                 return
             }
             
-            for card in cardArr {
-                let name = card["name"] as! String
-                let imgUrl = card["image"] as! String
-                
-                var classIds: [Classes] = []
-                if let multiClassIds = card["multiClassIds"] as? [Int], multiClassIds.count > 0 {
-                    for classId in multiClassIds {
-                        let cls = Classes(rawValue: classId) ?? Classes.NEUTRAL
-                        classIds.append(cls)
-                    }
-                } else {
-                    let classId: Int = card["classId"] as! Int
-                    let cls = Classes(rawValue: classId) ?? Classes.NEUTRAL
-                    classIds.append(cls)
-                }
-                
-                var mana: Int = -1
-                if let obj = card.object(forKey: "manaCost") { mana = obj as! Int }
-                
-                var attack: Int = -1
-                if let obj = card.object(forKey: "attack") { attack = obj as! Int }
-                
-                let type = CardTypes(rawValue: card["cardTypeId"] as! Int) ?? CardTypes.MINION
-                
-                var durability = -1
-                if let obj = card.object(forKey: "durability") { durability = obj as! Int }
-                
-                var hp: Int = -1
-                if let obj = card.object(forKey: "health") { hp = obj as! Int }
-                
-                var armor: Int = -1
-                if let obj = card.object(forKey: "armor") { armor = obj as! Int }
-                
-                var flavorText: String = ""
-                if let obj = card.object(forKey: "flavorText") { flavorText = obj as! String }
-                
-                let rarity = card.object(forKey: "rarityId") as! Int
-                
-                let set = card.object(forKey: "cardSetId") as! Int
-                
-                let cardData: CardData = CardData(name: name, type: type, mana: mana, attack: attack, hp: hp, durability: durability, armor: armor, imgUrl: imgUrl, classIds: classIds, flavorText: flavorText, rarity: rarity, set: set)
-                HearthStoneData.shared.cards.append(cardData)
+            for cardData in cardDataArr {
+                HearthStoneData.shared.cards.append(self.makeCardData(apiData: cardData))
             }
             
             self.dispatchSemaphore.signal()
         }.resume()
         
         _ = dispatchSemaphore.wait(timeout: .now() + 0.5)
-        if self.delegate != nil { self.delegate.responseCardDatas() }
+        self.delegate?.responseCardDatas?()
+    }
+    
+    func makeCardData(apiData: NSDictionary) -> CardData {
+        let name = apiData["name"] as! String
+        let imgUrl = apiData["image"] as! String
+        
+        var classIds: [Classes] = []
+        if let multiClassIds = apiData["multiClassIds"] as? [Int], multiClassIds.count > 0 {
+            for classId in multiClassIds {
+                let cls = Classes(rawValue: classId) ?? Classes.NEUTRAL
+                classIds.append(cls)
+            }
+        } else {
+            let classId: Int = apiData["classId"] as! Int
+            let cls = Classes(rawValue: classId) ?? Classes.NEUTRAL
+            classIds.append(cls)
+        }
+        
+        var mana: Int = -1
+        if let obj = apiData.object(forKey: "manaCost") { mana = obj as! Int }
+        
+        var attack: Int = -1
+        if let obj = apiData.object(forKey: "attack") { attack = obj as! Int }
+        
+        let type = CardTypes(rawValue: apiData["cardTypeId"] as! Int) ?? CardTypes.MINION
+        
+        var durability = -1
+        if let obj = apiData.object(forKey: "durability") { durability = obj as! Int }
+        
+        var hp: Int = -1
+        if let obj = apiData.object(forKey: "health") { hp = obj as! Int }
+        
+        var armor: Int = -1
+        if let obj = apiData.object(forKey: "armor") { armor = obj as! Int }
+        
+        var flavorText: String = ""
+        if let obj = apiData.object(forKey: "flavorText") { flavorText = obj as! String }
+        
+        let rarity = apiData.object(forKey: "rarityId") as! Int
+        
+        let set = apiData.object(forKey: "cardSetId") as! Int
+        
+        let cropImgUrl = apiData.object(forKey: "cropImage") as! String
+        
+        let cardData: CardData = CardData(name: name, type: type, mana: mana, attack: attack, hp: hp, durability: durability, armor: armor, imgUrl: imgUrl, classIds: classIds, flavorText: flavorText, rarity: rarity, set: set, cropImgUrl: cropImgUrl)
+        
+        return cardData
     }
         
     func requestMetaData(category: MetadataCategory) {
@@ -271,6 +276,34 @@ class HearthStoneAPI {
             self.dispatchSemaphore.signal()
         }.resume()
             
+    }
+    
+    func requestDeck(deckCode: String) {
+//        let deckCode: String = "AAECAf0EBu0F+KwDxbgDjbsDkssD0M4DDKsEtATmBJYFn5sD/50D+6wD+MwDhc0Dx84Dzc4D99EDAA=="
+        let urlString =  "https://kr.api.blizzard.com/hearthstone/deck/\(deckCode)?locale=ko_KR&access_token=\(self.accessToken)"
+        let url: URL = URL(string: urlString)!
+        let request: URLRequest = URLRequest(url: url)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else { print("empty data"); return }
+            guard let apiDict = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else { return }
+            guard let cardDataArr = apiDict["cards"] as? [NSDictionary] else { return }
+            guard let classData = apiDict["class"] as? NSDictionary else { return }
+            
+            let cls: Int = classData["id"] as! Int
+            var cardDatas: [CardData] = []
+            for cardData in cardDataArr {
+                cardDatas.append(self.makeCardData(apiData: cardData))
+            }
+            
+            let deckData = DeckData(name: "꺄울~", cls: Classes(rawValue: cls) ?? Classes.NEUTRAL, cards: cardDatas)
+            DeckDatas.shared.searchedDeck = deckData
+            
+            self.dispatchSemaphore.signal()
+        }.resume()
+        
+        _ = self.dispatchSemaphore.wait()
+        self.delegate?.responseDeckData?()
     }
     
 }

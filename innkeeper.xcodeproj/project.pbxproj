@@ -22,6 +22,14 @@
 		24489B4624D1D11F00E81B31 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24489B4524D1D11F00E81B31 /* CardsCollectionViewCell.swift */; };
 		24489B4824D7F23200E81B31 /* SSShinRegular_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 24489B4724D7F23200E81B31 /* SSShinRegular_otf.otf */; };
 		244E4A6C24DFE6C20028A55A /* DecksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244E4A6B24DFE6C20028A55A /* DecksTableViewCell.swift */; };
+		244E4A6E24E0130C0028A55A /* MyDecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244E4A6D24E0130C0028A55A /* MyDecks.swift */; };
+		244E4A7024E0132A0028A55A /* SearchDecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244E4A6F24E0132A0028A55A /* SearchDecks.swift */; };
+		244E4A7224E273E90028A55A /* DecksCommuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244E4A7124E273E90028A55A /* DecksCommuCollectionViewCell.swift */; };
+		244E4A7424E29DD30028A55A /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244E4A7324E29DD30028A55A /* GaugeView.swift */; };
+		244E4A7624E2C55B0028A55A /* DeckDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244E4A7524E2C55B0028A55A /* DeckDetailViewController.swift */; };
+		244E4A7824E37F4F0028A55A /* DeckDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244E4A7724E37F4F0028A55A /* DeckDetailTableViewCell.swift */; };
+		244E4A7A24E42B7B0028A55A /* ExUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244E4A7924E42B7B0028A55A /* ExUIImage.swift */; };
+		244E4A7C24E503ED0028A55A /* InnTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244E4A7B24E503ED0028A55A /* InnTexts.swift */; };
 		24503C0624BE9CDB00666AD6 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24503C0524BE9CDB00666AD6 /* TestViewController.swift */; };
 		2467E0F524C67E0B009CC97B /* ModifiedScrollingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */; };
 		2467E0FC24C99247009CC97B /* RangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467E0FB24C99247009CC97B /* RangeCollectionViewCell.swift */; };
@@ -69,6 +77,14 @@
 		24489B4524D1D11F00E81B31 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		24489B4724D7F23200E81B31 /* SSShinRegular_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SSShinRegular_otf.otf; sourceTree = "<group>"; };
 		244E4A6B24DFE6C20028A55A /* DecksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksTableViewCell.swift; sourceTree = "<group>"; };
+		244E4A6D24E0130C0028A55A /* MyDecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDecks.swift; sourceTree = "<group>"; };
+		244E4A6F24E0132A0028A55A /* SearchDecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDecks.swift; sourceTree = "<group>"; };
+		244E4A7124E273E90028A55A /* DecksCommuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksCommuCollectionViewCell.swift; sourceTree = "<group>"; };
+		244E4A7324E29DD30028A55A /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
+		244E4A7524E2C55B0028A55A /* DeckDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewController.swift; sourceTree = "<group>"; };
+		244E4A7724E37F4F0028A55A /* DeckDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailTableViewCell.swift; sourceTree = "<group>"; };
+		244E4A7924E42B7B0028A55A /* ExUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIImage.swift; sourceTree = "<group>"; };
+		244E4A7B24E503ED0028A55A /* InnTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnTexts.swift; sourceTree = "<group>"; };
 		24503C0524BE9CDB00666AD6 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedScrollingCollectionView.swift; sourceTree = "<group>"; };
 		2467E0FB24C99247009CC97B /* RangeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -157,8 +173,13 @@
 			isa = PBXGroup;
 			children = (
 				2470E7CF24DD431C007436D6 /* DecksViewController.swift */,
+				244E4A6D24E0130C0028A55A /* MyDecks.swift */,
+				244E4A6F24E0132A0028A55A /* SearchDecks.swift */,
 				2470E7D124DD43AA007436D6 /* DeckData.swift */,
 				244E4A6B24DFE6C20028A55A /* DecksTableViewCell.swift */,
+				244E4A7124E273E90028A55A /* DecksCommuCollectionViewCell.swift */,
+				244E4A7524E2C55B0028A55A /* DeckDetailViewController.swift */,
+				244E4A7724E37F4F0028A55A /* DeckDetailTableViewCell.swift */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -209,6 +230,8 @@
 				2467E0F424C67E0B009CC97B /* ModifiedScrollingCollectionView.swift */,
 				2467E10124CD7ACC009CC97B /* ExUITextField.swift */,
 				2470E7CC24DD352B007436D6 /* ExUIView.swift */,
+				244E4A7324E29DD30028A55A /* GaugeView.swift */,
+				244E4A7924E42B7B0028A55A /* ExUIImage.swift */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -254,6 +277,7 @@
 				24E7596E24ADCAB500789586 /* InnPalette.swift */,
 				242F6EAE24B313D1001156EA /* InnTags.swift */,
 				242E4CC024BD9598006B325E /* InnIdentifiers.swift */,
+				244E4A7B24E503ED0028A55A /* InnTexts.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -420,7 +444,9 @@
 				24E7596C24ADC7E700789586 /* AboutViewController.swift in Sources */,
 				24D27A6324B4B9A60030C4C1 /* HSInfoView.swift in Sources */,
 				24BF2B2224C5B99200E3E9DE /* KeywordsViewLayout.swift in Sources */,
+				244E4A7A24E42B7B0028A55A /* ExUIImage.swift in Sources */,
 				2497572124A9C389008D125E /* WelComeViewController.swift in Sources */,
+				244E4A7824E37F4F0028A55A /* DeckDetailTableViewCell.swift in Sources */,
 				2497571D24A9C389008D125E /* AppDelegate.swift in Sources */,
 				24B8B56624C1B9CF00D9FAE5 /* HearthStroneAPI.swift in Sources */,
 				2443F22724B8B19C003011C0 /* NoobViewController.swift in Sources */,
@@ -431,8 +457,11 @@
 				2497571F24A9C389008D125E /* SceneDelegate.swift in Sources */,
 				24489B4624D1D11F00E81B31 /* CardsCollectionViewCell.swift in Sources */,
 				242F487C24DA5851000CEE85 /* CardDetailViewController.swift in Sources */,
+				244E4A7024E0132A0028A55A /* SearchDecks.swift in Sources */,
 				24503C0624BE9CDB00666AD6 /* TestViewController.swift in Sources */,
+				244E4A7424E29DD30028A55A /* GaugeView.swift in Sources */,
 				2467E10024CAD955009CC97B /* SelectedDatas.swift in Sources */,
+				244E4A7C24E503ED0028A55A /* InnTexts.swift in Sources */,
 				2470E7D024DD431C007436D6 /* DecksViewController.swift in Sources */,
 				24B8B56824C1BAB900D9FAE5 /* HearthStoneData.swift in Sources */,
 				242E4CBD24BC8BF3006B325E /* LectureTableViewCell.swift in Sources */,
@@ -440,12 +469,15 @@
 				24ECC8AF24B5D0D1003EABC5 /* PrePlayView.swift in Sources */,
 				24BF2B1E24C450E400E3E9DE /* CardData.swift in Sources */,
 				2470E7CD24DD352B007436D6 /* ExUIView.swift in Sources */,
+				244E4A6E24E0130C0028A55A /* MyDecks.swift in Sources */,
 				242E4CC124BD9598006B325E /* InnIdentifiers.swift in Sources */,
 				24E7596F24ADCAB500789586 /* InnPalette.swift in Sources */,
+				244E4A7224E273E90028A55A /* DecksCommuCollectionViewCell.swift in Sources */,
 				24B8B56324BEDF6900D9FAE5 /* CardsViewController.swift in Sources */,
 				2467E0FC24C99247009CC97B /* RangeCollectionViewCell.swift in Sources */,
 				2467E0F524C67E0B009CC97B /* ModifiedScrollingCollectionView.swift in Sources */,
 				244E4A6C24DFE6C20028A55A /* DecksTableViewCell.swift in Sources */,
+				244E4A7624E2C55B0028A55A /* DeckDetailViewController.swift in Sources */,
 				242E4CBF24BD4FF9006B325E /* CircleMaskView.swift in Sources */,
 				2467E10424CF3852009CC97B /* WordCollectionViewCell.swift in Sources */,
 				242E4CC324BD9D63006B325E /* VideoListViewController.swift in Sources */,

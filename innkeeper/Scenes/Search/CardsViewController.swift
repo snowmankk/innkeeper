@@ -22,13 +22,13 @@ class CardsViewController: UIViewController {
 
         searchBar.delegate = self
         searchBar.searchTextField.textColor = .white
-        searchBar.placeholder = InnIdentifiers.SEARCH_PLACE_HOLDER.rawValue
+        searchBar.placeholder = InnTexts.CARD_SEARCH_PLACE_HOLDER.rawValue
         wordCollection.dataSource = self
         cardCollection.dataSource = self
         cardCollection.delegate = self
         SelectedDatas.shared.delegate = self
         HearthStoneAPI.shared.delegate = self
-        HearthStoneAPI.shared.requestAccessToken()
+        HearthStoneAPI.shared.requestMetaDatas()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,7 +158,7 @@ extension CardsViewController: SelectedDataDelegate {
 }
 
 // MARK:-HearthStroneAPIDelegate
-extension CardsViewController: HearthStroneAPIDelegate {
+extension CardsViewController: HearthStoneAPIDelegate {
     func responseCardDatas() {
         cardCollection.reloadData()
     }

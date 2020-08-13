@@ -10,14 +10,13 @@ import Foundation
 
 enum InnIdentifiers: String {
     
-    case SCENE_WELCOME = "Welcome!"
-    case SCENE_FOR_NOOB = "초보들에게  : )"
-    
     case CONSTRIANT_TARGET_HEIGHT = "targetHeight"
     
     case SEGUE_BASE = "segue-"
     case SEGUE_LECTURE_VIDEO = "segue-103"
     case SEGUE_CARD_DETAIL = "segue-104"
+    case SEGUE_DECK_DETAIL = "segue-105"
+    case SEGUE_CARD_DETAIL_OF_DECK = "segue-106"
     
     case YOUTUBE_HS_CINEMATIC = "m6kPKwfuzPI"
     
@@ -43,6 +42,4 @@ enum InnIdentifiers: String {
     case YOUTUBE_HS_EDDIE_0 = "i_ECrlQv6VM"
     case YOUTUBE_HS_EDDIE_1 = "35SFIp-XsXg"
     case YOUTUBE_HS_EDDIE_2 = "SElGoKAXb_8"
-    
-    case SEARCH_PLACE_HOLDER = "카드명/카드 텍스트를 검색하세요."
 }

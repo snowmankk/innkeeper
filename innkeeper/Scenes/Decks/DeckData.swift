@@ -12,4 +12,14 @@ struct DeckData {
     var name: String = ""
     var cls: Classes = .NEUTRAL
     var cards: [CardData] = []
+    var thumbnails: [String] = []         // 카드 썸네일 이미지의 base64 string
+}
+
+class DeckDatas {
+    static let shared = DeckDatas()
+    
+    var searchedDeck: DeckData?
+    var myDecks: [DeckData] = []
+    
+    private init() {}
 }
