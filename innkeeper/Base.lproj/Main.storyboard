@@ -1504,6 +1504,11 @@
                                     <constraint firstItem="v2I-2M-JEa" firstAttribute="top" secondItem="NGY-q4-Y6i" secondAttribute="top" id="ZPN-2C-fEh"/>
                                     <constraint firstAttribute="bottom" secondItem="v2I-2M-JEa" secondAttribute="bottom" id="lkx-gD-Kdh"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="menuView" destination="NzF-Ch-rW9" id="NL2-zW-zsB"/>
+                                    <outlet property="parent" destination="RSn-2d-92q" id="hse-FU-wSR"/>
+                                    <outlet property="table" destination="v2I-2M-JEa" id="B7Z-kK-IyB"/>
+                                </connections>
                             </view>
                             <view tag="3101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYY-VT-Urm" customClass="SearchDecks" customModule="innkeeper" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="138" width="414" height="675"/>
@@ -1649,11 +1654,6 @@
                             <constraint firstItem="NzF-Ch-rW9" firstAttribute="leading" secondItem="O1w-bc-V4B" secondAttribute="leading" id="jNu-co-APP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1w-bc-V4B"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="NGY-q4-Y6i"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Decks" image="icon-deck" selectedImage="icon-deck-selected" id="G5Q-Rr-hOC"/>
                     <navigationItem key="navigationItem" title="Decks" id="gMt-je-Bcz"/>
@@ -1662,7 +1662,6 @@
                         <outlet property="menuView" destination="NzF-Ch-rW9" id="kSG-7e-2Zi"/>
                         <outlet property="myDeck" destination="NGY-q4-Y6i" id="JCe-kE-xtS"/>
                         <outlet property="searchDeck" destination="vYY-VT-Urm" id="YRv-X9-Ds1"/>
-                        <outlet property="table" destination="v2I-2M-JEa" id="QlS-Io-ywq"/>
                         <segue destination="wIp-8q-ZhZ" kind="presentation" identifier="segue-105" id="XF5-0s-g43"/>
                     </connections>
                 </viewController>
@@ -1688,7 +1687,7 @@
                                     <navigationItem title="Deck Detail" id="J9f-5Y-SJ7">
                                         <barButtonItem key="rightBarButtonItem" image="folder.badge.plus" catalog="system" id="f1F-UW-Opb">
                                             <connections>
-                                                <action selector="onAdd:" destination="wIp-8q-ZhZ" id="MXk-vr-gwU"/>
+                                                <action selector="onAdd:" destination="wIp-8q-ZhZ" id="FTA-3j-SEO"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -2057,6 +2056,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Uez-Jh-bfa"/>
                     <connections>
+                        <outlet property="add" destination="f1F-UW-Opb" id="dah-hO-bcA"/>
                         <outlet property="composition" destination="1sZ-hg-FUR" id="2NW-rp-bBL"/>
                         <outlet property="tableView" destination="D77-4R-R1h" id="CUr-bV-Rr7"/>
                         <outlet property="title0" destination="kIC-pD-fYf" id="911-93-gpN"/>

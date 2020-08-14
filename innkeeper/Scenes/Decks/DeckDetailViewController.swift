@@ -20,6 +20,7 @@ class DeckDetailViewController: UIViewController {
     @IBOutlet var title0: UILabel!
     @IBOutlet var title1: UILabel!
     @IBOutlet var composition: UILabel!         // 덱의 구성 (하수인, 주문, 무기, 영웅교체 카드의 개수)
+    @IBOutlet weak var add: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class DeckDetailViewController: UIViewController {
         setGraphs()
         setCosts()
         setComposition()
+        setAddButtonHidden()
     }
     
     // 덱의 모든 카드를 오름 차순으로 정렬(마나 기준) 후 중복되는 카드를 제거한 카드 목록을 구함
@@ -115,16 +117,26 @@ class DeckDetailViewController: UIViewController {
         return cards?.count ?? 0
     }
     
+    func setAddButtonHidden() {
+        if DeckDatas.shared.myDecks.contains(where: { $0.code == deckData?.code }) {
+            add.isEnabled = false
+        } else {
+            add.isEnabled = true
+        }
+        
+    }
+    
     @IBAction func onAdd(_ sender: Any) {
         let alert = UIAlertController(title: "내 덱에 추가", message: "이 덱의 이름을 입력하세요.", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         let add = UIAlertAction(title: "추가", style: .default) { (action) -> Void in
             guard let deckName = alert.textFields?.first?.text, deckName.isEmpty == false else { return }
-            guard let deck = self.deckData else { return }
-            
+            guard var deck = self.deckData else { return }
             print("deck name: \(deckName)")
-            DeckDatas.shared.myDecks.append(deck)
             
+            deck.name = deckName
+            DeckDatas.shared.myDecks.append(deck)
+            self.setAddButtonHidden()
         }
         
         alert.addAction(cancel)

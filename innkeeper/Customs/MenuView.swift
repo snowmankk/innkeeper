@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MenuViewDelegate {
-    func onMenuSelected(selectedIndex: Int)
+    func onMenuSelected(selectedView: UIView)
 }
 
 class MenuView: UIView {
@@ -113,7 +113,7 @@ class MenuView: UIView {
             if item.tag == selectedTag {
                 item.selectedBar.alpha = 0.7
                 item.selectedView.isHidden = false
-                menuViewDelegate?.onMenuSelected(selectedIndex: selectedTag)
+                menuViewDelegate?.onMenuSelected(selectedView: item.selectedView)
             }
             else {
                 item.selectedBar.alpha = 0.0

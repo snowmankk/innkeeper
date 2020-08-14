@@ -289,6 +289,7 @@ class HearthStoneAPI {
             guard let apiDict = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else { return }
             guard let cardDataArr = apiDict["cards"] as? [NSDictionary] else { return }
             guard let classData = apiDict["class"] as? NSDictionary else { return }
+            guard let deckCode = apiDict["deckCode"] as? String else { return }
             
             let cls: Int = classData["id"] as! Int
             var cardDatas: [CardData] = []
@@ -296,7 +297,7 @@ class HearthStoneAPI {
                 cardDatas.append(self.makeCardData(apiData: cardData))
             }
             
-            let deckData = DeckData(name: "꺄울~", cls: Classes(rawValue: cls) ?? Classes.NEUTRAL, cards: cardDatas)
+            let deckData = DeckData(name: "", code: deckCode, cls: Classes(rawValue: cls) ?? Classes.NEUTRAL, cards: cardDatas)
             DeckDatas.shared.searchedDeck = deckData
             
             self.dispatchSemaphore.signal()
