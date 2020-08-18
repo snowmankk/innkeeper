@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2423EA3A24EBA8850018E7D0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423EA3924EBA8850018E7D0 /* SettingsViewController.swift */; };
+		2423EA3C24EBAC090018E7D0 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423EA3B24EBAC090018E7D0 /* SettingsTableViewCell.swift */; };
+		2423EA3E24EBC2F00018E7D0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423EA3D24EBC2F00018E7D0 /* SignInViewController.swift */; };
 		242E4CBB24BBEFD5006B325E /* CommuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CBA24BBEFD5006B325E /* CommuCollectionViewCell.swift */; };
 		242E4CBD24BC8BF3006B325E /* LectureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CBC24BC8BF3006B325E /* LectureTableViewCell.swift */; };
 		242E4CBF24BD4FF9006B325E /* CircleMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CBE24BD4FF9006B325E /* CircleMaskView.swift */; };
@@ -57,10 +60,16 @@
 		24E7596C24ADC7E700789586 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7596B24ADC7E700789586 /* AboutViewController.swift */; };
 		24E7596F24ADCAB500789586 /* InnPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7596E24ADCAB500789586 /* InnPalette.swift */; };
 		24ECC8AF24B5D0D1003EABC5 /* PrePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECC8AE24B5D0D1003EABC5 /* PrePlayView.swift */; };
+		24EF01B524EB73B6006B9094 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24EF01B424EB73B6006B9094 /* GoogleService-Info.plist */; };
+		24EF01BE24EB7577006B9094 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EF01BD24EB7577006B9094 /* FirebaseAuth.framework */; };
+		24EF01C224EB757C006B9094 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EF01C124EB757C006B9094 /* FirebaseCore.framework */; };
 		2EA53225B001438D1FF65F25 /* Pods_innkeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2622DAB982A9DA7D4A77DE6 /* Pods_innkeeper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2423EA3924EBA8850018E7D0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2423EA3B24EBAC090018E7D0 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		2423EA3D24EBC2F00018E7D0 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		242E4CBA24BBEFD5006B325E /* CommuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuCollectionViewCell.swift; sourceTree = "<group>"; };
 		242E4CBC24BC8BF3006B325E /* LectureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTableViewCell.swift; sourceTree = "<group>"; };
 		242E4CBE24BD4FF9006B325E /* CircleMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMaskView.swift; sourceTree = "<group>"; };
@@ -114,6 +123,11 @@
 		24E7596B24ADC7E700789586 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		24E7596E24ADCAB500789586 /* InnPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnPalette.swift; sourceTree = "<group>"; };
 		24ECC8AE24B5D0D1003EABC5 /* PrePlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrePlayView.swift; sourceTree = "<group>"; };
+		24EF01B424EB73B6006B9094 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		24EF01B624EB7422006B9094 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EF01BA24EB7429006B9094 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EF01BD24EB7577006B9094 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EF01C124EB757C006B9094 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C9D5D3467A82BD2DE318F1 /* Pods-innkeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innkeeper.release.xcconfig"; path = "Target Support Files/Pods-innkeeper/Pods-innkeeper.release.xcconfig"; sourceTree = "<group>"; };
 		8F0ACDC1FBE39FECD7A6B62A /* Pods-innkeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innkeeper.debug.xcconfig"; path = "Target Support Files/Pods-innkeeper/Pods-innkeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		E2622DAB982A9DA7D4A77DE6 /* Pods_innkeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_innkeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +139,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EA53225B001438D1FF65F25 /* Pods_innkeeper.framework in Frameworks */,
+				24EF01BE24EB7577006B9094 /* FirebaseAuth.framework in Frameworks */,
+				24EF01C224EB757C006B9094 /* FirebaseCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +232,7 @@
 				2497572524A9C38A008D125E /* Assets.xcassets */,
 				2497572724A9C38A008D125E /* LaunchScreen.storyboard */,
 				2497572A24A9C38A008D125E /* Info.plist */,
+				24EF01B424EB73B6006B9094 /* GoogleService-Info.plist */,
 			);
 			path = innkeeper;
 			sourceTree = "<group>";
@@ -285,6 +302,7 @@
 		24EEF98724AB1BFA00CFE38C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				24EF01C424EBA814006B9094 /* Settings */,
 				2470E7CE24DD42AA007436D6 /* Decks */,
 				24B8B56124BEDF5500D9FAE5 /* Search */,
 				24EEF98824AB1C2800CFE38C /* Welcome */,
@@ -303,6 +321,16 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		24EF01C424EBA814006B9094 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2423EA3924EBA8850018E7D0 /* SettingsViewController.swift */,
+				2423EA3B24EBAC090018E7D0 /* SettingsTableViewCell.swift */,
+				2423EA3D24EBC2F00018E7D0 /* SignInViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		C0AD442B95E34960A032086B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +343,10 @@
 		D9BB69E4AE6F83DC8E7FE0B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24EF01C124EB757C006B9094 /* FirebaseCore.framework */,
+				24EF01BD24EB7577006B9094 /* FirebaseAuth.framework */,
+				24EF01BA24EB7429006B9094 /* FirebaseCore.framework */,
+				24EF01B624EB7422006B9094 /* FirebaseAuth.framework */,
 				24310A4A24B0ABA300B6F017 /* youtube_ios_player_helper.framework */,
 				E2622DAB982A9DA7D4A77DE6 /* Pods_innkeeper.framework */,
 			);
@@ -333,6 +365,7 @@
 				2497571624A9C389008D125E /* Frameworks */,
 				2497571724A9C389008D125E /* Resources */,
 				94C9D6C0161B310E12BE1AF0 /* [CP] Embed Pods Frameworks */,
+				5D8125F8C8CD9EF3F474346B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24489B4824D7F23200E81B31 /* SSShinRegular_otf.otf in Resources */,
+				24EF01B524EB73B6006B9094 /* GoogleService-Info.plist in Resources */,
 				2497572924A9C38A008D125E /* LaunchScreen.storyboard in Resources */,
 				24310A4724AF82DC00B6F017 /* myfont-01-bold.otf in Resources */,
 				2497572624A9C38A008D125E /* Assets.xcassets in Resources */,
@@ -392,6 +426,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5D8125F8C8CD9EF3F474346B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-innkeeper/Pods-innkeeper-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-innkeeper/Pods-innkeeper-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-innkeeper/Pods-innkeeper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		94C9D6C0161B310E12BE1AF0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,8 +450,6 @@
 			);
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-innkeeper/Pods-innkeeper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -448,6 +497,7 @@
 				2497572124A9C389008D125E /* WelComeViewController.swift in Sources */,
 				244E4A7824E37F4F0028A55A /* DeckDetailTableViewCell.swift in Sources */,
 				2497571D24A9C389008D125E /* AppDelegate.swift in Sources */,
+				2423EA3C24EBAC090018E7D0 /* SettingsTableViewCell.swift in Sources */,
 				24B8B56624C1B9CF00D9FAE5 /* HearthStroneAPI.swift in Sources */,
 				2443F22724B8B19C003011C0 /* NoobViewController.swift in Sources */,
 				242F6EAD24B2F52D001156EA /* MenuView.swift in Sources */,
@@ -455,6 +505,7 @@
 				2470E7D224DD43AA007436D6 /* DeckData.swift in Sources */,
 				2497573224A9FC88008D125E /* GradientView.swift in Sources */,
 				2497571F24A9C389008D125E /* SceneDelegate.swift in Sources */,
+				2423EA3A24EBA8850018E7D0 /* SettingsViewController.swift in Sources */,
 				24489B4624D1D11F00E81B31 /* CardsCollectionViewCell.swift in Sources */,
 				242F487C24DA5851000CEE85 /* CardDetailViewController.swift in Sources */,
 				244E4A7024E0132A0028A55A /* SearchDecks.swift in Sources */,
@@ -482,6 +533,7 @@
 				2467E10424CF3852009CC97B /* WordCollectionViewCell.swift in Sources */,
 				242E4CC324BD9D63006B325E /* VideoListViewController.swift in Sources */,
 				24BF2B1C24C3FE3B00E3E9DE /* KeywordsCollectionViewCell.swift in Sources */,
+				2423EA3E24EBC2F00018E7D0 /* SignInViewController.swift in Sources */,
 				242F6EAF24B313D1001156EA /* InnTags.swift in Sources */,
 				242F6EAB24B2CC52001156EA /* HowViewController.swift in Sources */,
 				242E4CBB24BBEFD5006B325E /* CommuCollectionViewCell.swift in Sources */,

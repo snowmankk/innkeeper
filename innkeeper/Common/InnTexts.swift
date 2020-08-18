@@ -21,4 +21,8 @@ enum InnTexts: String {
     
     case MANA_COMPOSITION = "마나 비용 분포"
     case DECK_COMPOSITION = "덱 분포"
+    
+    case SETTINGS_LOGIN = "로그인"
+    case SETTINGS_REVIEW = "리뷰 작성"
+    case SETTINGS_TEA = "유자차 한잔의 여유  : )"
 }

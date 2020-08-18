@@ -8,5 +8,8 @@ target 'innkeeper' do
   # Pods for innkeeper
 
 pod 'youtube-ios-player-helper'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 
 end
