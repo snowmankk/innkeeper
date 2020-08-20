@@ -11,7 +11,7 @@ import Firebase
 import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
@@ -19,15 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         FirebaseApp.configure()
         GIDSignIn.sharedInstance()?.clientID = "1024944095644-ud7lkmf84aqa2jn0nauknj2qpuuqadhk.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance()?.delegate = self
         
         return true
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        
-        guard let email = user?.profile?.email else { print("no email.."); return }
-        print("user email: \(email)")
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {

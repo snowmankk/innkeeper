@@ -262,7 +262,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="214"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하스스톤?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5k-17-Nyb">
-                                                                <rect key="frame" x="13" y="173" width="120.5" height="33"/>
+                                                                <rect key="frame" x="13" y="173" width="129.5" height="33"/>
                                                                 <fontDescription key="fontDescription" name="NEXONLv1GothicOTFBold" family="NEXON Lv1 Gothic OTF" pointSize="30"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -295,7 +295,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="214"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="플레이 방법" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56e-4m-DjL">
-                                                                <rect key="frame" x="13" y="172" width="138.5" height="35"/>
+                                                                <rect key="frame" x="13" y="172.5" width="151.5" height="34.5"/>
                                                                 <fontDescription key="fontDescription" name="NEXONLv1GothicOTFBold" family="NEXON Lv1 Gothic OTF" pointSize="30"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -323,7 +323,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="214"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초보들에게  : )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lz1-Xu-aBH">
-                                                                <rect key="frame" x="13" y="172" width="171" height="35"/>
+                                                                <rect key="frame" x="13" y="172.5" width="188.5" height="34.5"/>
                                                                 <fontDescription key="fontDescription" name="NEXONLv1GothicOTFBold" family="NEXON Lv1 Gothic OTF" pointSize="30"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1404,29 +1404,16 @@
                                     <navigationItem title="Sign in" id="8JI-vE-rMf"/>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6Q-Yp-fS3" customClass="GIDSignInButton">
-                                <rect key="frame" x="30" y="188" width="354" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="YEE-fx-tot"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="exN-Lq-B0T" firstAttribute="leading" secondItem="TTV-aC-PNH" secondAttribute="leading" id="8ra-Xf-uUU"/>
                             <constraint firstItem="exN-Lq-B0T" firstAttribute="trailing" secondItem="TTV-aC-PNH" secondAttribute="trailing" id="MEY-NO-KAX"/>
                             <constraint firstItem="exN-Lq-B0T" firstAttribute="top" secondItem="TTV-aC-PNH" secondAttribute="top" id="Qri-6Z-JPM"/>
-                            <constraint firstItem="t6Q-Yp-fS3" firstAttribute="top" secondItem="exN-Lq-B0T" secondAttribute="bottom" constant="138" id="cNj-GJ-Nyo"/>
-                            <constraint firstItem="t6Q-Yp-fS3" firstAttribute="leading" secondItem="TTV-aC-PNH" secondAttribute="leading" constant="30" id="hBQ-Xr-gJ5"/>
-                            <constraint firstItem="TTV-aC-PNH" firstAttribute="trailing" secondItem="t6Q-Yp-fS3" secondAttribute="trailing" constant="30" id="hPz-Wt-sdD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TTV-aC-PNH"/>
                     </view>
                     <navigationItem key="navigationItem" id="Na1-bR-Rx3"/>
-                    <connections>
-                        <outlet property="googleSignIn" destination="t6Q-Yp-fS3" id="BTw-1j-fv5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECc-xB-b7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
