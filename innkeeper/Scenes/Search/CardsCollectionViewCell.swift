@@ -23,7 +23,7 @@ class CardsCollectionViewCell: UICollectionViewCell {
     var name: String = ""
     
     func configure(data: CardData) {
-        name = data.name
+        name = data.name ?? ""
         
         let pallete = InnPalette(rawValue: data.classIds[0].rawValue)
         guard let color = pallete?.color else { return }
@@ -50,7 +50,7 @@ class CardsCollectionViewCell: UICollectionViewCell {
         }
 
         DispatchQueue.main.async {
-            self.setCardImage(imgUrl: data.imgUrl)
+            self.setCardImage(imgUrl: data.imgUrl ?? "")
         }
     }
     

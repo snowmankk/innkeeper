@@ -56,13 +56,14 @@ class CardDetailViewController: UIViewController {
         }
         
         flavorText.text = data.flavorText
-        typeText.text = "\(MetadataCategory.TYPES.localName): \(data.type.name)"
+        
+        typeText.text = "\(MetadataCategory.TYPES.localName): \(data.type?.name ?? "")"
         rarityText.text = "\(MetadataCategory.RARITY.localName): \(data.getRarityName())"
         setText.text = "\(MetadataCategory.SETS.localName): \(data.getSetName())"
-        manaText.text = "\(MetadataCategory.COST.localName): \(data.mana)"
+        manaText.text = "\(MetadataCategory.COST.localName): \(data.mana ?? 0)"
         
         
-        self.setCardImage(imgUrl: data.imgUrl)
+        self.setCardImage(imgUrl: data.imgUrl ?? "")
     }
     
     func setCardImage(imgUrl: String) {

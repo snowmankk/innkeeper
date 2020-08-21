@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 @objc
 protocol HearthStoneAPIDelegate {
@@ -80,7 +81,7 @@ class HearthStoneAPI {
         let searchWord: String = SelectedDatas.shared.searchWord
         
         let url: String = "https://kr.api.blizzard.com/hearthstone/cards?locale=ko_KR&set=\(set)&class=\(cls)&manaCost=\(cost)&attack=\(attack)&health=\(hp)&collectible=1&rarity=\(rarity)&type=\(type)&minionType=\(minionType)&keyword=\(option)&textFilter=\(searchWord)&gameMode=constructed&page=\(page)&pageSize=\(pageSize)&sort=name&order=desc&access_token=\(self.accessToken)"
-        print("request url: \(url)")
+//        print("request url: \(url)")
         return url
     }
     
@@ -103,7 +104,9 @@ class HearthStoneAPI {
         
         page = 1
         HearthStoneData.shared.cards.removeAll()
-        requestCards(url: makeCardDataRequestURL())
+        
+        let url = makeCardDataRequestURL()
+        requestCards(url: url)
     }
     
     func requestNextPageCardDatas() {
@@ -115,6 +118,27 @@ class HearthStoneAPI {
         requestCards(url: makeCardDataRequestURL())
     }
     
+    func requestCards(url: String) {
+        AF.request(url).response { (responseData) in
+            guard let data = responseData.data else { return }
+            
+            do {
+//                let cards = try JSONDecoder().decode(Dictionary<String, [CardData2]>.self, from: data)
+                let cardResponse = try JSONDecoder().decode(CardResponse.self, from: data)
+                guard let cards = cardResponse.cards else { return }
+                
+                for card in cards {
+                    print("\n Card: \(card)")
+                    HearthStoneData.shared.cards.append(card)
+                }
+                
+            } catch {
+                print("\n Alamofire error: \(error)")
+            }
+        }
+    }
+    
+    /*
     func requestCards(url: String) {
         let uri = URL(string: url)!
         let request: URLRequest = URLRequest(url: uri)
@@ -141,7 +165,8 @@ class HearthStoneAPI {
         _ = dispatchSemaphore.wait(timeout: .now() + 0.5)
         self.delegate?.responseCardDatas?()
     }
-    
+    */
+    /*
     func makeCardData(apiData: NSDictionary) -> CardData {
         let name = apiData["name"] as! String
         let imgUrl = apiData["image"] as! String
@@ -188,6 +213,7 @@ class HearthStoneAPI {
         
         return cardData
     }
+    */
         
     func requestMetaData(category: MetadataCategory) {
         print("request category : \(category)")

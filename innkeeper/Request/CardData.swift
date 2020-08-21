@@ -8,6 +8,118 @@
 
 import Foundation
 
+struct CardResponse: Decodable {
+    var cards: [CardData]?
+    var cardCount: Int?
+    var pageCount: Int?
+    var page: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case cards = "cards"
+        case cardCount = "cardCount"
+        case pageCount = "pageCount"
+        case page = "page"
+    }
+}
+
+struct CardData: Decodable {
+    var name: String?
+    var type: CardTypes?
+    var mana: Int?
+    var attack: Int?
+    var hp: Int?
+    var durability: Int?
+    var armor: Int?
+    var imgUrl: String?
+    var flavorText: String?
+    var rarity: Int?
+    var set: Int?
+    var cropImgUrl: String?
+    var multiClassIds: [Int]?
+    var classId: Int?
+    var classIds: [Classes] = []
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case type = "cardTypeId"
+        case mana = "manaCost"
+        case attack = "attack"
+        case hp = "health"
+        case durability = "durability"
+        case armor = "armor"
+        case imgUrl = "image"
+//        case classIds = "classId"
+        case flavorText = "flavorText"
+        case rarity = "rarityId"
+        case set = "cardSetId"
+        case cropImgUrl = "cropImage"
+        case multiClassIds = "multiClassIds"
+        case classId = "classId"
+    }
+    
+    init(from decoder: Decoder) throws {
+        do {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            name = try container.decodeIfPresent(String.self, forKey: .name)
+            mana = try container.decodeIfPresent(Int.self, forKey: .mana)
+            attack = try container.decodeIfPresent(Int.self, forKey: .attack)
+            hp = try container.decodeIfPresent(Int.self, forKey: .hp)
+            durability = try container.decodeIfPresent(Int.self, forKey: .durability)
+            armor = try container.decodeIfPresent(Int.self, forKey: .armor)
+            imgUrl = try container.decodeIfPresent(String.self, forKey: .imgUrl)
+            flavorText = try container.decodeIfPresent(String.self, forKey: .flavorText)
+            rarity = try container.decodeIfPresent(Int.self, forKey: .rarity)
+            set = try container.decodeIfPresent(Int.self, forKey: .set)
+            cropImgUrl = try container.decodeIfPresent(String.self, forKey: .cropImgUrl)
+            multiClassIds = try container.decodeIfPresent([Int].self, forKey: .multiClassIds)
+            classId = try container.decodeIfPresent(Int.self, forKey: .classId)
+            
+            if let multiClassIds = multiClassIds, multiClassIds.count > 0 {
+                for classId in multiClassIds {
+                    classIds.append(Classes(rawValue: classId) ?? Classes.NEUTRAL)
+                }
+            } else {
+                let classId = self.classId ?? 0
+                classIds.append(Classes(rawValue: classId) ?? Classes.NEUTRAL)
+            }
+            
+            if let type = try container.decodeIfPresent(Int.self, forKey: .type) {
+                self.type = CardTypes(rawValue: type)
+            }
+            
+        } catch {
+            print("\nCardData2 init error: \(error)")
+        }
+    }
+    
+    init() {
+        name = ""
+        type = CardTypes.MINION
+        mana = 0
+        attack = 0
+        hp = 0
+        durability = 0
+        armor = 0
+        imgUrl = ""
+        classIds = []
+        flavorText = ""
+        rarity = 0
+        set = 0
+        cropImgUrl = ""
+    }
+    
+    func getRarityName() -> String {
+        let data = HearthStoneData.shared.rarity.filter { $0.id == rarity }
+        return data.first?.name ?? ""
+    }
+    
+    func getSetName() -> String {
+        let data = HearthStoneData.shared.sets.filter { $0.id == set }
+        return data.first?.name ?? ""
+    }
+}
+
+/*
 struct CardData: Hashable {
     var name: String = ""
     var type: CardTypes = .MINION
@@ -33,6 +145,7 @@ struct CardData: Hashable {
         return data.first?.name ?? ""
     }
 }
+ */
 
 enum CardTypes: Int {
     case HERO = 3
