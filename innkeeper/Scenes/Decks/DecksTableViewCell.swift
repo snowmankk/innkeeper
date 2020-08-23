@@ -33,7 +33,7 @@ class DecksTableViewCell: UITableViewCell {
         
         let imageWidth: CGFloat = 40
         let imageFrame = CGRect(x: 0, y: 0, width: imageWidth, height: imageWidth)
-        classImg.image = getImage(imageName: "icon-class-\(deck.cls.rawValue)", frame: imageFrame)
+        classImg.image = getImage(imageName: "icon-class-\(deck.cls?.rawValue ?? 0)", frame: imageFrame)
         name.text = deck.name
         
         let indicatorImg = UIImage(named: "icon-indicator")?.withTintColor(name.textColor)

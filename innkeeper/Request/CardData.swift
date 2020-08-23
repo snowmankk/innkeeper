@@ -22,7 +22,7 @@ struct CardResponse: Decodable {
     }
 }
 
-struct CardData: Decodable {
+struct CardData: Decodable, Hashable {
     var name: String?
     var type: CardTypes?
     var mana: Int?

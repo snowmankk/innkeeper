@@ -60,12 +60,12 @@ class DeckDetailViewController: UIViewController {
         }
 
         if classCard.count > 0 {
-            classCard.sort(by: { return $0.mana < $1.mana })
+            classCard.sort(by: { return $0.mana ?? 0 < $1.mana ?? 0 })
             sectionCards.append(SectionCrads(name: InnTexts.CLASS_CARD.rawValue, cards: classCard))
         }
         
         if neutralCard.count > 0 {
-            neutralCard.sort(by: { return $0.mana < $1.mana })
+            neutralCard.sort(by: { return $0.mana ?? 0 < $1.mana ?? 0 })
             sectionCards.append(SectionCrads(name: InnTexts.NEUTRAL_CARD.rawValue, cards: neutralCard))
         }
     }
@@ -107,13 +107,13 @@ class DeckDetailViewController: UIViewController {
 
     // 특정 마나(비용)와 일치하는 카드들의 개수 반환
     func getCardCount(manaCost mana: Int) -> Int {
-        let cards = deckData?.cards.filter { $0.mana == mana }
+        let cards = deckData?.cards?.filter { $0.mana == mana }
         return cards?.count ?? 0
     }
     
     // 특정 id와 일치하는 카드들의 개수 반환
     func getCardCount(cardName name: String) -> Int {
-        let cards = deckData?.cards.filter { $0.name == name }
+        let cards = deckData?.cards?.filter { $0.name == name }
         return cards?.count ?? 0
     }
     
@@ -175,7 +175,7 @@ extension DeckDetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: DeckDetailTableViewCell.identifier, for: indexPath) as! DeckDetailTableViewCell
 //        let card = decksCards[indexPath.row]
         let card = sectionCards[indexPath.section].cards[indexPath.row]
-        cell.configure(name: card.name, imgUrl: card.cropImgUrl, manaCost: card.mana, cardCount: getCardCount(cardName: card.name))
+        cell.configure(name: card.name ?? "", imgUrl: card.cropImgUrl ?? "" , manaCost: card.mana ?? 0, cardCount: getCardCount(cardName: card.name ?? ""))
         return cell
     }
     

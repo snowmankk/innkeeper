@@ -90,10 +90,28 @@ class HearthStoneData {
     }
 }
 
-struct MetaDataBase {
+struct HearthStoneAuth: Decodable {
+    var accessToken: String
+    var tokenType: String
+    var expires: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case accessToken = "access_token"
+        case tokenType = "token_type"
+        case expires = "expires_in"
+    }
+}
+
+struct MetaDataBase: Decodable {
     var id: Int
     var slug: String
     var name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case slug = "slug"
+        case name = "name"
+    }
 }
 
 enum MetadataCategory: String {
@@ -150,5 +168,15 @@ enum MetadataCategory: String {
     }
 }
 
-
+struct SetGroupData: Decodable {
+    var name = ""
+    var slug = ""
+    var cardSets: [String] = []
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case slug = "slug"
+        case cardSets = "cardSets"
+    }
+}
 
