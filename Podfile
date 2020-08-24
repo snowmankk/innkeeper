@@ -10,6 +10,7 @@ target 'innkeeper' do
 pod 'youtube-ios-player-helper'
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
 pod 'GoogleSignIn'
 pod 'Alamofire', '~> 5.2'
 

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2423797724F3961B0016B296 /* FirebaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423797624F3961B0016B296 /* FirebaseRequest.swift */; };
+		2423797924F3AA390016B296 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2423797824F3AA390016B296 /* GoogleService-Info.plist */; };
 		2423EA3A24EBA8850018E7D0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423EA3924EBA8850018E7D0 /* SettingsViewController.swift */; };
 		2423EA3C24EBAC090018E7D0 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423EA3B24EBAC090018E7D0 /* SettingsTableViewCell.swift */; };
 		2423EA3E24EBC2F00018E7D0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423EA3D24EBC2F00018E7D0 /* SignInViewController.swift */; };
-		2423EA4024ECF6BD0018E7D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2423EA3F24ECF6BD0018E7D0 /* GoogleService-Info.plist */; };
 		2423EA4324EE5C9A0018E7D0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2423EA4224EE5C9A0018E7D0 /* StoreKit.framework */; };
 		242E4CBB24BBEFD5006B325E /* CommuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CBA24BBEFD5006B325E /* CommuCollectionViewCell.swift */; };
 		242E4CBD24BC8BF3006B325E /* LectureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E4CBC24BC8BF3006B325E /* LectureTableViewCell.swift */; };
@@ -68,10 +69,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2423797624F3961B0016B296 /* FirebaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRequest.swift; sourceTree = "<group>"; };
+		2423797824F3AA390016B296 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2423EA3924EBA8850018E7D0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2423EA3B24EBAC090018E7D0 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		2423EA3D24EBC2F00018E7D0 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		2423EA3F24ECF6BD0018E7D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2423EA4124ED04230018E7D0 /* innkeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = innkeeper.entitlements; sourceTree = "<group>"; };
 		2423EA4224EE5C9A0018E7D0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		242E4CBA24BBEFD5006B325E /* CommuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2423797524F3958B0016B296 /* Datas */ = {
+			isa = PBXGroup;
+			children = (
+				2470E7D124DD43AA007436D6 /* DeckData.swift */,
+				24B8B56724C1BAB900D9FAE5 /* HearthStoneData.swift */,
+				24BF2B1D24C450E400E3E9DE /* CardData.swift */,
+			);
+			path = Datas;
+			sourceTree = "<group>";
+		};
 		2443F21C24B8B0B7003011C0 /* How */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +207,6 @@
 				2470E7CF24DD431C007436D6 /* DecksViewController.swift */,
 				244E4A6D24E0130C0028A55A /* MyDecks.swift */,
 				244E4A6F24E0132A0028A55A /* SearchDecks.swift */,
-				2470E7D124DD43AA007436D6 /* DeckData.swift */,
 				244E4A6B24DFE6C20028A55A /* DecksTableViewCell.swift */,
 				244E4A7124E273E90028A55A /* DecksCommuCollectionViewCell.swift */,
 				244E4A7524E2C55B0028A55A /* DeckDetailViewController.swift */,
@@ -225,8 +236,9 @@
 		2497571B24A9C389008D125E /* innkeeper */ = {
 			isa = PBXGroup;
 			children = (
+				2423797524F3958B0016B296 /* Datas */,
 				2423EA4124ED04230018E7D0 /* innkeeper.entitlements */,
-				24B8B56424C1B99C00D9FAE5 /* Request */,
+				24B8B56424C1B99C00D9FAE5 /* Requests */,
 				24503C0224BE9CAB00666AD6 /* Test */,
 				24E7596D24ADCA8F00789586 /* Common */,
 				24EEF98724AB1BFA00CFE38C /* Scenes */,
@@ -237,7 +249,7 @@
 				2497572524A9C38A008D125E /* Assets.xcassets */,
 				2497572724A9C38A008D125E /* LaunchScreen.storyboard */,
 				2497572A24A9C38A008D125E /* Info.plist */,
-				2423EA3F24ECF6BD0018E7D0 /* GoogleService-Info.plist */,
+				2423797824F3AA390016B296 /* GoogleService-Info.plist */,
 			);
 			path = innkeeper;
 			sourceTree = "<group>";
@@ -274,14 +286,13 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		24B8B56424C1B99C00D9FAE5 /* Request */ = {
+		24B8B56424C1B99C00D9FAE5 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
 				24B8B56524C1B9CF00D9FAE5 /* HearthStroneAPI.swift */,
-				24B8B56724C1BAB900D9FAE5 /* HearthStoneData.swift */,
-				24BF2B1D24C450E400E3E9DE /* CardData.swift */,
+				2423797624F3961B0016B296 /* FirebaseRequest.swift */,
 			);
-			path = Request;
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		24CA7A9224AB471E00A415AD /* Fonts */ = {
@@ -425,7 +436,7 @@
 				24310A4724AF82DC00B6F017 /* myfont-01-bold.otf in Resources */,
 				2497572624A9C38A008D125E /* Assets.xcassets in Resources */,
 				2497572424A9C389008D125E /* Main.storyboard in Resources */,
-				2423EA4024ECF6BD0018E7D0 /* GoogleService-Info.plist in Resources */,
+				2423797924F3AA390016B296 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +532,7 @@
 				244E4A7C24E503ED0028A55A /* InnTexts.swift in Sources */,
 				2470E7D024DD431C007436D6 /* DecksViewController.swift in Sources */,
 				24B8B56824C1BAB900D9FAE5 /* HearthStoneData.swift in Sources */,
+				2423797724F3961B0016B296 /* FirebaseRequest.swift in Sources */,
 				242E4CBD24BC8BF3006B325E /* LectureTableViewCell.swift in Sources */,
 				2467E10224CD7ACC009CC97B /* ExUITextField.swift in Sources */,
 				24ECC8AF24B5D0D1003EABC5 /* PrePlayView.swift in Sources */,

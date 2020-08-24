@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        GIDSignIn.sharedInstance()?.clientID = "1024944095644-ud7lkmf84aqa2jn0nauknj2qpuuqadhk.apps.googleusercontent.com"
-        
+        GIDSignIn.sharedInstance()?.clientID = "1024944095644-g7rlvriutbf94bcn741rp0see0fl2nkb.apps.googleusercontent.com"
+        FirebaseRequest.shared.checkSignIn()
         return true
     }
     

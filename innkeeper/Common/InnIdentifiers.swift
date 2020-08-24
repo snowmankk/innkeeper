@@ -43,4 +43,10 @@ enum InnIdentifiers: String {
     case YOUTUBE_HS_EDDIE_0 = "i_ECrlQv6VM"
     case YOUTUBE_HS_EDDIE_1 = "35SFIp-XsXg"
     case YOUTUBE_HS_EDDIE_2 = "SElGoKAXb_8"
+    
+    case SIGN_APPLE_ID_TOKEN = "apple-id-token"
+    case SIGN_APPLE_ID_NONCE = "apple-id-nonce"
+    case SIGN_GOOGLE_ID_TOKEN = "google-id-token"
+    case SIGN_GOOGLE_ACCESS_TOKEN = "google-access-token"
+    
 }
