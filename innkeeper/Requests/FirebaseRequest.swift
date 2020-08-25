@@ -15,34 +15,74 @@ class FirebaseRequest {
     
     var rdb: DatabaseReference!
     
-    private init() {
+    private init() { }
+    
+    func ready() {
+        checkSignIn()
+        setRealtimeDatabase()
+        readMyDecks()
+    }
+    
+    // MARK:- Realtime Database
+    func setRealtimeDatabase() {
         rdb = Database.database().reference()
+        print("\n - Firebaser realtime database url: \(rdb.url)")
+//        self.rdb.child("test").child("test_deck_001").setValue("test_deck_code_001")
+//        self.rdb.child("test").childByAutoId().setValue("test_deck_code_002")
     }
     
+    func readMyDecks() {
+        guard var userEmail = Auth.auth().currentUser?.email else {
+            print("\n User info not exist..")
+            return
+        }
+        
+        print("\n")
+        userEmail = userEmail.replacingOccurrences(of: ".", with: "_dot_")
+        rdb.child(userEmail).queryOrderedByKey().observe(.value) { (snapshot) in
+            guard let values = snapshot.value else { return }
+            let valueArray = NSArray(object: values)
+            
+            for value in valueArray {
+                guard let datas = value as? NSMutableDictionary else { continue }
+                
+                for data in datas {
+                    guard let deckInfo = data.value as? NSMutableDictionary else { continue }
+                    let deckCode = deckInfo["deckCode"] as! String
+                    let deckName = deckInfo["deckName"] as! String
+                    
+                    print("\n Firebase query(deckCode: \(deckCode) / deckName: \(deckName)")
+                }
+            }
+        }
+    }
+    
+    func writeMyDecks(deckDatas: [DeckData]) {
+        guard var userEmail = Auth.auth().currentUser?.email else {
+            print("\n User info not exist..")
+            return
+        }
+        
+        print("\n")
+        userEmail = userEmail.replacingOccurrences(of: ".", with: "_dot_")
+        for deck in deckDatas {
+            guard let deckCode = deck.code else { continue }
+            guard let deckName = deck.name else { continue }
+            let ref = rdb.child(userEmail).childByAutoId()
+            ref.child("deckCode").setValue(deckCode)
+            ref.child("deckName").setValue(deckName)
+        }
+
+    }
+    
+    
+    // MARK:- Sign-In
     func checkSignIn() {
-        checkAppleSignIn()
-//        checkGoogleSignIn()
-    }
-    
-    private func checkAppleSignIn() {
-        guard let appleIdToken = UserDefaults.standard.string(forKey: InnIdentifiers.SIGN_APPLE_ID_TOKEN.rawValue) else { return }
-        guard let appleIdNonce = UserDefaults.standard.string(forKey: InnIdentifiers.SIGN_APPLE_ID_NONCE.rawValue) else { return }
+        let user = Auth.auth().currentUser
+        print("\n User: \(user?.email ?? "no user")")
         
-        print("\n Stored apple id token: \(appleIdToken) / apple id nonce: \(appleIdNonce)")
-        
-//        let _appleIdToken = appleIdToken as! String
-//        let _appleIdNonce = appleIdNonce as! String
-//        print("\n Stored apple id token: \(_appleIdToken) / apple id nonce: \(_appleIdNonce)")
-    }
-    
-    private func checkGoogleSignIn() {
-        guard let googleIdToken = UserDefaults.standard.string(forKey: InnIdentifiers.SIGN_GOOGLE_ID_TOKEN.rawValue) else { return }
-        guard let googleAccessToken = UserDefaults.standard.string(forKey: InnIdentifiers.SIGN_GOOGLE_ACCESS_TOKEN.rawValue) else { return }
-        print("\n Stored google id token: \(googleIdToken) / google access token: \(googleAccessToken)")
-        
-//        let _googleIdToken = googleIdToken as! String
-//        let _googleAccessToken = googleAccessToken as! String
-//        print("\n Stored google id token: \(_googleIdToken) / google access token: \(_googleAccessToken)")
+        //        checkAppleSignIn()
+        //        checkGoogleSignIn()
     }
     
     func appleSignIn(idToken: String, nonce: String) {
@@ -61,28 +101,60 @@ class FirebaseRequest {
             }
             
             // User is signed in to Firebase with Apple.
-            UserDefaults.standard.set(idToken, forKey: InnIdentifiers.SIGN_APPLE_ID_TOKEN.rawValue)
-            UserDefaults.standard.set(nonce, forKey: InnIdentifiers.SIGN_APPLE_ID_NONCE.rawValue)
-//            print("\n Firebase(Apple Sign-In) auth success! \n - idToken: \(idToken) / nonce: \(nonce)")
+            guard let email = authResult?.user.email else { return }
         }
     }
     
-    func signInGoogle(idToken: String, accessToken: String) {
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+    func googleSignIn(idToken: String, accessToken: String) {
+        let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                //                let authError = error as NSError
+                print("\n Firebase auth(Google Sign-In) failed.. \n - \(error.localizedDescription)")
+                return
+            }
             
-            Auth.auth().signIn(with: credential) { (authResult, error) in
-                if let error = error {
-    //                let authError = error as NSError
-                    print("\n Firebase auth(Google Sign-In) failed.. \n - \(error.localizedDescription)")
+            // User is signed in to Firebase with Google
+            guard let email = authResult?.user.email else { return }
+        }
+        
+    }
+    
+    
+    // 애플 로그인 요청에 대해 'nonce' 문자열(무작위) 생성 https://firebase.google.com/docs/auth/ios/apple?authuser=0
+    // Adapted from https://auth0.com/docs/api-auth/tutorials/nonce#generate-a-cryptographically-random-nonce
+    private func randomNonceString(length: Int = 32) -> String {
+        precondition(length > 0)
+        let charset: Array<Character> =
+            Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+        var result = ""
+        var remainingLength = length
+        
+        while remainingLength > 0 {
+            let randoms: [UInt8] = (0 ..< 16).map { _ in
+                var random: UInt8 = 0
+                let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
+                if errorCode != errSecSuccess {
+                    fatalError("Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)")
+                }
+                return random
+            }
+            
+            randoms.forEach { random in
+                if remainingLength == 0 {
                     return
                 }
                 
-                // User is signed in to Firebase with Google
-                UserDefaults.standard.set(InnIdentifiers.SIGN_GOOGLE_ID_TOKEN.rawValue, forKey: idToken)
-                UserDefaults.standard.set(InnIdentifiers.SIGN_GOOGLE_ACCESS_TOKEN.rawValue, forKey: accessToken)
-                print("\n Firebase auth(Google Sign-In) success!")
+                if random < charset.count {
+                    result.append(charset[Int(random)])
+                    remainingLength -= 1
+                }
             }
-            
-            
         }
+        
+        return result
+    }
 }
+
+

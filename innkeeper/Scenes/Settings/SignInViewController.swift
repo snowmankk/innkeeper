@@ -165,7 +165,7 @@ extension SignInViewController: GIDSignInDelegate {
         print("\n Google Sign-In success! \n - user id(Google): \(userId)")
         
         guard let authentication = user.authentication else { return }
-        FirebaseRequest.shared.signInGoogle(idToken: authentication.idToken, accessToken: authentication.accessToken)
+        FirebaseRequest.shared.googleSignIn(idToken: authentication.idToken, accessToken: authentication.accessToken)
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

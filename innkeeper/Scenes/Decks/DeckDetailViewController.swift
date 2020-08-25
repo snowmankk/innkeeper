@@ -137,6 +137,8 @@ class DeckDetailViewController: UIViewController {
             deck.name = deckName
             DeckDatas.shared.myDecks.append(deck)
             self.setAddButtonHidden()
+            
+            FirebaseRequest.shared.writeMyDecks(deckDatas: [deck])
         }
         
         alert.addAction(cancel)
