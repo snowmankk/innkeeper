@@ -19,6 +19,10 @@ class MyDecks: UIView {
         table.delegate = self
         table.dataSource = self
         menuView.menuViewDelegate = self
+        
+        HearthStoneAPI.shared.delegates.append(self)
+        FirebaseRequest.shared.delegate = self
+        FirebaseRequest.shared.readMyDecks()
     }
 }
 
@@ -47,6 +51,32 @@ extension MyDecks: UITableViewDataSource {
 extension MyDecks: MenuViewDelegate {
     func onMenuSelected(selectedView: UIView) {
         if selectedView !== self { return }
+        table.reloadData()
+    }
+}
+
+extension MyDecks: FirebaseRequestDelegate {
+    func responseDeckData(deckInfos: [String]) {
+        for deckInfo in deckInfos {
+            let arr = deckInfo.components(separatedBy: InnIdentifiers.SEPERATOR_DECK_STRING.rawValue)
+            guard arr.count > 0 else { continue }
+            HearthStoneAPI.shared.requestDeck(deckCode: arr[0], deckName: arr[1])
+        }
+    }
+}
+
+extension MyDecks: HearthStoneAPIDelegate {
+    func responseDeckData(deck: Any?) {
+        if self.isHidden { return }
+        
+//        let deckData = deck as! DeckData
+        guard let _deck = deck as? DeckData else { return }
+        
+        let _duplicateDeck = DeckDatas.shared.myDecks.filter { $0.code == _deck.code }
+        if _duplicateDeck.count > 0 { return }
+        
+        print("\n My deck (name: \(_deck.name ?? "") / code: \(_deck.code ?? "")")
+        DeckDatas.shared.myDecks.append(_deck)
         table.reloadData()
     }
 }

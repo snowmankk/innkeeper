@@ -12,7 +12,7 @@ import Alamofire
 @objc
 protocol HearthStoneAPIDelegate {
     @objc optional func responseCardDatas()
-    @objc optional func responseDeckData()
+    @objc optional func responseDeckData(deck: Any?)
 }
 
 class HearthStoneAPI {
@@ -24,7 +24,7 @@ class HearthStoneAPI {
     private let dispatchQueue = DispatchQueue.global()
     
     var page: Int = 1
-    var delegate: HearthStoneAPIDelegate?
+    var delegates: [HearthStoneAPIDelegate] = []
     
     private init() {}
     
@@ -128,7 +128,11 @@ class HearthStoneAPI {
                     HearthStoneData.shared.cards.append(card)
                 }
                 
-                self.delegate?.responseCardDatas?()
+                
+                for delegate in self.delegates {
+                    delegate.responseCardDatas?()
+                }
+                
                 
             } catch {
                 print("\n Alamofire error: \(error)")
@@ -228,21 +232,27 @@ class HearthStoneAPI {
         }
     }
     
-    func requestDeck(deckCode: String) {
+    func requestDeck(deckCode: String, deckName: String = "") {
         let url =  "https://kr.api.blizzard.com/hearthstone/deck/\(deckCode)?locale=ko_KR&access_token=\(self.accessToken)"
         AF.request(url).response { (responseData) in
             guard let data = responseData.data else { return }
             
+            var deckData = DeckData()
             do {
-                let deckData = try JSONDecoder().decode(DeckData.self, from: data)
+                deckData = try JSONDecoder().decode(DeckData.self, from: data)
 //                print("\n Deck data: \(deckData)")
                 
+                deckData.name = deckName
                 DeckDatas.shared.searchedDeck = deckData
+                
             } catch {
                 print("\n Deck data reponse error: \(error)")
             }
             
-            self.delegate?.responseDeckData?()
+            for delegate in self.delegates {
+                delegate.responseDeckData?(deck: deckData)
+            }
+            
         }
     }
  

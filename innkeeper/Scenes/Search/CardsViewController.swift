@@ -27,7 +27,7 @@ class CardsViewController: UIViewController {
         cardCollection.dataSource = self
         cardCollection.delegate = self
         SelectedDatas.shared.delegate = self
-        HearthStoneAPI.shared.delegate = self
+        HearthStoneAPI.shared.delegates.append(self)
         HearthStoneAPI.shared.requestMetaDatas()
     }
     

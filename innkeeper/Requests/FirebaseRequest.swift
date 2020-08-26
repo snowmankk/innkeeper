@@ -10,17 +10,22 @@ import Foundation
 import FirebaseDatabase
 import FirebaseAuth
 
+protocol FirebaseRequestDelegate {
+    func responseDeckData(deckInfos: [String])
+}
+
 class FirebaseRequest {
     static let shared = FirebaseRequest()
     
     var rdb: DatabaseReference!
+    var delegate: FirebaseRequestDelegate?
     
     private init() { }
     
     func ready() {
         checkSignIn()
         setRealtimeDatabase()
-        readMyDecks()
+//        readMyDecks()
     }
     
     // MARK:- Realtime Database
@@ -43,17 +48,25 @@ class FirebaseRequest {
             guard let values = snapshot.value else { return }
             let valueArray = NSArray(object: values)
             
+            var deckArray: [String] = []
             for value in valueArray {
-                guard let datas = value as? NSMutableDictionary else { continue }
+                guard let datas = value as? NSMutableDictionary, datas.count > 0 else { continue }
                 
                 for data in datas {
-                    guard let deckInfo = data.value as? NSMutableDictionary else { continue }
-                    let deckCode = deckInfo["deckCode"] as! String
-                    let deckName = deckInfo["deckName"] as! String
+                    guard let deck = data.value as? NSMutableDictionary else { continue }
                     
-                    print("\n Firebase query(deckCode: \(deckCode) / deckName: \(deckName)")
+//                    var deckString = ""
+                    
+                    guard let deckString = deck.object(forKey: "deckInfo") as? String else { continue }
+                    if deckString.isEmpty { continue }
+                    deckArray.append(deckString)
+                    print("\n Firebase query(deckInfo: \(deckString)")
                 }
             }
+            
+//            if deckArray.count > 0 {
+                self.delegate?.responseDeckData(deckInfos: deckArray)
+//            }
         }
     }
     
@@ -68,9 +81,12 @@ class FirebaseRequest {
         for deck in deckDatas {
             guard let deckCode = deck.code else { continue }
             guard let deckName = deck.name else { continue }
-            let ref = rdb.child(userEmail).childByAutoId()
-            ref.child("deckCode").setValue(deckCode)
-            ref.child("deckName").setValue(deckName)
+//            let ref = rdb.child(userEmail).childByAutoId()
+//            ref.child("deckCode").setValue(deckCode)
+//            ref.child("deckName").setValue(deckName)
+            
+            let deckString = "\(deckCode)\(InnIdentifiers.SEPERATOR_DECK_STRING.rawValue)\(deckName)"
+            rdb.child(userEmail).childByAutoId().child("deckInfo").setValue(deckString)
         }
 
     }

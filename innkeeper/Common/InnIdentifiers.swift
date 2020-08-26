@@ -49,4 +49,6 @@ enum InnIdentifiers: String {
     case SIGN_GOOGLE_ID_TOKEN = "google-id-token"
     case SIGN_GOOGLE_ACCESS_TOKEN = "google-access-token"
     
+    case SEPERATOR_DECK_STRING = "!!-@@-##"
+    
 }

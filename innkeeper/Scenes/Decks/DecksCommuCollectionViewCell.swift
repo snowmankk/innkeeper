@@ -20,6 +20,5 @@ class DecksCommuCollectionViewCell: UICollectionViewCell {
         img.image = UIImage(named: data.imgName)
         name.text = data.title
         url = data.url
-        print("community url: \(url)")
     }
 }

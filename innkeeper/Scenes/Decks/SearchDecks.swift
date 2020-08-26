@@ -22,7 +22,7 @@ class SearchDecks: UIView {
         collection.delegate = self
         collection.dataSource = self
         searchField.delegate = self
-        HearthStoneAPI.shared.delegate = self
+        HearthStoneAPI.shared.delegates.append(self)
         setCommunityCells()
         
         // placeHolder 텍스트 설정, 색상 변경 
@@ -99,7 +99,8 @@ extension SearchDecks: UICollectionViewDelegateFlowLayout {
 
 
 extension SearchDecks: HearthStoneAPIDelegate {
-    func responseDeckData() {
+    func responseDeckData(deck: Any?) {
+        if self.isHidden { return }
         parent.performSegue(withIdentifier: InnIdentifiers.SEGUE_DECK_DETAIL.rawValue, sender: self)
     }
 }
