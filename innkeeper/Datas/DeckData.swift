@@ -9,14 +9,6 @@
 import Foundation
 
 struct DeckData: Decodable {
-    /*
-    var name: String = ""
-    var code: String = ""
-    var cls: Classes = .NEUTRAL
-    var cards: [CardData] = []
-    //var thumbnails: [String] = []         // 카드 썸네일 이미지의 base64 string
-    */
-    
     struct ClassData: Decodable {
         var id: Int?
         

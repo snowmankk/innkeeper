@@ -221,11 +221,7 @@ class HearthStoneAPI {
                 }
              
                 completion?()
-//                self.dispatchSemaphore.signal()
-                
-//                print("\n Standard groups: \(HearthStoneData.shared.standards)")
-//                print("\n Wild groups: \(HearthStoneData.shared.wilds)")
-                
+
             } catch {
                 print("\n Group datas error: \(error)")
             }

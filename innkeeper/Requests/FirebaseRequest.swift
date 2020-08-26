@@ -32,8 +32,6 @@ class FirebaseRequest {
     func setRealtimeDatabase() {
         rdb = Database.database().reference()
         print("\n - Firebaser realtime database url: \(rdb.url)")
-//        self.rdb.child("test").child("test_deck_001").setValue("test_deck_code_001")
-//        self.rdb.child("test").childByAutoId().setValue("test_deck_code_002")
     }
     
     func readMyDecks() {

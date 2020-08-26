@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  innkeeper
+
+  Created by orca on 2020/08/26.
+  Copyright © 2020 example. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "HearthStrone Inn";

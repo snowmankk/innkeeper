@@ -1,0 +1,189 @@
+
+/* Class = "UILabel"; text = "k"; ObjectID = "0fW-km-CeB"; */
+"0fW-km-CeB.text" = "k";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "1ic-HI-eS5"; */
+"1ic-HI-eS5.title" = "Item";
+
+/* Class = "UILabel"; text = "하수인: 10    주문: 18    무기: 1    영웅 교체: 1   "; ObjectID = "1sZ-hg-FUR"; */
+"1sZ-hg-FUR.text" = "하수인: 10    주문: 18    무기: 1    영웅 교체: 1   ";
+
+/* Class = "UIBarButtonItem"; title = "ef"; ObjectID = "25a-JN-XHH"; */
+"25a-JN-XHH.title" = "ef";
+
+/* Class = "UILabel"; text = "플레이 방법"; ObjectID = "56e-4m-DjL"; */
+"56e-4m-DjL.text" = "플레이 방법";
+
+/* Class = "UILabel"; text = "하스스톤 커뮤니티"; ObjectID = "5Sy-kH-AVk"; */
+"5Sy-kH-AVk.text" = "하스스톤 커뮤니티";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "5ZI-dR-5SW"; */
+"5ZI-dR-5SW.text" = "0";
+
+/* Class = "UILabel"; text = "title"; ObjectID = "68D-gh-BQb"; */
+"68D-gh-BQb.text" = "title";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "6gT-Gz-mlV"; */
+"6gT-Gz-mlV.text" = "0";
+
+/* Class = "UINavigationItem"; title = "Sign in"; ObjectID = "8JI-vE-rMf"; */
+"8JI-vE-rMf.title" = "Sign in";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "8iU-HN-eu8"; */
+"8iU-HN-eu8.text" = "0";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "9U7-fA-Ee1"; */
+"9U7-fA-Ee1.title" = "Item";
+
+/* Class = "UILabel"; text = "하스스톤은 오버워치®와 월드 오브 워크래프트®를 개발한 스튜디오가 개발하였으며, 수많은 상을 받은 블리자드 엔터테인먼트의 수집형 카드 게임입니다! 강력한 카드를 수집하고 최고의 덱을 만드세요. 하수인을 소환하고 주문을 던지며 시시각각 변하는 전장을 지배하세요. 능수능란한 전략으로 대적하는 모든 플레이어를 물리치세요."; ObjectID = "BIF-YO-dMt"; */
+"BIF-YO-dMt.text" = "하스스톤은 오버워치®와 월드 오브 워크래프트®를 개발한 스튜디오가 개발하였으며, 수많은 상을 받은 블리자드 엔터테인먼트의 수집형 카드 게임입니다! 강력한 카드를 수집하고 최고의 덱을 만드세요. 하수인을 소환하고 주문을 던지며 시시각각 변하는 전장을 지배하세요. 능수능란한 전략으로 대적하는 모든 플레이어를 물리치세요.";
+
+/* Class = "UILabel"; text = "하스스톤 강의 영상"; ObjectID = "Bod-cy-S0m"; */
+"Bod-cy-S0m.text" = "하스스톤 강의 영상";
+
+/* Class = "UIButton"; normalTitle = "앱스토어에서 다운로드 받으세요!  "; ObjectID = "Df4-8V-dEW"; */
+"Df4-8V-dEW.normalTitle" = "앱스토어에서 다운로드 받으세요!  ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Dj3-aI-92I"; */
+"Dj3-aI-92I.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Dqd-2A-kg9"; */
+"Dqd-2A-kg9.text" = "0";
+
+/* Class = "UINavigationItem"; title = "초보들에게  : )"; ObjectID = "EI2-EW-6c2"; */
+"EI2-EW-6c2.title" = "초보들에게  : )";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "EXL-sU-ODx"; */
+"EXL-sU-ODx.text" = "0";
+
+/* Class = "UILabel"; text = "~"; ObjectID = "F63-t4-uNh"; */
+"F63-t4-uNh.text" = "~";
+
+/* Class = "UILabel"; text = "FlavorText"; ObjectID = "FZT-Ew-K7A"; */
+"FZT-Ew-K7A.text" = "FlavorText";
+
+/* Class = "UITabBarItem"; title = "Decks"; ObjectID = "G5Q-Rr-hOC"; */
+"G5Q-Rr-hOC.title" = "Decks";
+
+/* Class = "UILabel"; text = "Mana"; ObjectID = "GYG-Tm-xhN"; */
+"GYG-Tm-xhN.text" = "Mana";
+
+/* Class = "UILabel"; text = "모자키 마법사"; ObjectID = "Ghw-0N-dvs"; */
+"Ghw-0N-dvs.text" = "모자키 마법사";
+
+/* Class = "UITabBarItem"; title = "cards"; ObjectID = "Gj5-W8-PR1"; */
+"Gj5-W8-PR1.title" = "cards";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Gz1-TE-qeN"; */
+"Gz1-TE-qeN.text" = "Label";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "HEx-dK-HEp"; */
+"HEx-dK-HEp.text" = "2";
+
+/* Class = "UILabel"; text = "...."; ObjectID = "HJ3-TF-ug9"; */
+"HJ3-TF-ug9.text" = "....";
+
+/* Class = "UILabel"; text = "+"; ObjectID = "Hme-7R-hve"; */
+"Hme-7R-hve.text" = "+";
+
+/* Class = "UINavigationItem"; title = "Deck Detail"; ObjectID = "J9f-5Y-SJ7"; */
+"J9f-5Y-SJ7.title" = "Deck Detail";
+
+/* Class = "UILabel"; text = "특성"; ObjectID = "Kfn-bo-D63"; */
+"Kfn-bo-D63.text" = "특성";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "LG4-aw-6Fa"; */
+"LG4-aw-6Fa.title" = " ";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "MTZ-zc-Gl6"; */
+"MTZ-zc-Gl6.text" = "Type";
+
+/* Class = "UILabel"; text = "FlavorText FlavorText FlavorText FlavorText FlavorText FlavorText FlavorText FlavorText "; ObjectID = "R3F-jz-wWb"; */
+"R3F-jz-wWb.text" = "FlavorText FlavorText FlavorText FlavorText FlavorText FlavorText FlavorText FlavorText ";
+
+/* Class = "UITabBarItem"; title = "welcome"; ObjectID = "TLi-XO-rs7"; */
+"TLi-XO-rs7.title" = "welcome";
+
+/* Class = "UILabel"; text = "desc"; ObjectID = "YUm-Zc-hXs"; */
+"YUm-Zc-hXs.text" = "desc";
+
+/* Class = "UILabel"; text = "Class"; ObjectID = "Zha-6s-Neu"; */
+"Zha-6s-Neu.text" = "Class";
+
+/* Class = "UILabel"; text = "desc"; ObjectID = "cGU-LY-eTI"; */
+"cGU-LY-eTI.text" = "desc";
+
+/* Class = "UILabel"; text = "title"; ObjectID = "cW5-98-EBm"; */
+"cW5-98-EBm.text" = "title";
+
+/* Class = "UILabel"; text = ".."; ObjectID = "eXp-ga-bOi"; */
+"eXp-ga-bOi.text" = "..";
+
+/* Class = "UILabel"; text = "하스스톤?"; ObjectID = "f5k-17-Nyb"; */
+"f5k-17-Nyb.text" = "하스스톤?";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fa6-MA-gDv"; */
+"fa6-MA-gDv.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Decks"; ObjectID = "gMt-je-Bcz"; */
+"gMt-je-Bcz.title" = "Decks";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gR3-re-A3C"; */
+"gR3-re-A3C.text" = "Label";
+
+/* Class = "UILabel"; text = "마나"; ObjectID = "hpU-k0-Zd2"; */
+"hpU-k0-Zd2.text" = "마나";
+
+/* Class = "UILabel"; text = "마나 비용 분포"; ObjectID = "kIC-pD-fYf"; */
+"kIC-pD-fYf.text" = "마나 비용 분포";
+
+/* Class = "UILabel"; text = "Set"; ObjectID = "kUe-q0-WZn"; */
+"kUe-q0-WZn.text" = "Set";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "khP-Q3-kuC"; */
+"khP-Q3-kuC.text" = "0";
+
+/* Class = "UILabel"; text = "초보들에게  : )"; ObjectID = "lz1-Xu-aBH"; */
+"lz1-Xu-aBH.text" = "초보들에게  : )";
+
+/* Class = "UINavigationItem"; title = "Card Detail"; ObjectID = "nJ5-iT-lQK"; */
+"nJ5-iT-lQK.title" = "Card Detail";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "o4V-3k-oPo"; */
+"o4V-3k-oPo.text" = "0";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "rGP-jI-UBw"; */
+"rGP-jI-UBw.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "rvd-Jf-PdV"; */
+"rvd-Jf-PdV.title" = "Settings";
+
+/* Class = "UILabel"; text = "(0~10)"; ObjectID = "t2c-wX-aKd"; */
+"t2c-wX-aKd.text" = "(0~10)";
+
+/* Class = "UILabel"; text = "Rarity"; ObjectID = "taT-eS-CeR"; */
+"taT-eS-CeR.text" = "Rarity";
+
+/* Class = "UINavigationItem"; title = "플레이 방법"; ObjectID = "tkF-yg-ncc"; */
+"tkF-yg-ncc.title" = "플레이 방법";
+
+/* Class = "UIButton"; normalTitle = "블리자드 하스스톤 공식 홈페이지  "; ObjectID = "u79-Yz-w27"; */
+"u79-Yz-w27.normalTitle" = "블리자드 하스스톤 공식 홈페이지  ";
+
+/* Class = "UINavigationItem"; title = "Keywords"; ObjectID = "vdR-LK-PHg"; */
+"vdR-LK-PHg.title" = "Keywords";
+
+/* Class = "UIViewController"; title = "vvvv"; ObjectID = "wfH-vv-2fS"; */
+"wfH-vv-2fS.title" = "vvvv";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "whK-yl-Ln2"; */
+"whK-yl-Ln2.title" = "Settings";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "yWH-PF-0we"; */
+"yWH-PF-0we.text" = "Title";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ylC-BM-bdr"; */
+"ylC-BM-bdr.text" = "0";
+
+/* Class = "UILabel"; text = "덱 구성"; ObjectID = "ztr-u1-m7Z"; */
+"ztr-u1-m7Z.text" = "덱 구성";
