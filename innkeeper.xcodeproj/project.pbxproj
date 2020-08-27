@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2406DB6D24F69396008B957C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2406DB6F24F69396008B957C /* InfoPlist.strings */; };
+		2406DB7424F6DA5E008B957C /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406DB7324F6DA5E008B957C /* PolicyViewController.swift */; };
+		2406DB7624F6DC89008B957C /* Privacy-Policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 2406DB7524F6DC89008B957C /* Privacy-Policy.html */; };
 		2423797724F3961B0016B296 /* FirebaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423797624F3961B0016B296 /* FirebaseRequest.swift */; };
 		2423797924F3AA390016B296 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2423797824F3AA390016B296 /* GoogleService-Info.plist */; };
 		2423EA3A24EBA8850018E7D0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423EA3924EBA8850018E7D0 /* SettingsViewController.swift */; };
@@ -74,6 +76,8 @@
 		2406DB6A24F69294008B957C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2406DB6E24F69396008B957C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2406DB7024F6939D008B957C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2406DB7324F6DA5E008B957C /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
+		2406DB7524F6DC89008B957C /* Privacy-Policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Privacy-Policy.html"; sourceTree = "<group>"; };
 		2423797624F3961B0016B296 /* FirebaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRequest.swift; sourceTree = "<group>"; };
 		2423797824F3AA390016B296 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2423EA3924EBA8850018E7D0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 		2497571024A9C389008D125E = {
 			isa = PBXGroup;
 			children = (
+				2406DB7524F6DC89008B957C /* Privacy-Policy.html */,
 				2406DB6F24F69396008B957C /* InfoPlist.strings */,
 				2497571B24A9C389008D125E /* innkeeper */,
 				2497571A24A9C389008D125E /* Products */,
@@ -349,6 +354,7 @@
 				2423EA3924EBA8850018E7D0 /* SettingsViewController.swift */,
 				2423EA3B24EBAC090018E7D0 /* SettingsTableViewCell.swift */,
 				2423EA3D24EBC2F00018E7D0 /* SignInViewController.swift */,
+				2406DB7324F6DA5E008B957C /* PolicyViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24489B4824D7F23200E81B31 /* SSShinRegular_otf.otf in Resources */,
+				2406DB7624F6DC89008B957C /* Privacy-Policy.html in Resources */,
 				2406DB6D24F69396008B957C /* InfoPlist.strings in Resources */,
 				2497572924A9C38A008D125E /* LaunchScreen.storyboard in Resources */,
 				24310A4724AF82DC00B6F017 /* myfont-01-bold.otf in Resources */,
@@ -536,6 +543,7 @@
 				244E4A7024E0132A0028A55A /* SearchDecks.swift in Sources */,
 				24503C0624BE9CDB00666AD6 /* TestViewController.swift in Sources */,
 				244E4A7424E29DD30028A55A /* GaugeView.swift in Sources */,
+				2406DB7424F6DA5E008B957C /* PolicyViewController.swift in Sources */,
 				2467E10024CAD955009CC97B /* SelectedDatas.swift in Sources */,
 				244E4A7C24E503ED0028A55A /* InnTexts.swift in Sources */,
 				2470E7D024DD431C007436D6 /* DecksViewController.swift in Sources */,

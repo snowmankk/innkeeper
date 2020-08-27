@@ -18,6 +18,7 @@ enum InnIdentifiers: String {
     case SEGUE_DECK_DETAIL = "segue-105"
     case SEGUE_CARD_DETAIL_OF_DECK = "segue-106"
     case SEGUE_SIGN_IN = "segue-107"
+    case SEGUE_POLICY = "segue-108"
     
     case YOUTUBE_HS_CINEMATIC = "m6kPKwfuzPI"
     
@@ -44,11 +45,8 @@ enum InnIdentifiers: String {
     case YOUTUBE_HS_EDDIE_1 = "35SFIp-XsXg"
     case YOUTUBE_HS_EDDIE_2 = "SElGoKAXb_8"
     
-    case SIGN_APPLE_ID_TOKEN = "apple-id-token"
-    case SIGN_APPLE_ID_NONCE = "apple-id-nonce"
-    case SIGN_GOOGLE_ID_TOKEN = "google-id-token"
-    case SIGN_GOOGLE_ACCESS_TOKEN = "google-access-token"
-    
     case SEPERATOR_DECK_STRING = "!!-@@-##"
+    
+    case URL_PRIVACY_POLICY = "https://zerosquare.me/snowmanppqq/10850"//"https://haseuseuton-yeogwan.flycricket.io/privacy.html"
     
 }

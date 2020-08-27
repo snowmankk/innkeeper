@@ -8,13 +8,14 @@
 
 import UIKit
 import StoreKit
+import SafariServices
 
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
     
     var myProduct: SKProduct?
-    let menu: [String] = [InnTexts.SETTINGS_LOGIN.rawValue, InnTexts.SETTINGS_REVIEW.rawValue, InnTexts.SETTINGS_TEA.rawValue]
+    let menu: [String] = [InnTexts.SETTINGS_LOGIN.rawValue, InnTexts.SETTINGS_PRIVACY_POLICY.rawValue, InnTexts.SETTINGS_THANKS_TO.rawValue]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case InnTexts.SETTINGS_LOGIN.rawValue:
             self.performSegue(withIdentifier: InnIdentifiers.SEGUE_SIGN_IN.rawValue, sender: self)
 
-        case InnTexts.SETTINGS_REVIEW.rawValue:
+        case InnTexts.SETTINGS_PRIVACY_POLICY.rawValue:
+            self.performSegue(withIdentifier: InnIdentifiers.SEGUE_POLICY.rawValue, sender: self)
+            break
+            
+        case InnTexts.SETTINGS_THANKS_TO.rawValue:
+            
             break
         case InnTexts.SETTINGS_TEA.rawValue:
             

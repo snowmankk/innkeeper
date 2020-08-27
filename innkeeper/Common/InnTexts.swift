@@ -25,4 +25,6 @@ enum InnTexts: String {
     case SETTINGS_LOGIN = "로그인"
     case SETTINGS_REVIEW = "리뷰 작성"
     case SETTINGS_TEA = "유자차 한잔의 여유  : )"
+    case SETTINGS_PRIVACY_POLICY = "개인정보 처리방침"
+    case SETTINGS_THANKS_TO = "Thanks To"
 }

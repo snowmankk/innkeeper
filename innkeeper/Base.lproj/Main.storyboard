@@ -1381,6 +1381,8 @@
                     <connections>
                         <outlet property="table" destination="wah-6G-VZE" id="UrZ-4k-6qv"/>
                         <segue destination="0R5-08-Xqf" kind="presentation" identifier="segue-107" id="SKQ-tF-ewH"/>
+                        <segue destination="g86-Gn-Kui" kind="presentation" identifier="segue-108" id="bEm-gP-RGO"/>
+                        <segue destination="rqx-P7-gv2" kind="presentation" id="9hH-tJ-iuL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfr-F3-ft2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1417,7 +1419,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECc-xB-b7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4024.6376811594205" y="2102.6785714285716"/>
+            <point key="canvasLocation" x="4025" y="1463"/>
+        </scene>
+        <!--Policy View Controller-->
+        <scene sceneID="cIk-el-1Xt">
+            <objects>
+                <viewController id="g86-Gn-Kui" customClass="PolicyViewController" customModule="innkeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JWC-sK-WGr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5IQ-wl-iid">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5IQ-wl-iid" firstAttribute="top" secondItem="cWD-5j-am4" secondAttribute="top" id="9PZ-e7-1sN"/>
+                            <constraint firstItem="5IQ-wl-iid" firstAttribute="leading" secondItem="cWD-5j-am4" secondAttribute="leading" id="Dfn-fI-pod"/>
+                            <constraint firstItem="5IQ-wl-iid" firstAttribute="trailing" secondItem="cWD-5j-am4" secondAttribute="trailing" id="Zhx-0C-u0L"/>
+                            <constraint firstAttribute="bottom" secondItem="5IQ-wl-iid" secondAttribute="bottom" id="t4r-Uy-Ucm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cWD-5j-am4"/>
+                    </view>
+                    <connections>
+                        <outlet property="web" destination="5IQ-wl-iid" id="Xj6-tn-tEY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qwo-bT-Xkb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4024.6376811594205" y="2248.6607142857142"/>
         </scene>
         <!--Item-->
         <scene sceneID="GJf-vp-UKs">
@@ -2197,6 +2233,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIm-MA-dR7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4024.6376811594205" y="332.8125"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xdl-av-TYs">
+            <objects>
+                <viewController id="rqx-P7-gv2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KvU-Ty-xqJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="XrZ-gU-5va"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WHp-rS-NOm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4025" y="3012"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
