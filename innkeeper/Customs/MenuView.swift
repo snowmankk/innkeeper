@@ -112,7 +112,7 @@ class MenuView: UIView {
         for item in menuItems {
             if item.tag == selectedTag {
                 item.selectedBar.alpha = 0.7
-                item.selectedView.isHidden = false
+                item.selectedView.isHidden = false                
                 menuViewDelegate?.onMenuSelected(selectedView: item.selectedView)
             }
             else {

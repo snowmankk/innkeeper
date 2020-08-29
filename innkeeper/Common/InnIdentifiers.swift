@@ -19,6 +19,7 @@ enum InnIdentifiers: String {
     case SEGUE_CARD_DETAIL_OF_DECK = "segue-106"
     case SEGUE_SIGN_IN = "segue-107"
     case SEGUE_POLICY = "segue-108"
+    case SEGUE_THANKS = "segue-109"
     
     case YOUTUBE_HS_CINEMATIC = "m6kPKwfuzPI"
     
@@ -47,6 +48,8 @@ enum InnIdentifiers: String {
     
     case SEPERATOR_DECK_STRING = "!!-@@-##"
     
-    case URL_PRIVACY_POLICY = "https://zerosquare.me/snowmanppqq/10850"//"https://haseuseuton-yeogwan.flycricket.io/privacy.html"
-    
+    case URL_BLIZZARD_DEV = "https://develop.battle.net/"
+    case URL_FIREBASE = "https://firebase.google.com/"
+    case URL_ICON8 = "https://icons8.com/icons"
+    case URL_PNGWING = "https://www.pngwing.com/"
 }

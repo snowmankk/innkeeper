@@ -8,7 +8,6 @@
 
 import UIKit
 import StoreKit
-import SafariServices
 
 class SettingsViewController: UIViewController {
 
@@ -55,7 +54,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             break
             
         case InnTexts.SETTINGS_THANKS_TO.rawValue:
-            
+            self.performSegue(withIdentifier: InnIdentifiers.SEGUE_THANKS.rawValue, sender: self)
             break
         case InnTexts.SETTINGS_TEA.rawValue:
             

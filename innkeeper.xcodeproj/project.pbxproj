@@ -10,6 +10,7 @@
 		2406DB6D24F69396008B957C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2406DB6F24F69396008B957C /* InfoPlist.strings */; };
 		2406DB7424F6DA5E008B957C /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406DB7324F6DA5E008B957C /* PolicyViewController.swift */; };
 		2406DB7624F6DC89008B957C /* Privacy-Policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 2406DB7524F6DC89008B957C /* Privacy-Policy.html */; };
+		2406DB7824F78810008B957C /* ThanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406DB7724F78810008B957C /* ThanksViewController.swift */; };
 		2423797724F3961B0016B296 /* FirebaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423797624F3961B0016B296 /* FirebaseRequest.swift */; };
 		2423797924F3AA390016B296 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2423797824F3AA390016B296 /* GoogleService-Info.plist */; };
 		2423EA3A24EBA8850018E7D0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423EA3924EBA8850018E7D0 /* SettingsViewController.swift */; };
@@ -78,6 +79,7 @@
 		2406DB7024F6939D008B957C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2406DB7324F6DA5E008B957C /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		2406DB7524F6DC89008B957C /* Privacy-Policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Privacy-Policy.html"; sourceTree = "<group>"; };
+		2406DB7724F78810008B957C /* ThanksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksViewController.swift; sourceTree = "<group>"; };
 		2423797624F3961B0016B296 /* FirebaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRequest.swift; sourceTree = "<group>"; };
 		2423797824F3AA390016B296 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2423EA3924EBA8850018E7D0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				2423EA3B24EBAC090018E7D0 /* SettingsTableViewCell.swift */,
 				2423EA3D24EBC2F00018E7D0 /* SignInViewController.swift */,
 				2406DB7324F6DA5E008B957C /* PolicyViewController.swift */,
+				2406DB7724F78810008B957C /* ThanksViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				24E7596F24ADCAB500789586 /* InnPalette.swift in Sources */,
 				244E4A7224E273E90028A55A /* DecksCommuCollectionViewCell.swift in Sources */,
 				24B8B56324BEDF6900D9FAE5 /* CardsViewController.swift in Sources */,
+				2406DB7824F78810008B957C /* ThanksViewController.swift in Sources */,
 				2467E0FC24C99247009CC97B /* RangeCollectionViewCell.swift in Sources */,
 				2467E0F524C67E0B009CC97B /* ModifiedScrollingCollectionView.swift in Sources */,
 				244E4A6C24DFE6C20028A55A /* DecksTableViewCell.swift in Sources */,
@@ -729,7 +733,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = innkeeper/innkeeper.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6TSJX9HXTD;
 				INFOPLIST_FILE = innkeeper/Info.plist;
@@ -739,7 +743,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.orca.hearthstoneinnkeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "dev-hearthstoneinnkeeper";
+				PROVISIONING_PROFILE_SPECIFIER = "dis-hearthstoneinnkeeper";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -751,7 +755,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = innkeeper/innkeeper.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6TSJX9HXTD;
 				INFOPLIST_FILE = innkeeper/Info.plist;
@@ -761,7 +765,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.orca.hearthstoneinnkeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "dev-hearthstoneinnkeeper";
+				PROVISIONING_PROFILE_SPECIFIER = "dis-hearthstoneinnkeeper";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

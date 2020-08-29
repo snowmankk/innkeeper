@@ -12,17 +12,19 @@ class MyDecks: UIView {
 
     @IBOutlet weak var parent: DecksViewController!
     @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var menuView: MenuView!
     
     override func didMoveToWindow() {
         
         table.delegate = self
         table.dataSource = self
-        menuView.menuViewDelegate = self
         
         HearthStoneAPI.shared.delegates.append(self)
         FirebaseRequest.shared.delegate = self
         FirebaseRequest.shared.readMyDecks()
+    }
+    
+    func refresh() {
+        table.reloadData()
     }
 }
 
@@ -48,19 +50,12 @@ extension MyDecks: UITableViewDataSource {
     }
 }
 
-extension MyDecks: MenuViewDelegate {
-    func onMenuSelected(selectedView: UIView) {
-        if selectedView !== self { return }
-        table.reloadData()
-    }
-}
-
 extension MyDecks: FirebaseRequestDelegate {
     func responseDeckData(deckInfos: [String]) {
         for deckInfo in deckInfos {
             let arr = deckInfo.components(separatedBy: InnIdentifiers.SEPERATOR_DECK_STRING.rawValue)
             guard arr.count > 0 else { continue }
-            HearthStoneAPI.shared.requestDeck(deckCode: arr[0], deckName: arr[1])
+            HearthStoneAPI.shared.requestDeck(deckCode: arr[0], deckName: arr[1], delegateEnable: false)
         }
     }
 }

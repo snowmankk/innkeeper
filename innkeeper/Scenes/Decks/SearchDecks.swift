@@ -59,11 +59,17 @@ class SearchDecks: UIView {
     }
     
     @IBAction func onSearch(_ sender: UIButton) {
-        guard let fieldText = searchField.text else { return}
+        hideKeyboard()
+        guard let fieldText = searchField.text else { return }
         if fieldText.isEmpty { return }
     
 //        HearthStoneAPI.shared.requestDeck(deckCode: "AAECAf0EBu0F+KwDxbgDjbsDkssD0M4DDKsEtATmBJYFn5sD/50D+6wD+MwDhc0Dx84Dzc4D99EDAA==")
         HearthStoneAPI.shared.requestDeck(deckCode: fieldText)
+    }
+    
+    func hideKeyboard() {
+        print("TextField first responder: \(searchField.isFirstResponder)")
+        searchField.resignFirstResponder()
     }
 }
 

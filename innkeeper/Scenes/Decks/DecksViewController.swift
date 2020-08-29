@@ -17,8 +17,20 @@ class DecksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        menuView.menuViewDelegate = self
         menuView.setMenuItems(titles: ["내 덱", "덱 검색"], views: [myDeck, searchDeck])
         HearthStoneAPI.shared.requestMetaDatas()
     }
+}
+
+extension DecksViewController: MenuViewDelegate {
+    func onMenuSelected(selectedView: UIView) {
+        if selectedView === myDeck {
+            myDeck.refresh()
+            searchDeck.hideKeyboard()
+        }
+    }
+    
+    
 }
 
