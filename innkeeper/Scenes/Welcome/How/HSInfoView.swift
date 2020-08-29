@@ -22,7 +22,7 @@ class HSInfoView: UIView {
     
     var infos: [HSInfo] = []
     var grayView: UIView!
-    var moved: Bool = false
+    var initialized: Bool = false
     var current: Int = 0
     var verticalRate: CGFloat = 0
     var horizontalRate: CGFloat = 0
@@ -32,14 +32,14 @@ class HSInfoView: UIView {
     }
     
     override func didMoveToWindow() {
-        guard false == moved else { return }
-        moved = true
+        if initialized { return }
         UIView.setResolution(targetView: hsImgView)
         self.initInfos()
         self.setInfos()
         self.setScreenRate()
         self.setMaskViews()
         self.makeMask(invert: true)
+        initialized = true
     }
     
     func initInfos() {

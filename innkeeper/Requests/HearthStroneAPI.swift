@@ -228,7 +228,7 @@ class HearthStoneAPI {
         }
     }
     
-    func requestDeck(deckCode: String, deckName: String = "", delegateEnable: Bool = true) {
+    func requestDeck(deckCode: String, deckName: String = "") {
         let url =  "https://kr.api.blizzard.com/hearthstone/deck/\(deckCode)?locale=ko_KR&access_token=\(self.accessToken)"
         AF.request(url).response { (responseData) in
             guard let data = responseData.data else { return }
@@ -245,11 +245,10 @@ class HearthStoneAPI {
                 print("\n Deck data reponse error: \(error)")
             }
             
-            if delegateEnable {
-                for delegate in self.delegates {
-                    delegate.responseDeckData?(deck: deckData)
-                }
+            for delegate in self.delegates {
+                delegate.responseDeckData?(deck: deckData)
             }
+            
         }
     }
  

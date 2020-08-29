@@ -16,20 +16,28 @@ class SearchDecks: UIView {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchInfo: UILabel!
     
+    var initialized: Bool = false
     var communities: [CommuCellData] = []
     
     override func didMoveToWindow() {
+        initialize()
+    }
+    
+    func initialize() {
+        if initialized { return }
+        
         collection.delegate = self
         collection.dataSource = self
         searchField.delegate = self
         HearthStoneAPI.shared.delegates.append(self)
         setCommunityCells()
         
-        // placeHolder 텍스트 설정, 색상 변경 
+        // placeHolder 텍스트 설정, 색상 변경
         let attributes: [NSAttributedString.Key : UIColor] = [NSAttributedString.Key.foregroundColor: UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1)]
         searchField.attributedPlaceholder = NSAttributedString(string: InnTexts.DECK_SEARCH_PLACE_HOLDER.rawValue, attributes: attributes)
-        
         searchInfo.text = InnTexts.DECK_SEARCH_INFO.rawValue
+        
+        initialized = true
     }
     
     func setCommunityCells() {

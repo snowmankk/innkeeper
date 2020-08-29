@@ -20,6 +20,7 @@ class PrePlayView: UIView {
     @IBOutlet var title: UILabel!
     @IBOutlet var desc: UILabel!
     
+    var initialized: Bool = false
     var current: Int = 0
     var infos: [PlayInfo] = []
     
@@ -28,9 +29,11 @@ class PrePlayView: UIView {
     }
     
     override func didMoveToWindow() {
+        if initialized { return }
         self.initInfos()
         self.setInfos()
         UIView.setResolution(targetView: playImgView)
+        initialized = true
     }
     
     func initInfos() {

@@ -13,7 +13,14 @@ class MyDecks: UIView {
     @IBOutlet weak var parent: DecksViewController!
     @IBOutlet weak var table: UITableView!
     
+    var initialized: Bool = false
+    
     override func didMoveToWindow() {
+        initialize()
+    }
+    
+    func initialize() {
+        if initialized { return }
         
         table.delegate = self
         table.dataSource = self
@@ -21,6 +28,7 @@ class MyDecks: UIView {
         HearthStoneAPI.shared.delegates.append(self)
         FirebaseRequest.shared.delegate = self
         FirebaseRequest.shared.readMyDecks()
+        initialized = true
     }
     
     func refresh() {
@@ -55,7 +63,7 @@ extension MyDecks: FirebaseRequestDelegate {
         for deckInfo in deckInfos {
             let arr = deckInfo.components(separatedBy: InnIdentifiers.SEPERATOR_DECK_STRING.rawValue)
             guard arr.count > 0 else { continue }
-            HearthStoneAPI.shared.requestDeck(deckCode: arr[0], deckName: arr[1], delegateEnable: false)
+            HearthStoneAPI.shared.requestDeck(deckCode: arr[0], deckName: arr[1])
         }
     }
 }
@@ -63,8 +71,6 @@ extension MyDecks: FirebaseRequestDelegate {
 extension MyDecks: HearthStoneAPIDelegate {
     func responseDeckData(deck: Any?) {
         if self.isHidden { return }
-        
-//        let deckData = deck as! DeckData
         guard let _deck = deck as? DeckData else { return }
         
         let _duplicateDeck = DeckDatas.shared.myDecks.filter { $0.code == _deck.code }
