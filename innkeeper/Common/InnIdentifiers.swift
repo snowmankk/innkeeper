@@ -48,8 +48,8 @@ enum InnIdentifiers: String {
     
     case SEPERATOR_DECK_STRING = "!!-@@-##"
     
-    case URL_BLIZZARD_DEV = "https://develop.battle.net/"
-    case URL_FIREBASE = "https://firebase.google.com/"
+    case URL_BLIZZARD_DEV = "https://develop.battle.net"
+    case URL_FIREBASE = "https://firebase.google.com"
     case URL_ICON8 = "https://icons8.com/icons"
-    case URL_PNGWING = "https://www.pngwing.com/"
+    case URL_FLATICON = "https://www.flaticon.com"  // https://www.flaticon.com/free-icon/medieval_2286432
 }

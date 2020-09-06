@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n3S-U1-Ucv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n3S-U1-Ucv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -1411,12 +1411,19 @@
                                     <navigationItem title="Sign in" id="8JI-vE-rMf"/>
                                 </items>
                             </navigationBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Xbd-an-GMN">
+                                <rect key="frame" x="0.0" y="50" width="414" height="792"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Xbd-an-GMN" firstAttribute="top" secondItem="exN-Lq-B0T" secondAttribute="bottom" id="8ZI-ps-1KN"/>
                             <constraint firstItem="exN-Lq-B0T" firstAttribute="leading" secondItem="TTV-aC-PNH" secondAttribute="leading" id="8ra-Xf-uUU"/>
                             <constraint firstItem="exN-Lq-B0T" firstAttribute="trailing" secondItem="TTV-aC-PNH" secondAttribute="trailing" id="MEY-NO-KAX"/>
+                            <constraint firstItem="Xbd-an-GMN" firstAttribute="leading" secondItem="TTV-aC-PNH" secondAttribute="leading" id="Nie-p3-MFd"/>
                             <constraint firstItem="exN-Lq-B0T" firstAttribute="top" secondItem="TTV-aC-PNH" secondAttribute="top" id="Qri-6Z-JPM"/>
+                            <constraint firstAttribute="bottom" secondItem="Xbd-an-GMN" secondAttribute="bottom" id="Rym-uB-F9G"/>
+                            <constraint firstItem="TTV-aC-PNH" firstAttribute="trailing" secondItem="Xbd-an-GMN" secondAttribute="trailing" id="vpO-1T-H7D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TTV-aC-PNH"/>
                     </view>
@@ -1424,7 +1431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECc-xB-b7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4025" y="1463"/>
+            <point key="canvasLocation" x="4024.6376811594205" y="1462.5"/>
         </scene>
         <!--Policy View Controller-->
         <scene sceneID="cIk-el-1Xt">
@@ -2360,14 +2367,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bh9-Wr-Mv5" userLabel="pngWing">
                                 <rect key="frame" x="32" y="415" width="350" height="110"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-pngwing" translatesAutoresizingMaskIntoConstraints="NO" id="IyR-hd-0Ut">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-flaticon" translatesAutoresizingMaskIntoConstraints="NO" id="IyR-hd-0Ut">
                                         <rect key="frame" x="18" y="12" width="153" height="86"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="86" id="69M-3t-bYI"/>
                                             <constraint firstAttribute="width" constant="153" id="uHJ-p3-2bu"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PNGWING에서 앱의 아이콘 이미지를 사용했습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob3-ym-e0h">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flaticon에서 앱의 아이콘 이미지를 사용했습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob3-ym-e0h">
                                         <rect key="frame" x="183" y="15" width="159" height="80"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2441,12 +2448,12 @@
         <image name="icon-deck" width="24" height="24"/>
         <image name="icon-deck-selected" width="24" height="24"/>
         <image name="icon-firebase" width="128" height="64"/>
+        <image name="icon-flaticon" width="128" height="49.5"/>
         <image name="icon-home" width="24" height="24"/>
         <image name="icon-home-selected" width="24" height="24"/>
         <image name="icon-icon8" width="128" height="58.5"/>
         <image name="icon-indicator" width="15" height="15"/>
         <image name="icon-mana-crystal" width="32" height="37"/>
-        <image name="icon-pngwing" width="386" height="112"/>
         <image name="icon-settings" width="24" height="24"/>
         <image name="icon-settings-selected" width="24" height="24"/>
         <image name="img-test-1" width="121.5" height="32"/>

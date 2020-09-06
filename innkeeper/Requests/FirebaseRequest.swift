@@ -10,15 +10,16 @@ import Foundation
 import FirebaseDatabase
 import FirebaseAuth
 
+@objc
 protocol FirebaseRequestDelegate {
-    func responseDeckData(deckInfos: [String])
+    @objc optional func signInComplete(email: String)
 }
 
 class FirebaseRequest {
     static let shared = FirebaseRequest()
     
     var rdb: DatabaseReference!
-    var delegate: FirebaseRequestDelegate?
+    var delegates: [FirebaseRequestDelegate] = []
     
     private init() { }
     
@@ -46,7 +47,7 @@ class FirebaseRequest {
             guard let values = snapshot.value else { return }
             let valueArray = NSArray(object: values)
             
-            var deckArray: [String] = []
+            var deckInfos: [String] = []
             for value in valueArray {
                 guard let datas = value as? NSMutableDictionary, datas.count > 0 else { continue }
                 
@@ -57,14 +58,18 @@ class FirebaseRequest {
                     
                     guard let deckString = deck.object(forKey: "deckInfo") as? String else { continue }
                     if deckString.isEmpty { continue }
-                    deckArray.append(deckString)
+                    deckInfos.append(deckString)
                     print("\n Firebase query(deckInfo: \(deckString)")
                 }
             }
             
-//            if deckArray.count > 0 {
-                self.delegate?.responseDeckData(deckInfos: deckArray)
-//            }
+            DeckDatas.shared.myDecks.removeAll()
+            
+            for deckInfo in deckInfos {
+                let arr = deckInfo.components(separatedBy: InnIdentifiers.SEPERATOR_DECK_STRING.rawValue)
+                guard arr.count > 0 else { continue }
+                HearthStoneAPI.shared.requestDeck(deckCode: arr[0], deckName: arr[1], addToMyDecks: true)
+            }
         }
     }
     
@@ -112,10 +117,16 @@ class FirebaseRequest {
                 // your request to Apple.
                 print("\n Firebase(Apple Sign-In) auth error \n - \(error?.localizedDescription ?? "unknown auth error..")")
                 return
+            } else {
+                // User is signed in to Firebase with Apple.
+                
+                self.readMyDecks()
             }
             
-            // User is signed in to Firebase with Apple.
             guard let email = authResult?.user.email else { return }
+            for delegate in self.delegates {
+                delegate.signInComplete?(email: email)
+            }
         }
     }
     
@@ -124,13 +135,18 @@ class FirebaseRequest {
         
         Auth.auth().signIn(with: credential) { (authResult, error) in
             if let error = error {
-                //                let authError = error as NSError
+                // let authError = error as NSError
                 print("\n Firebase auth(Google Sign-In) failed.. \n - \(error.localizedDescription)")
                 return
+            } else {
+                self.readMyDecks()
             }
             
             // User is signed in to Firebase with Google
             guard let email = authResult?.user.email else { return }
+            for delegate in self.delegates {
+                delegate.signInComplete?(email: email)
+            }
         }
         
     }

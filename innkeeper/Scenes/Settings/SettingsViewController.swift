@@ -8,23 +8,32 @@
 
 import UIKit
 import StoreKit
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
     
     var myProduct: SKProduct?
-    let menu: [String] = [InnTexts.SETTINGS_LOGIN.rawValue, InnTexts.SETTINGS_PRIVACY_POLICY.rawValue, InnTexts.SETTINGS_THANKS_TO.rawValue]
+    var menu: [String] = [InnTexts.SETTINGS_LOGIN.rawValue, InnTexts.SETTINGS_PRIVACY_POLICY.rawValue, InnTexts.SETTINGS_THANKS_TO.rawValue]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         table.delegate = self
         table.dataSource = self
+        FirebaseRequest.shared.delegates.append(self)
+        setSignInTitle()
         
         let productRequest = SKProductsRequest(productIdentifiers: ["citron_tea_001"])
         productRequest.delegate = self
         productRequest.start()
+    }
+    
+    func setSignInTitle() {
+        if let email = Auth.auth().currentUser?.email {
+            menu[0] = "\(InnTexts.SETTINGS_LOGIN.rawValue)(\(email))"
+        }
     }
 }
 
@@ -45,6 +54,19 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func selectItem(index: Int) {
+        
+        if menu[index].contains(InnTexts.SETTINGS_LOGIN.rawValue) {
+            self.performSegue(withIdentifier: InnIdentifiers.SEGUE_SIGN_IN.rawValue, sender: self)
+        }
+        else if menu[index].contains(InnTexts.SETTINGS_PRIVACY_POLICY.rawValue) {
+            self.performSegue(withIdentifier: InnIdentifiers.SEGUE_POLICY.rawValue, sender: self)
+        }
+        
+        else if menu[index].contains(InnTexts.SETTINGS_THANKS_TO.rawValue) {
+            self.performSegue(withIdentifier: InnIdentifiers.SEGUE_THANKS.rawValue, sender: self)
+        }
+        
+        /*
         switch menu[index] {
         case InnTexts.SETTINGS_LOGIN.rawValue:
             self.performSegue(withIdentifier: InnIdentifiers.SEGUE_SIGN_IN.rawValue, sender: self)
@@ -69,6 +91,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             break
         default: break
         }
+ */
     }
 }
 
@@ -105,6 +128,12 @@ extension SettingsViewController: SKProductsRequestDelegate, SKPaymentTransactio
             }
         }
     }
+}
+
+extension SettingsViewController: FirebaseRequestDelegate {
     
-    
+    func signInComplete(email: String) {
+        setSignInTitle()
+        table.reloadData()
+    }
 }

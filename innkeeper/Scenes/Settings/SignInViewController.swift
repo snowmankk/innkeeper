@@ -10,21 +10,24 @@ import UIKit
 import CryptoKit
 import GoogleSignIn
 import AuthenticationServices
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
     
+    private var indicator: UIActivityIndicatorView!
     private var currentNonce: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
-
-        setSignInButtons()
+        FirebaseRequest.shared.delegates.append(self)
+        setUI()
+        indicator.hidesWhenStopped = true
     }
     
-    func setSignInButtons() {
+    func setUI() {
         let appleSignIn = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .white)
         appleSignIn.addTarget(self, action: #selector(onTapAppleSignIn), for: .touchUpInside)
         appleSignIn.translatesAutoresizingMaskIntoConstraints = false
@@ -49,9 +52,25 @@ class SignInViewController: UIViewController {
             googleSignIn2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -46),
             googleSignIn2.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        indicator = UIActivityIndicatorView(style: .large)
+        indicator.center = view.center
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.color = .white
+        indicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        view.addSubview(indicator)
+        
+        NSLayoutConstraint.activate([
+            indicator.topAnchor.constraint(equalTo: view.superview?.topAnchor ?? view.topAnchor, constant: 55),
+            indicator.leadingAnchor.constraint(equalTo: view.superview?.leadingAnchor ?? view.leadingAnchor, constant: 0),
+            indicator.trailingAnchor.constraint(equalTo: view.superview?.trailingAnchor ?? view.trailingAnchor, constant: 0),
+            indicator.bottomAnchor.constraint(equalTo: view.superview?.bottomAnchor ?? view.bottomAnchor, constant: 0)
+//            indicator.heightAnchor.constraint(equalToConstant: 400)
+        ])
     }
     
     @objc func onTapAppleSignIn() {
+        
         let provider = ASAuthorizationAppleIDProvider()
         let request = provider.createRequest()
         request.requestedScopes = [.fullName, .email]
@@ -110,6 +129,15 @@ class SignInViewController: UIViewController {
       return hashString
     }
 
+    private func makeSignInAlert(email: String) {
+        let alert = UIAlertController(title: "로그인 성공!", message: "\(email)님\n환영합니다 : )", preferredStyle: .alert)
+        let add = UIAlertAction(title: "확인", style: .default) { (action) -> Void in
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(add)
+        self.present(alert, animated: false)
+    }
 }
 
 // MARK:- ASAuthorizationControllerDelegate
@@ -138,7 +166,12 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
                 return
             }
             
+            indicator.startAnimating()
             FirebaseRequest.shared.appleSignIn(idToken: idTokenString, nonce: nonce)
+            
+//            var userEmail = appleIDCredential.email ?? ""
+//            if userEmail.isEmpty { userEmail = Auth.auth().currentUser?.email ?? "" }
+//            makeSignInAlert(email: userEmail)
         }
     }
     
@@ -158,17 +191,32 @@ extension SignInViewController: ASAuthorizationControllerPresentationContextProv
     
 }
 
+// MARK:- GIDSignInDelegate
 extension SignInViewController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+    
+        if error == nil { return }
         
         guard let userId = user?.userID else { print("\n Google Sign-In failed(no google id)"); return }
         print("\n Google Sign-In success! \n - user id(Google): \(userId)")
         
         guard let authentication = user.authentication else { return }
+        
+        indicator.startAnimating()
         FirebaseRequest.shared.googleSignIn(idToken: authentication.idToken, accessToken: authentication.accessToken)
+        
+//        guard let userEmail = user?.profile.email else { return }
+//        makeSignInAlert(email: userEmail)
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         print("\n Google Sign-In failed.. \n - \(error.localizedDescription)")
+    }
+}
+
+extension SignInViewController: FirebaseRequestDelegate {
+    func signInComplete(email: String) {
+        indicator.stopAnimating()
+        makeSignInAlert(email: email)
     }
 }

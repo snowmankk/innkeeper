@@ -228,7 +228,7 @@ class HearthStoneAPI {
         }
     }
     
-    func requestDeck(deckCode: String, deckName: String = "") {
+    func requestDeck(deckCode: String, deckName: String = "", addToMyDecks: Bool = false) {
         let url =  "https://kr.api.blizzard.com/hearthstone/deck/\(deckCode)?locale=ko_KR&access_token=\(self.accessToken)"
         AF.request(url).response { (responseData) in
             guard let data = responseData.data else { return }
@@ -243,6 +243,14 @@ class HearthStoneAPI {
                 
             } catch {
                 print("\n Deck data reponse error: \(error)")
+            }
+            
+            if addToMyDecks {
+                let _duplicateDeck = DeckDatas.shared.myDecks.filter { $0.code == deckData.code }
+                if _duplicateDeck.count > 0 { return }
+                
+                print("\n My deck (name: \(deckData.name ?? "") / code: \(deckData.code ?? "")")
+                DeckDatas.shared.myDecks.append(deckData)
             }
             
             for delegate in self.delegates {

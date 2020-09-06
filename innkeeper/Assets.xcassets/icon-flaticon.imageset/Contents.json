@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icon-mana.png",
+      "filename" : "icon-flaticon.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icon-mana-1.png",
+      "filename" : "icon-flaticon-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icon-mana-2.png",
+      "filename" : "icon-flaticon-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -22,7 +22,7 @@ class ThanksViewController: UIViewController {
         blizzardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapBlizzardView)))
         firebaseView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapFirebaseView)))
         icon8View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapIcon8View)))
-        pngWing.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapIcon8View)))
+        pngWing.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onPngWing)))
     }
     
     @objc func onTapBlizzardView() {
@@ -38,7 +38,7 @@ class ThanksViewController: UIViewController {
     }
     
     @objc func onPngWing() {
-        visit(identifier: InnIdentifiers.URL_PNGWING)
+        visit(identifier: InnIdentifiers.URL_FLATICON)
     }
     
     func visit(identifier: InnIdentifiers) {
