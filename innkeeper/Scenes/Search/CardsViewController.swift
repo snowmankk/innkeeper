@@ -84,10 +84,10 @@ extension CardsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row >= HearthStoneData.shared.cards.count - 1 {
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.async(execute: {
                 HearthStoneAPI.shared.requestNextPageCardDatas()
-            }
+            })
+            
         }
     }
     
@@ -111,7 +111,7 @@ extension CardsViewController: UICollectionViewDataSource {
         if collectionView === cardCollection {
             let cardCell = collectionView.dequeueReusableCell(withReuseIdentifier: CardsCollectionViewCell.identifier, for: indexPath) as! CardsCollectionViewCell
             
-            cardCell.configure(data: HearthStoneData.shared.cards[indexPath.row])
+            cardCell.configure(index: indexPath.row)
             
             return cardCell
         } else {
@@ -121,7 +121,6 @@ extension CardsViewController: UICollectionViewDataSource {
             return wordCell
         }
     }
-    
 }
 
 // MARK:- UICollectionViewDelegateFlowLayout

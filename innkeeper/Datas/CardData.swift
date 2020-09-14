@@ -38,6 +38,7 @@ struct CardData: Decodable, Hashable {
     var multiClassIds: [Int]?
     var classId: Int?
     var classIds: [Classes] = []
+    var imageCache: Data?
     
     enum CodingKeys: String, CodingKey {
         case name = "name"

@@ -19,10 +19,10 @@ class CardsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var flavorText: UILabel!
     
-    var cardImg: UIImage! = nil
     var name: String = ""
     
-    func configure(data: CardData) {
+    func configure(index: Int) {
+        let data = HearthStoneData.shared.cards[index]
         name = data.name ?? ""
         
         let pallete = InnPalette(rawValue: data.classIds[0].rawValue)
@@ -49,21 +49,25 @@ class CardsCollectionViewCell: UICollectionViewCell {
             cls.image = UIImage(named: "icon-class-\(data.classIds[0].rawValue)")
         }
 
-        DispatchQueue.main.async {
-            self.setCardImage(imgUrl: data.imgUrl ?? "")
-        }
+        self.setCardImage(index: index, imgUrl: data.imgUrl ?? "")
     }
     
-    func setCardImage(imgUrl: String) {
+    func setCardImage(index: Int, imgUrl: String) {
         
-        let url: URL! = URL(string: imgUrl)
-        guard let data = try? Data(contentsOf: url) else { return }
+        if let imageCache = HearthStoneData.shared.cards[index].imageCache {
+            card.image = UIImage(data: imageCache)
+            return
+        }
         
-        cardImg = UIImage(data: data)
-        card.image = cardImg
-    }
-
-    func testConfigure() {
-//        gradientView.setGradient(palette: InnPalette.gradientColor004)
+        DispatchQueue.global().async {
+            let url: URL! = URL(string: imgUrl)
+            guard let data = try? Data(contentsOf: url) else { return }
+            
+            DispatchQueue.main.async(execute: {
+                let cardImg = UIImage(data: data)
+                self.card.image = cardImg
+                HearthStoneData.shared.cards[index].imageCache = cardImg?.pngData()
+            })
+        }
     }
 }

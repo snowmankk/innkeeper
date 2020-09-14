@@ -29,13 +29,17 @@ class DeckDetailTableViewCell: UITableViewCell {
         self.name.text = name
         self.manaCost.text = "\(manaCost)"
         self.cardCount.text = "x\(cardCount)"
-        let url: URL! = URL(string: imgUrl)
-        DispatchQueue.main.async {
+        
+        DispatchQueue.global().async {
+            let url: URL! = URL(string: imgUrl)
             guard let data = try? Data(contentsOf: url) else { return }
-            var img = UIImage(data: data)//?.cropped(boundingBox: CGRect(x: 30, y: 5, width: 80, height: 40))
-            guard let imgHeight = img?.size.height else { return }
-            img = img?.cropped(boundingBox: CGRect(x: 55, y: 5, width: 130, height: imgHeight - 10))
-            self.img.image = img
+
+            DispatchQueue.main.async {
+                var img = UIImage(data: data)//?.cropped(boundingBox: CGRect(x: 30, y: 5, width: 80, height: 40))
+                guard let imgHeight = img?.size.height else { return }
+                img = img?.cropped(boundingBox: CGRect(x: 55, y: 5, width: 130, height: imgHeight - 10))
+                self.img.image = img
+            }
         }
         
         let indicatorImg = UIImage(named: "icon-indicator")?.withTintColor(self.name.textColor)

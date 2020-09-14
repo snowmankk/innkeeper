@@ -112,7 +112,7 @@ class HearthStoneAPI {
             guard let data = responseData.data else { return }
             
             do {
-//                let cards = try JSONDecoder().decode(Dictionary<String, [CardData2]>.self, from: data)
+                //let cards = try JSONDecoder().decode(Dictionary<String, [CardData2]>.self, from: data)
                 let cardResponse = try JSONDecoder().decode(CardResponse.self, from: data)
                 guard let cards = cardResponse.cards else { return }
                 
@@ -137,8 +137,6 @@ class HearthStoneAPI {
             } catch {
                 print("\n Alamofire error: \(error)")
             }
-            
-            
         }
     }
     
